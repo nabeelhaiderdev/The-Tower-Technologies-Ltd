@@ -33,9 +33,6 @@ $ccss     = ( isset( $option_fields['custom_css'] ) ) ? $option_fields['custom_c
 $hscripts = ( isset( $option_fields['head_scripts'] ) ) ? $option_fields['head_scripts'] : null;
 $bscripts = ( isset( $option_fields['body_scripts'] ) ) ? $option_fields['body_scripts'] : null;
 
-$ttl_tohdr_btn     = $option_fields['ttl_tohdr_btn'];
-$ttl_tohdr_btn_two = $option_fields['ttl_tohdr_btn_two'];
-$ttl_tohdr_tbar    = $option_fields['ttl_tohdr_tbar'];
 // Page variables - Advanced custom fields variables
 ?>
 <!DOCTYPE html>
@@ -53,16 +50,16 @@ $ttl_tohdr_tbar    = $option_fields['ttl_tohdr_tbar'];
 	}
 	?>
 	<link rel="apple-touch-icon" sizes="180x180"
-		href="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/pwa/apple-touch-icon.png">
+		href="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/pwa/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32"
-		href="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/pwa/favicon-32x32.png">
+		href="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/pwa/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16"
-		href="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/pwa/favicon-16x16.png">
+		href="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/pwa/favicon-16x16.png">
 	<link rel="icon" sizes="any"
-		href="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/pwa/favicon.ico">
+		href="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/pwa/favicon.ico">
 	<link rel="icon" type="image/svg+xml"
-		href="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/pwa/icon.svg">
-	<link rel="manifest" href="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/pwa/site.webmanifest">
+		href="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/pwa/icon.svg">
+	<link rel="manifest" href="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/pwa/site.webmanifest">
 	<meta name="theme-color" content="#0047FE">
 	<meta name="mobile-web-app-capable" content="yes">
 	<meta name="application-name" content="BaseTheme Package">
@@ -71,9 +68,13 @@ $ttl_tohdr_tbar    = $option_fields['ttl_tohdr_tbar'];
 	<meta name="msapplication-TileColor" content="#0047FE">
 	<meta name="msapplication-tap-highlight" content="no">
 	<meta name="msapplication-TileImage"
-		content="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/pwa/pwa-icon-144.png">
+		content="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/pwa/pwa-icon-144.png">
 	<!-- iOS Safari -->
 	<meta name="apple-mobile-web-app-status-bar-style" content="#0047FE">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 	<?php
 		// Tracking Code
 	if ( $tracking != '' ) {
@@ -105,65 +106,42 @@ if ( $bscripts != '' ) {
 		<?php echo html_entity_decode( $bscripts, ENT_QUOTES ); ?> </div> <?php } ?> <a
 		class="skip-link screen-reader-text"
 		href="#page-section"><?php esc_html_e( 'Skip to content', 'ttl_td' ); ?></a>
-	<header id="header-section" class="header-section">
-		<!-- Header Start -->
-
-		<div class="header-wrapper header-inner d-flex align-items-center justify-content-between">
-			<div class="header-logo logo">
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img
-						src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/site-logo.svg"
-						alt="Site Logo" /></a>
-			</div>
-			<div class="right-header header-navigation">
-				<div class="nav-overlay">
-					<div class="nav-container">
-						<div class="header-nav">
-							<?php
-						wp_nav_menu(
-							array(
-								'theme_location' => 'header-nav',
-								'fallback_cb'    => 'nav_fallback',
-							)
-						);
-						?>
-						</div>
-						<?php if ( $ttl_tohdr_btn || $ttl_tohdr_btn_two ) { ?>
-						<div class="header-btns desktop-hide">
-							<?php
-							if ( $ttl_tohdr_btn ) {
-								echo glide_acf_button( $ttl_tohdr_btn, 'button' );
-							}
-
-							if ( $ttl_tohdr_btn_two ) {
-								echo glide_acf_button( $ttl_tohdr_btn_two, 'button' );
-							}
-							?>
-						</div>
-						<?php } ?>
+		<div id="wrapper">
+		<!-- Header Global -->
+		<header id="header" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="1000">
+			<div class="container-full">
+				<div class="header-holder">
+					<div class="logo-wrap">
+						<div class="logo logo-normal"><a href="./"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/logo-towertech-white.svg" alt="Tower Tech" width="245" height="46"></a></div>
+						<div class="logo logo-fixed"><a href="./"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/logo-towertech.svg" alt="Tower Tech" width="245" height="46"></a></div>
 					</div>
-				</div>
-				<div class="menu-btn">
-					<span class="top"></span>
-					<span class="middle"></span>
-					<span class="bottom"></span>
+					<a href="javascript:;" class="nav-opener"><span></span></a>
 				</div>
 			</div>
-			<?php if ( $ttl_tohdr_btn || $ttl_tohdr_btn_two ) { ?>
-			<div class="header-btns">
+		</header>
+		<!-- Navigation-->
+		<nav class="navigation">
+			<div class="container-full">
+				<div class="header-holder">
+					<div class="logo-wrap">
+						<div class="logo logo-normal"><a href="<?php echo home_url(); ?>"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/logo-towertech-white.svg" alt="Tower Tech" width="245" height="46"></a></div>
+						<div class="logo logo-fixed"><a href="<?php echo home_url(); ?>"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/logo-towertech.svg" alt="Tower Tech" width="245" height="46"></a></div>
+					</div>
+					<a href="javascript:;" class="nav-opener"><span></span></a>
+				</div>
 				<?php
-				if ( $ttl_tohdr_btn ) {
-					echo glide_acf_button( $ttl_tohdr_btn, 'button' );
-				}
-
-				if ( $ttl_tohdr_btn_two ) {
-					echo glide_acf_button( $ttl_tohdr_btn_two, 'button' );
-				}
+					wp_nav_menu(
+						array(
+						'theme_location' => 'header-nav',
+						'fallback_cb' => 'menu_fallback',
+						)
+					);
 				?>
 			</div>
-			<?php } ?>
-			<!-- header buttons -->
-		</div>
-		<!-- Header End -->
-	</header>
-	<!-- Main Area Start -->
-	<main id="main-section" class="main-section">
+			<div class="btn-holder">
+				<a href="#main" class="btn-explore btnClose">Explore</a>
+			</div>
+		</nav>
+		<!-- Intro -->
+		
+	

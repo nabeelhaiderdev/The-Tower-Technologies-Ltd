@@ -56,6 +56,7 @@ if ( $ttl_schema_check ) {
 	$ttl_schema_type                = html_entity_remove( $option_fields['ttl_schema_type'] );
 }
 // Custom - ACF variables.
+$ttl_to_ftr_css = ( isset( $option_fields['ttl_to_ftr_css'] ) ) ? $option_fields['ttl_to_ftr_css'] : null;
 
 $ttl_ftrop_title     = ( isset( $option_fields['ttl_ftrop_title'] ) ) ? $option_fields['ttl_ftrop_title'] : null;
 $ttl_ftrop_text      = html_entity_decode( $option_fields['ttl_ftrop_text'] );
@@ -64,99 +65,84 @@ $ttl_social_fb       = ( isset( $option_fields['ttl_social_fb'] ) ) ? $option_fi
 $ttl_social_tw       = ( isset( $option_fields['ttl_social_tw'] ) ) ? $option_fields['ttl_social_tw'] : null;
 $ttl_social_li       = ( isset( $option_fields['ttl_social_li'] ) ) ? $option_fields['ttl_social_li'] : null;
 $ttl_social_in       = ( isset( $option_fields['ttl_social_in'] ) ) ? $option_fields['ttl_social_in'] : null;
+$ttl_social_yt       = ( isset( $option_fields['ttl_social_yt'] ) ) ? $option_fields['ttl_social_yt'] : null;
 
 ?>
  <?php get_template_part( 'partials/cta' ); ?> </main>
-<footer id="footer-section" class="footer-section">
-	<!-- Footer Start -->
-	<div class="footer-ctn">
-		<div class="wrapper">
-
-			<div class="footer-widgets d-flex justify-content-between flex-wrap">
-				<div class="single-widget"> <?php if ( $ttl_ftrop_title ) { ?>
-					<div class="footer-logo">
-						<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-							<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/site-logo-white.svg" alt="Logo" />
-						</a>
-					</div>
-					<h5> <?php echo html_entity_decode( $ttl_ftrop_title ); ?></h5> <?php } ?>
-					<?php if ( $ttl_ftrop_text ) { ?>
-						<div class="address"><?php echo $ttl_ftrop_text; ?></div>
+<footer id="footer" class="footer-section">
+	<!-- Footer -->
+		<div class="container">
+			<div class="footer-content">
+				<div class="footer-col box-content">
+					<div class="logo">
+						<a href="./"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/logo-towertech.svg" alt="" width="330" height="46"></a>
+					</div>			
+					<?php if($ttl_to_ftr_css){ ?>			
+					<ul class="contacts">
+						<?php foreach ($ttl_to_ftr_css as $contact) { 
+							$contact_title = $contact['title'];
+							$contact_text = $contact['text'];
+							$contact_type = $contact['type'];
+							if($contact_type == 'Phone'){
+								$contact_href = 'tel:+'. preg_replace( '/[^0-9]/', '', $contact_text );
+							} else {
+								$contact_href = 'mailto:' . $contact_text;
+							}
+							?>
+						<li>
+							<span class="subtitle"><?php echo $contact_title; ?></span>
+							<span class="context"><a href="<?php echo $contact_href; ?>"><?php echo $contact_text; ?></a></span>
+						</li>
+						<?php } ?>
+					</ul>
 					<?php } ?>
-					<div class="social-icons d-flex">
-						<?php
-						if ( $ttl_social_fb ) {
-							?>
-							<a href="<?php echo $ttl_social_fb; ?>" target="_blank" class="facebook flex-center"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/facebook-icon.svg" alt="Facebook Icon" /></a><?php } ?>
-						<?php
-						if ( $ttl_social_tw ) {
-							?>
-							<a href="<?php echo $ttl_social_tw; ?>" target="_blank" class="tweeter flex-center"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/linkedin-icon.svg" alt="LinkedIn Icon" /></a><?php } ?>
-						<?php
-						if ( $ttl_social_li ) {
-							?>
-							<a href="<?php echo $ttl_social_li; ?>" target="_blank" class="linkdhin flex-center"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/twitter-icon.svg" alt="Twitter Icon" /></a><?php } ?>
-						<?php
-						if ( $ttl_social_in ) {
-							?>
-							<a href="<?php echo $ttl_social_in; ?>" target="_blank" class="instagram flex-center"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/instagram-icon.svg" alt="Instagram Icon" /></a><?php } ?>
-					</div>
 				</div>
-				<div class="single-widget">
-					<div class="footer-nav"> 
+				<div class="footer-col footer-nav">
+					<h4>Links</h4>
 					<?php
-							wp_nav_menu(
-								array(
-									'theme_location' => 'footer-nav-one',
-									'fallback_cb'    => 'nav_fallback',
-								)
-							);
-							?>
-							 </div>
-				</div>
-				<div class="single-widget">
-					<div class="footer-nav"> 
-					<?php
-							wp_nav_menu(
-								array(
-									'theme_location' => 'footer-nav-two',
-									'fallback_cb'    => 'nav_fallback',
-								)
-							);
-							?>
-							 </div>
-				</div>
-				<div class="single-widget">
-					<div class="footer-nav"> 
-					<?php
-							wp_nav_menu(
-								array(
-									'theme_location' => 'footer-nav-three',
-									'fallback_cb'    => 'nav_fallback',
-								)
-							);
-							?>
-							 </div>
-				</div>
-			</div>
-			<div class="s-80"></div>
-			<div class="footer-bottom d-flex align-items-center justify-content-between">
-				<?php if ( $ttl_ftrop_copyright ) { ?>
-					<div class="copy-right"><?php echo $ttl_ftrop_copyright; ?></div>
-				<?php } ?>
-				<div class="legal-nav"> 
-				<?php
 						wp_nav_menu(
 							array(
-								'theme_location' => 'legal-nav',
-								'fallback_cb'    => 'nav_fallback',
+							'theme_location' => 'header-nav',
+							'fallback_cb' => 'menu_fallback',
 							)
 						);
-						?>
-						 </div>
+					?>
+				</div>
+				<div class="footer-col newsletter">
+					<h4>Follow Us</h4>
+					<ul class="social-networks">
+						<?php if($ttl_social_tw){ ?>
+							<li><a href="<?php echo $ttl_social_tw; ?>"><i class="fab fa-twitter"></i></a></li>
+						<?php } ?>
+						<?php if($ttl_social_li){ ?>
+						<li><a href="<?php echo $ttl_social_li; ?>"><i class="fab fa-linkedin"></i></a></li>
+						<?php } ?>
+						<?php if($ttl_social_fb){ ?>
+						<li><a href="<?php echo $ttl_social_fb; ?>"><i class="fab fa-facebook"></i></a></li>
+						<?php } ?>
+						<?php if($ttl_social_yt){ ?>
+						<li><a href="<?php echo $ttl_social_yt; ?>"><i class="fab fa-youtube"></i></a></li>
+						<?php } ?>
+					</ul>
+					<h4>Subscribe</h4>
+					<p>Subscribe our newsletter to get updates about our services and offers.</p>
+					<form class="newsletter-form">
+						<div class="form-holder">
+							<input type="email" class="form-control form-control-sm" placeholder="Enter your email">
+							<button type="submit" class="btn btn-tertiary btn-sm">Subscribe</button>
+						</div>
+					</form>
+					
+				</div>
+			</div>
+			<div class="copyright"> 
+				<p>&copy; <?php the_date('Y'); ?> <?php echo $ttl_ftrop_copyright; ?> </p>
 			</div>
 		</div>
-	</div>
+		<!-- Btn Top -->
+		<a href="#wrapper" class="btn-top smoothScroll">
+			<img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/ico-up.svg" alt="Go Top" width="9" height="18">
+		</a>
 	<!-- Footer End --> 
 	<?php
 	if ( $ttl_schema_check ) {
@@ -192,6 +178,10 @@ $ttl_social_in       = ( isset( $option_fields['ttl_social_in'] ) ) ? $option_fi
 if ( $footer_scripts != '' ) {
 	?>
 	 <div style="display: none;">
-	<?php echo html_entity_decode( $footer_scripts, ENT_QUOTES ); ?> </div> <?php } ?> </body>
+	<?php echo html_entity_decode( $footer_scripts, ENT_QUOTES ); ?> </div> <?php } ?>
+
+</div>
+<!-- /#wrapper -->
+</body>
 
 </html>

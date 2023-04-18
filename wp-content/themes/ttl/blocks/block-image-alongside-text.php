@@ -45,41 +45,64 @@ if ( $block['name'] ) {
 // Block variables
 
 $ttl_iat_title        = $block_fields['ttl_iat_title'];
-$ttl_iat_text         = html_entity_decode( $block_fields['ttl_iat_text'] );
-$ttl_iat_button       = $block_fields['ttl_iat_button'];
-$ttl_iat_img_location = $block_fields['ttl_iat_img_location'];
-$ttl_iat_image        = $block_fields['ttl_iat_image'];
-
-
-if ( $ttl_iat_img_location == 'left' ) {
-	$ttl_iat_img_location = 'image-at-left';
-} else {
-	$ttl_iat_img_location = 'image-at-right';
-}
+$ttl_blk_iat_design        = $block_fields['ttl_blk_iat_design'];
+$ttl_blk_iat_image        = $block_fields['ttl_blk_iat_image'];
+$ttl_blk_iat_kicker        = $block_fields['ttl_blk_iat_kicker'];
+$ttl_blk_iat_description        = $block_fields['ttl_blk_iat_description'];
+$ttl_blk_iat_features        = $block_fields['ttl_blk_iat_features'];
 
 
 ?>
 <div id="<?php echo $id; ?>" class="<?php echo $align_class . ' ' . $class_name . ' ' . $name; ?> glide-block-<?php echo $block_glide_name; ?>">
 
-	<div class="iat-section two-columns justify-content-between align-items-center <?php echo $ttl_iat_img_location; ?>">
-		<div class="iat-text column">
-			<?php if ( $ttl_iat_title ) { ?>
-				<h2><?php echo $ttl_iat_title; ?></h2>
-			<?php } ?>
-			<?php if ( $ttl_iat_text ) { ?>
-				<?php echo $ttl_iat_text; ?>
-			<?php } ?>
-			<?php if ( $ttl_iat_button ) { ?>
-				<div class="iat-button">
-					<?php echo glide_acf_button( $ttl_iat_button, 'button' ); ?>
+<?php if($ttl_blk_iat_design == 'features'){ ?>
+<!-- Section About -->
+<section class="section section-about">
+	<div class="section-frame">
+		<div class="container">
+			<div class="about-content">
+				<div class="img-holder" data-aos="fade-right" data-aos-duration="700" data-aos-delay="500">
+					<?php if($ttl_blk_iat_image){ ?>
+						<img src="<?php echo $ttl_blk_iat_image; ?>" alt="" width="534" height="696" alt="<?php echo $ttl_iat_title; ?>">
+					<?php } ?>
 				</div>
-			<?php } ?>
-		</div>
-		<?php if ( $ttl_iat_image ) { ?>
-			<div class="iat-image column">
-				<img src="<?php echo wp_get_attachment_image_url( $ttl_iat_image, 'full' ); ?>" alt="">
+				<div class="text-block" data-aos="fade-left" data-aos-duration="700" data-aos-delay="1000">
+					<header class="section-head">
+						<?php if($ttl_blk_iat_kicker){ ?>
+							<h5><?php echo $ttl_blk_iat_kicker; ?></h5>
+						<?php } ?>
+						<h2><?php echo $ttl_iat_title; ?><span class="sign-line"></span></h2>
+					</header>
+					<?php 
+						if($ttl_blk_iat_description){
+							echo html_entity_decode($ttl_blk_iat_description);
+						}
+					?>
+					<?php if($ttl_blk_iat_features){ ?>
+					<ul class="services-list">
+						<?php foreach ($ttl_blk_iat_features as $feature ) { 
+							$feature_title = $feature['title'];
+							$feature_text = $feature['text'];
+							$feature_icon = $feature['icon'];
+							?>
+						<li>
+							<div class="ico"><img src="<?php echo $feature_icon; ?>" alt="" width="59" height="59" alt="<?php echo $feature_title; ?>"></div>
+							<h5><?php echo $feature_title; ?></h5>
+							<p><?php echo $feature_text; ?></p>
+						</li>
+						<?php } ?>
+					</ul>
+					<?php } ?>
+				</div>
 			</div>
-		<?php } ?>
+		</div>
 	</div>
+</section>
+
+<?php } elseif($ttl_blk_iat_design == 'overlap'){ ?>
+
+<?php } elseif($ttl_blk_iat_design == 'frame'){ ?>
+
+<?php } ?>
 
 </div>

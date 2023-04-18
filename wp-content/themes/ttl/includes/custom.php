@@ -168,7 +168,7 @@ add_filter(
  */
 
 function glide_theme_favicon() {
-	 $favicon_path = get_template_directory_uri() . '/assets/img/pwa/favicon.ico';
+	 $favicon_path = get_template_directory_uri() . '/assets/images/pwa/favicon.ico';
 
 	 echo '<link rel="shortcut icon" href="' . esc_url( $favicon_path ) . '" />';
 }
