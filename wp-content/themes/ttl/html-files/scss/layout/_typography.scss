@@ -1,0 +1,286 @@
+body {
+    font: 18px/1.36 "Open Sans", Arial;
+
+    @media (max-width: $widescreen) {
+        font-size: 17px;
+    }
+
+    @media (max-width: $desktop) {
+        font-size: 16px;
+    }
+
+    @media (max-width: $tablet) {
+        font-size: 15px;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 700;
+    font-family: "Poppins", Arial, sans-serif;
+    margin: 0 0 16px;
+    line-height: 1.28;
+
+    a {
+        color: inherit;
+    }
+}
+
+h1 {
+    font: 90px/1.28 'DM Serif Display', "Poppins";
+    padding: 0 0 20px;
+    position: relative;
+    color: $primary;
+    text-transform: uppercase;
+    margin: 0 0 28px;
+
+    &:after {
+        position: absolute;
+        left: 0;
+        width: 122px;
+        height: 1px;
+        background: #41A4FF;
+        content: "";
+        bottom: 0;
+    }
+
+    span {
+        display: block;
+        color: $white;
+    }
+
+    @media (max-width: $widescreen) {
+        font-size: 70px;
+    }
+
+    @media (max-width: $desktop) {
+        font-size: 55px;
+    }
+
+    @media (max-width: $tablet) {
+        font-size: 45px;
+    }
+}
+
+h2 {
+    font-size: 48px;
+    margin: 0 0 20px;
+    color: $secondary;
+    text-transform: capitalize;
+
+    @media (max-width: $widescreen) {
+        font-size: 32px;
+    }
+
+    @media (max-width: $desktop) {
+        font-size: 26px;
+        margin: 0 0 15px;
+    }
+
+    &.h2-smaller {
+
+        @media (min-width: $widescreen + 1) {
+            font-size: 40px;
+        }
+    }
+
+    span {
+        display: inline-block;
+        font-size: 54.2%;
+        vertical-align: middle;
+        padding: 0 0 0 16px;
+        margin: 0 0 0 13px;
+        font-weight: 600;
+        color: #343434;
+        border-left: 1px solid #343434;
+
+        @media (max-width: $tablet) {
+            display: block;
+            padding: 0;
+            margin: 0;
+            border: 0;
+        }
+    }
+}
+
+h3 {
+    font-size: 26px;
+    color: $primary;
+    font-weight: 600;
+
+    @media (max-width: $desktop) {
+        font-size: 19px;
+        margin: 0 0 12px;
+    }
+}
+
+h4 {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0 0 24px;
+    color: $secondary;
+
+    @media (max-width: $widescreen) {
+        font-size: 20px;
+        margin: 0 0 16px;
+    }
+}
+
+h5 {
+    font-size: 22px;
+    font-weight: 600;
+    margin: 0 0 13px;
+    color: #343434;
+
+    @media (max-width: $widescreen) {
+        font-size: 18px;
+    }
+}
+
+h6 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 3px;
+
+    @media (max-width: $desktop) {
+        margin: 0;
+        font-size: 16px;
+    }
+}
+
+.link-default {
+    color: inherit;
+}
+
+p {
+    margin: 0 0 24px;
+
+    @media (max-width: $desktop) {
+        margin: 0 0 20px;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+a {
+    text-decoration: none;
+    color: $primary;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+
+
+a,
+input,
+button {
+    transition: all .25s ease-in-out;
+    outline: none !important;
+}
+
+input,
+button {
+    font-family: inherit;
+}
+
+.text-primary {
+    color: $primary !important;
+}
+
+.text-success {
+    color: $green !important;
+}
+
+.text-secondary {
+    color: $secondary !important;
+}
+
+.text-gray {
+    color: $gray-light !important;
+}
+
+.text-warning {
+    color: $yellow !important;
+}
+
+.text-danger {
+    color: $red !important;
+}
+
+.bg-primary {
+    background-color: $primary !important;
+}
+
+.bg-success {
+    background-color: $green !important;
+}
+
+.bg-secondary {
+    background-color: $secondary !important;
+}
+
+.bg-warning {
+    background-color: $yellow !important;
+}
+
+.bg-danger {
+    background-color: $red !important;
+}
+
+.arrow-list,
+.post-details ul:not([class]) {
+    padding: 0;
+    list-style: none;
+    font-size: 20px;
+    line-height: 1.35;
+    margin: 0 0 24px;
+
+    @media (max-width: $widescreen) {
+        font-size: 17px;
+    }
+
+    @media (max-width: $desktop) {
+        margin: 0 0 20px;
+        font-size: 16px;
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    >li {
+        position: relative;
+        padding: 0 0 9px 35px;
+
+        &:last-child {
+            padding-bottom: 0;
+        }
+
+        &:before {
+            background: url(../images/ico-arrow.svg) no-repeat;
+            width: 17px;
+            height: 16px;
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 6px;
+            background-size: 100% auto;
+        }
+    }
+}
