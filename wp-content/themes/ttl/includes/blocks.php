@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Functions for custom Gutenberg blocks
  *
@@ -11,17 +12,18 @@
 /**
  * Register custom Gutenberg blocks
  */
-add_action( 'acf/init', 'glide_theme_acf_init' );
-function glide_theme_acf_init() {
+add_action('acf/init', 'glide_theme_acf_init');
+function glide_theme_acf_init()
+{
 
-	if ( function_exists( 'acf_register_block' ) ) {
+	if (function_exists('acf_register_block')) {
 
 		// Register a block - Spacer
 		acf_register_block(
 			array(
 				'name'            => 'spacer',
-				'title'           => __( 'Theme Spacer', 'ttl_td' ),
-				'description'     => __( 'A custom spacer block for theme.', 'ttl_td' ),
+				'title'           => __('Theme Spacer', 'ttl_td'),
+				'description'     => __('A custom spacer block for theme.', 'ttl_td'),
 				'render_callback' => 'glide_acf_block_callback',
 				'category'        => 'glide-blocks',
 				'icon'            => '<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -54,10 +56,10 @@ function glide_theme_acf_init() {
 				<path d="M64 52L64 56L36 56L36 52L64 52Z" fill="#20007F"/>
 				</svg>',
 				'mode'            => 'edit',
-				'keywords'        => array( 'Spacer Block' ),
+				'keywords'        => array('Spacer Block'),
 				'align'           => 'full',
 				'supports'        => array(
-					'align' => array( 'full' ),
+					'align' => array('full'),
 				),
 			)
 		);
@@ -66,8 +68,8 @@ function glide_theme_acf_init() {
 		acf_register_block(
 			array(
 				'name'            => 'button',
-				'title'           => __( 'Theme Buttons', 'ttl_td' ),
-				'description'     => __( 'A custom button block with theme styles.', 'ttl_td' ),
+				'title'           => __('Theme Buttons', 'ttl_td'),
+				'description'     => __('A custom button block with theme styles.', 'ttl_td'),
 				'render_callback' => 'glide_acf_block_callback',
 				'category'        => 'glide-blocks',
 				'icon'            => '<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -97,7 +99,7 @@ function glide_theme_acf_init() {
 				<path d="M64 28L64 36L36 36L36 28L64 28Z" fill="#20007F"/>
 				</svg>',
 				'mode'            => 'edit',
-				'keywords'        => array( 'Button' ),
+				'keywords'        => array('Button'),
 				'align'           => 'wide',
 				'supports'        => array(
 					'align' => false,
@@ -106,7 +108,7 @@ function glide_theme_acf_init() {
 					'attributes' => array(
 						'mode' => 'preview',
 						'data' => array(
-							'preview_image_help' => esc_url( get_template_directory_uri() ) . '/assets/img/admin/default-block-preview.webp',
+							'preview_image_help' => esc_url(get_template_directory_uri()) . '/assets/img/admin/default-block-preview.webp',
 						),
 					),
 				),
@@ -117,13 +119,13 @@ function glide_theme_acf_init() {
 		acf_register_block(
 			array(
 				'name'            => 'acfblock',
-				'title'           => __( 'ACFBlock', 'ttl_td' ),
-				'description'     => __( 'A custom ACFBlock.', 'ttl_td' ),
+				'title'           => __('ACFBlock', 'ttl_td'),
+				'description'     => __('A custom ACFBlock.', 'ttl_td'),
 				'render_callback' => 'glide_acf_block_callback',
 				'category'        => 'glide-blocks',
 				'icon'            => 'images-alt2',
 				'mode'            => 'edit',
-				'keywords'        => array( 'ACFBlock' ),
+				'keywords'        => array('ACFBlock'),
 				'align'           => 'wide',
 				// calling assets js,css
 				// 'enqueue_assets' => function(){
@@ -147,8 +149,8 @@ function glide_theme_acf_init() {
 		acf_register_block(
 			array(
 				'name'            => 'image-alongside-text',
-				'title'           => __( 'Image Alongside Text', 'ttl_td' ),
-				'description'     => __( 'A custom image alongside text.', 'ttl_td' ),
+				'title'           => __('Image Alongside Text', 'ttl_td'),
+				'description'     => __('A custom image alongside text.', 'ttl_td'),
 				'render_callback' => 'glide_acf_block_callback',
 				'category'        => 'glide-blocks',
 				'icon'            => '<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -178,7 +180,7 @@ function glide_theme_acf_init() {
 				<path d="M22 9.5C22 10.8807 20.8807 12 19.5 12C18.1193 12 17 10.8807 17 9.5C17 8.11929 18.1193 7 19.5 7C20.8807 7 22 8.11929 22 9.5Z" fill="#20007F"/>
 				</svg>',
 				'mode'            => 'edit',
-				'keywords'        => array( 'image', 'along', 'side', 'text' ),
+				'keywords'        => array('image', 'along', 'side', 'text'),
 				'align'           => 'wide',
 				'supports'        => array(
 					'align' => false,
@@ -198,13 +200,13 @@ function glide_theme_acf_init() {
 		acf_register_block(
 			array(
 				'name'            => 'partner-companies',
-				'title'           => __( 'Partner Companies', 'ttl_td' ),
-				'description'     => __( 'A custom Partner Companies.', 'ttl_td' ),
+				'title'           => __('Partner Companies', 'ttl_td'),
+				'description'     => __('A custom Partner Companies.', 'ttl_td'),
 				'render_callback' => 'glide_acf_block_callback',
 				'category'        => 'glide-blocks',
 				'icon'            => 'images-alt2',
 				'mode'            => 'edit',
-				'keywords'        => array( 'Partner Companies' ),
+				'keywords'        => array('Partner Companies'),
 				'align'           => 'wide',
 				// calling assets js,css
 				// 'enqueue_assets' => function(){
@@ -227,13 +229,13 @@ function glide_theme_acf_init() {
 		acf_register_block(
 			array(
 				'name'            => 'featured-icons',
-				'title'           => __( 'Featured Icons', 'ttl_td' ),
-				'description'     => __( 'A custom Featured Icons.', 'ttl_td' ),
+				'title'           => __('Featured Icons', 'ttl_td'),
+				'description'     => __('A custom Featured Icons.', 'ttl_td'),
 				'render_callback' => 'glide_acf_block_callback',
 				'category'        => 'glide-blocks',
 				'icon'            => 'images-alt2',
 				'mode'            => 'edit',
-				'keywords'        => array( 'Featured Icons' ),
+				'keywords'        => array('Featured Icons'),
 				'align'           => 'wide',
 				// calling assets js,css
 				// 'enqueue_assets' => function(){
@@ -252,6 +254,92 @@ function glide_theme_acf_init() {
 				),
 			)
 		);
-
+		// Register a block - Three Columns Text
+		acf_register_block(
+			array(
+				'name'            => 'three-columns-text',
+				'title'           => __('Three Columns Text', 'ttl_td'),
+				'description'     => __('A custom Three Columns.', 'ttl_td'),
+				'render_callback' => 'glide_acf_block_callback',
+				'category'        => 'glide-blocks',
+				'icon'            => 'images-alt2',
+				'mode'            => 'edit',
+				'keywords'        => array('Three Columns Text'),
+				'align'           => 'wide',
+				// calling assets js,css
+				// 'enqueue_assets' => function(){
+				// wp_enqueue_script( 'block-testimonial', get_template_directory_uri() . '/scripts/jquery.cycle2.min.js', array('jquery'), '', true );
+				// },
+				'supports'        => array(
+					'align' => false,
+				),
+				// 'example'         => array(
+				// 	'attributes' => array(
+				// 		'mode' => 'preview',
+				// 		'data' => array(
+				// 			'preview_image_help' => get_template_directory_uri() . '/assets/img/admin/default-block-preview.webp',
+				// 		),
+				// 	),
+				// ),
+			)
+		);
 	}
+	// Register a block - Tabbed Content
+	acf_register_block(
+		array(
+			'name'            => 'tabbed-content',
+			'title'           => __('Tabbed Content', 'ttl_td'),
+			'description'     => __('Tabbed Content.', 'ttl_td'),
+			'render_callback' => 'glide_acf_block_callback',
+			'category'        => 'glide-blocks',
+			'icon'            => 'images-alt2',
+			'mode'            => 'edit',
+			'keywords'        => array('Tabbed Content'),
+			'align'           => 'wide',
+			// calling assets js,css
+			// 'enqueue_assets' => function(){
+			// wp_enqueue_script( 'block-testimonial', get_template_directory_uri() . '/scripts/jquery.cycle2.min.js', array('jquery'), '', true );
+			// },
+			'supports'        => array(
+				'align' => false,
+			),
+			// 'example'         => array(
+			// 	'attributes' => array(
+			// 		'mode' => 'preview',
+			// 		'data' => array(
+			// 			'preview_image_help' => get_template_directory_uri() . '/assets/img/admin/default-block-preview.webp',
+			// 		),
+			// 	),
+			// ),
+		)
+	);
+	// Register a block - Numbers Alongside Text
+	acf_register_block(
+		array(
+			'name'            => 'numbers-alongside-text',
+			'title'           => __('Numbers Alongside Text', 'ttl_td'),
+			'description'     => __('Numbers Alongside Text.', 'ttl_td'),
+			'render_callback' => 'glide_acf_block_callback',
+			'category'        => 'glide-blocks',
+			'icon'            => 'images-alt2',
+			'mode'            => 'edit',
+			'keywords'        => array('Numbers Alongside Text'),
+			'align'           => 'wide',
+			// calling assets js,css
+			// 'enqueue_assets' => function(){
+			// wp_enqueue_script( 'block-testimonial', get_template_directory_uri() . '/scripts/jquery.cycle2.min.js', array('jquery'), '', true );
+			// },
+			'supports'        => array(
+				'align' => false,
+			),
+			// 'example'         => array(
+			// 	'attributes' => array(
+			// 		'mode' => 'preview',
+			// 		'data' => array(
+			// 			'preview_image_help' => get_template_directory_uri() . '/assets/img/admin/default-block-preview.webp',
+			// 		),
+			// 	),
+			// ),
+		)
+	);
 }

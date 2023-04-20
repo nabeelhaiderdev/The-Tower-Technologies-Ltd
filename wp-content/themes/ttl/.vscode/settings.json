@@ -112,7 +112,7 @@
 	"[php]": {
 		"editor.formatOnSave": true,
 		"editor.formatOnPaste": true,
-		"editor.defaultFormatter": "persoderlind.vscode-phpcbf",
+		"editor.defaultFormatter": "bmewburn.vscode-intelephense-client",
 	},
 	//PHP CS
 	"phpcs.enable": true,
