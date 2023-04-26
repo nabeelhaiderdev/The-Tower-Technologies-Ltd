@@ -2775,9 +2775,9 @@ ol.comments-list {
 
 /* Section About Us */
 .section-about {
+
     &.reverse .about-content {
         flex-flow: row-reverse nowrap;
-
     }
 
     .about-content {
@@ -2864,11 +2864,46 @@ ol.comments-list {
         }
     }
 
-    .img-frame {
-        padding: 30px;
-        border-radius: 30px;
-        position: relative;
-        background: linear-gradient(to bottom, #0085ff 0%, #f6f8fc 100%);
+    &.about-modified {
+        .services-list {
+            display: block;
+
+            @media (min-width: $tablet + 1) {
+                max-width: 80%;
+                padding: 16px 0 0;
+                margin-top: -40px;
+
+                li {
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    padding-top: 40px;
+                }
+
+                .ico {
+                    flex-shrink: 0;
+                    margin: 0 22px 0 0;
+                }
+
+                .text-box {
+                    flex-grow: 1;
+                    overflow: hidden;
+                }
+            }
+
+            .ico {
+                border-radius: 50% 0 50% 50%;
+            }
+        }
+    }
+
+    &:not(.about-modified) {
+        .img-frame {
+            padding: 30px;
+            border-radius: 30px;
+            position: relative;
+            background: linear-gradient(to bottom, #0085ff 0%, #f6f8fc 100%);
+        }
     }
 }
 
@@ -2904,6 +2939,13 @@ ol.comments-list {
 
             @media (max-width: $tablet) {
                 width: 100%;
+            }
+
+            h5 a {
+                &:hover {
+                    text-decoration: none;
+                    color: $primary;
+                }
             }
 
             .box-holder {
@@ -2942,6 +2984,7 @@ ol.comments-list {
                 align-items: center;
                 justify-content: center;
                 margin: 0 0 24px;
+                min-height: 72px;
 
                 @media (max-width: $desktop) {
                     margin: 0 0 20px;
@@ -3383,6 +3426,8 @@ ol.comments-list {
 }
 
 /* Widget Reply  */
+
+
 .widget-reply {
     h4 {
         margin: 0 0 8px;
@@ -3390,6 +3435,10 @@ ol.comments-list {
 
     .reply-form {
         padding: 5px 0 0;
+
+        .form-control {
+            background: #F3F3F3;
+        }
     }
 
     .btn-block {
@@ -3809,7 +3858,6 @@ ol.comments-list {
             margin: 0 auto;
             box-shadow: -40px 33px 40px rgba(0, 0, 0, 0.129);
 
-
             img {
                 display: block;
                 width: 100%;
@@ -3844,8 +3892,6 @@ ol.comments-list {
     @media (max-width: $widescreen) {
         font-size: 20px;
     }
-
-    @media (max-width: $widescreen-s) {}
 
     @media (max-width: $desktop) {
         font-size: 16px;
@@ -3944,6 +3990,67 @@ ol.comments-list {
 
     .btn-secondary-fancy {
         color: $secondary;
+    }
+
+    &.modified {
+        text-align: center;
+
+        &:before {
+            background-image: url(../images/img-pattern-3.svg);
+        }
+
+        &:after {
+            background-image: url(../images/img-pattern-4.svg);
+        }
+
+        h1 {
+            font-family: "Poppins", Arial, sans-serif;
+            color: $secondary;
+            text-transform: capitalize;
+            padding: 0;
+            margin: 0 0 12px;
+            font-weight: 700;
+
+            @media (min-width: $widescreen + 1) {
+                font-size: 72px;
+            }
+
+            &:after {
+                display: none;
+            }
+        }
+
+        .text-box {
+            max-width: none;
+        }
+
+        .breadcrumb-holder {
+            padding: 0;
+
+        }
+
+        .breadcrumb {
+            letter-spacing: 0.1em;
+
+            @media (min-width: $widescreen + 1) {
+                font-size: 28px;
+                margin: 0 -9px 0 -25px;
+            }
+
+            >li {
+                @media (min-width: $widescreen + 1) {
+                    padding: 0 9px 0 25px;
+                }
+
+                >a {
+                    color: inherit;
+
+                    &:hover {
+                        color: $secondary;
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -4095,7 +4202,6 @@ ol.comments-list {
 
         @media (max-width: $desktop) {
             margin: -40px -10px 0;
-
         }
     }
 
@@ -4117,8 +4223,6 @@ ol.comments-list {
             padding: 40px 10px 0;
             width: 100%;
         }
-
-        @media (max-width: $tablet) {}
 
         .figure-holder {
             flex-shrink: 0;
@@ -4196,6 +4300,31 @@ ol.comments-list {
 
             @media (max-width: $widescreen) {
                 margin: 0 0 12px;
+            }
+        }
+    }
+
+    &.figures-modified {
+        .box-figure {
+            width: 25%;
+            display: block;
+            text-align: center;
+
+            @media (max-width: $desktop) {
+                width: 50%;
+            }
+
+            @media (max-width: $tablet) {
+                width: 100%;
+            }
+
+            .figure-holder {
+                margin: 0 auto 67px;
+
+                @media (min-width: $widescreen + 1) {
+                    width: 126px;
+                    height: 126px;
+                }
             }
         }
     }
@@ -4339,6 +4468,9 @@ ol.comments-list {
     .breadcrumb-frame {
         position: relative;
         overflow: hidden;
+        display: inline-block;
+        vertical-align: top;
+        max-width: 100%;
     }
 }
 
@@ -4928,6 +5060,147 @@ ol.comments-list {
                     bottom: auto;
                 }
             }
+        }
+    }
+}
+
+/* Section Team */
+.section-team {
+    .team-members {
+        position: relative;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        margin: -40px -10px 0;
+    }
+
+    .member-box {
+        display: flex;
+        padding: 40px 10px 0;
+        width: 25%;
+        text-align: center;
+
+        @media (max-width: $desktop) {
+            width: 33.33%;
+        }
+
+        @media (max-width: $tablet) {
+            width: 50%;
+        }
+
+        @media (max-width: $phone) {
+            width: 100%;
+        }
+
+        .box-holder {
+            width: 100%;
+            background: #FAF9F5;
+            padding: 20px 20px 45px;
+            border-radius: 8px;
+
+            @media (max-width: $widescreen) {
+                padding: 15px 10px;
+            }
+
+        }
+
+        .img-holder {
+            border-radius: 8px;
+            overflow: hidden;
+            height: 240px;
+
+            img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: 50% 0;
+            }
+        }
+
+        .text-box {
+            padding: 20px 0 0;
+        }
+
+        h5 {
+            font-size: 20px;
+            margin: 0 0 8px;
+
+            @media (max-width: $widescreen) {
+                font-size: 16px;
+            }
+        }
+
+        h6 {
+            font-size: 16px;
+            font-weight: 400;
+
+            @media (max-width: $widescreen) {
+                font-size: 13px;
+            }
+        }
+    }
+
+    &.bg-gray {
+        .member-box .box-holder {
+            background: #E3E3E3;
+        }
+    }
+}
+
+/* Section Video */
+.section-video {
+    text-align: center;
+
+    video {
+        max-width: 100%;
+        border: 0;
+        display: inline-block;
+        vertical-align: top;
+        height: auto;
+
+    }
+}
+
+/* Section Goals */
+.section-goals {
+    .section-head {
+        text-align: center;
+        margin-bottom: 40px;
+    }
+}
+
+.featured-boxes {
+    display: flex;
+    margin: -24px -12px 0;
+    flex-flow: row wrap;
+
+    .featured-box {
+        width: 33.33%;
+        padding: 24px 12px 0;
+        display: flex;
+
+        @media (max-width: $desktop) {
+            width: 100%;
+        }
+
+        .box-frame {
+            width: 100%;
+            background: $white;
+            box-shadow: 0px 3px 14px rgba(0, 0, 0, 0.16);
+            border-radius: 12px;
+            padding: 40px 20px;
+        }
+
+        .ico-holder {
+            display: flex;
+            align-items: center;
+            min-height: 80px;
+            margin: 0 0 20px;
+        }
+
+        h5 {
+            margin: 0 0 18px;
         }
     }
 }

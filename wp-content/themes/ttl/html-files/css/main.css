@@ -4775,7 +4775,34 @@ ol.comments-list > li p {
   height: 105px;
   border-radius: 0 50% 50% 50%;
 }
-.section-about .img-frame {
+.section-about.about-modified .services-list {
+  display: block;
+}
+@media (min-width: 768px) {
+  .section-about.about-modified .services-list {
+    max-width: 80%;
+    padding: 16px 0 0;
+    margin-top: -40px;
+  }
+  .section-about.about-modified .services-list li {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding-top: 40px;
+  }
+  .section-about.about-modified .services-list .ico {
+    flex-shrink: 0;
+    margin: 0 22px 0 0;
+  }
+  .section-about.about-modified .services-list .text-box {
+    flex-grow: 1;
+    overflow: hidden;
+  }
+}
+.section-about.about-modified .services-list .ico {
+  border-radius: 50% 0 50% 50%;
+}
+.section-about:not(.about-modified) .img-frame {
   padding: 30px;
   border-radius: 30px;
   position: relative;
@@ -4817,6 +4844,10 @@ ol.comments-list > li p {
     width: 100%;
   }
 }
+.section-services .services-block .box-service h5 a:hover {
+  text-decoration: none;
+  color: #0085FF;
+}
 .section-services .services-block .box-service .box-holder {
   width: 100%;
   background: #fff;
@@ -4850,6 +4881,7 @@ ol.comments-list > li p {
   align-items: center;
   justify-content: center;
   margin: 0 0 24px;
+  min-height: 72px;
 }
 @media (max-width: 1023px) {
   .section-services .services-block .box-service .ico {
@@ -5254,6 +5286,9 @@ ol.comments-list > li p {
 }
 .widget-reply .reply-form {
   padding: 5px 0 0;
+}
+.widget-reply .reply-form .form-control {
+  background: #F3F3F3;
 }
 .widget-reply .btn-block {
   padding: 10px 0 0;
@@ -5786,6 +5821,57 @@ ol.comments-list > li p {
 .section-intro-landing .btn-secondary-fancy {
   color: #20007F;
 }
+.section-intro-landing.modified {
+  text-align: center;
+}
+.section-intro-landing.modified:before {
+  background-image: url(../images/img-pattern-3.svg);
+}
+.section-intro-landing.modified:after {
+  background-image: url(../images/img-pattern-4.svg);
+}
+.section-intro-landing.modified h1 {
+  font-family: "Poppins", Arial, sans-serif;
+  color: #20007F;
+  text-transform: capitalize;
+  padding: 0;
+  margin: 0 0 12px;
+  font-weight: 700;
+}
+@media (min-width: 1340px) {
+  .section-intro-landing.modified h1 {
+    font-size: 72px;
+  }
+}
+.section-intro-landing.modified h1:after {
+  display: none;
+}
+.section-intro-landing.modified .text-box {
+  max-width: none;
+}
+.section-intro-landing.modified .breadcrumb-holder {
+  padding: 0;
+}
+.section-intro-landing.modified .breadcrumb {
+  letter-spacing: 0.1em;
+}
+@media (min-width: 1340px) {
+  .section-intro-landing.modified .breadcrumb {
+    font-size: 28px;
+    margin: 0 -9px 0 -25px;
+  }
+}
+@media (min-width: 1340px) {
+  .section-intro-landing.modified .breadcrumb > li {
+    padding: 0 9px 0 25px;
+  }
+}
+.section-intro-landing.modified .breadcrumb > li > a {
+  color: inherit;
+}
+.section-intro-landing.modified .breadcrumb > li > a:hover {
+  color: #20007F;
+}
 
 /* Section What We Do */
 .section-whatwedo .section-head {
@@ -6028,6 +6114,30 @@ ol.comments-list > li p {
     margin: 0 0 12px;
   }
 }
+.section-figures.figures-modified .box-figure {
+  width: 25%;
+  display: block;
+  text-align: center;
+}
+@media (max-width: 1023px) {
+  .section-figures.figures-modified .box-figure {
+    width: 50%;
+  }
+}
+@media (max-width: 767px) {
+  .section-figures.figures-modified .box-figure {
+    width: 100%;
+  }
+}
+.section-figures.figures-modified .box-figure .figure-holder {
+  margin: 0 auto 67px;
+}
+@media (min-width: 1340px) {
+  .section-figures.figures-modified .box-figure .figure-holder {
+    width: 126px;
+    height: 126px;
+  }
+}
 
 /* Section Clients */
 .section-clients {
@@ -6152,6 +6262,9 @@ ol.comments-list > li p {
 .breadcrumb-holder .breadcrumb-frame {
   position: relative;
   overflow: hidden;
+  display: inline-block;
+  vertical-align: top;
+  max-width: 100%;
 }
 
 .breadcrumb {
@@ -6680,4 +6793,131 @@ ol.comments-list > li p {
   height: 4px;
   top: 50%;
   bottom: auto;
+}
+
+/* Section Team */
+.section-team .team-members {
+  position: relative;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin: -40px -10px 0;
+}
+.section-team .member-box {
+  display: flex;
+  padding: 40px 10px 0;
+  width: 25%;
+  text-align: center;
+}
+@media (max-width: 1023px) {
+  .section-team .member-box {
+    width: 33.33%;
+  }
+}
+@media (max-width: 767px) {
+  .section-team .member-box {
+    width: 50%;
+  }
+}
+@media (max-width: 575px) {
+  .section-team .member-box {
+    width: 100%;
+  }
+}
+.section-team .member-box .box-holder {
+  width: 100%;
+  background: #FAF9F5;
+  padding: 20px 20px 45px;
+  border-radius: 8px;
+}
+@media (max-width: 1339px) {
+  .section-team .member-box .box-holder {
+    padding: 15px 10px;
+  }
+}
+.section-team .member-box .img-holder {
+  border-radius: 8px;
+  overflow: hidden;
+  height: 240px;
+}
+.section-team .member-box .img-holder img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 0;
+}
+.section-team .member-box .text-box {
+  padding: 20px 0 0;
+}
+.section-team .member-box h5 {
+  font-size: 20px;
+  margin: 0 0 8px;
+}
+@media (max-width: 1339px) {
+  .section-team .member-box h5 {
+    font-size: 16px;
+  }
+}
+.section-team .member-box h6 {
+  font-size: 16px;
+  font-weight: 400;
+}
+@media (max-width: 1339px) {
+  .section-team .member-box h6 {
+    font-size: 13px;
+  }
+}
+.section-team.bg-gray .member-box .box-holder {
+  background: #E3E3E3;
+}
+
+/* Section Video */
+.section-video {
+  text-align: center;
+}
+.section-video video {
+  max-width: 100%;
+  border: 0;
+  display: inline-block;
+  vertical-align: top;
+  height: auto;
+}
+
+/* Section Goals */
+.section-goals .section-head {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.featured-boxes {
+  display: flex;
+  margin: -24px -12px 0;
+  flex-flow: row wrap;
+}
+.featured-boxes .featured-box {
+  width: 33.33%;
+  padding: 24px 12px 0;
+  display: flex;
+}
+@media (max-width: 1023px) {
+  .featured-boxes .featured-box {
+    width: 100%;
+  }
+}
+.featured-boxes .featured-box .box-frame {
+  width: 100%;
+  background: #fff;
+  box-shadow: 0px 3px 14px rgba(0, 0, 0, 0.16);
+  border-radius: 12px;
+  padding: 40px 20px;
+}
+.featured-boxes .featured-box .ico-holder {
+  display: flex;
+  align-items: center;
+  min-height: 80px;
+  margin: 0 0 20px;
+}
+.featured-boxes .featured-box h5 {
+  margin: 0 0 18px;
 }
