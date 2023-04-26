@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Theme functions and definitions
  *
@@ -27,10 +28,10 @@ $file_includes = array(
 /**
  * Checks if any file have error while including it.
  */
-foreach ( $file_includes as $file ) {
-	if ( ! $filepath = locate_template( $file ) ) {
-		trigger_error( sprintf( __( 'Error locating %s for inclusion', 'ttl_td' ), $file ), E_USER_ERROR );
+foreach ($file_includes as $file) {
+	if (!$filepath = locate_template($file)) {
+		trigger_error(sprintf(__('Error locating %s for inclusion', 'ttl_td'), $file), E_USER_ERROR);
 	}
 	require_once $filepath;
 }
-unset( $file, $filepath );
+unset($file, $filepath);

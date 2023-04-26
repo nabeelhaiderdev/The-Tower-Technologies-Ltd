@@ -3,6 +3,29 @@
     "title": "Single Page Options",
     "fields": [
         {
+            "key": "field_6448f8361bc43",
+            "label": "Select Design",
+            "name": "ttl_spo_select_design",
+            "aria-label": "",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "with-image": "With Image",
+                "without-image": "Without Image"
+            },
+            "default_value": "",
+            "return_format": "value",
+            "allow_null": 0,
+            "layout": "horizontal"
+        },
+        {
             "key": "field_6448c77a67438",
             "label": "Title",
             "name": "ttl_spo_title",
@@ -30,7 +53,15 @@
             "type": "text",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6448f8361bc43",
+                        "operator": "==",
+                        "value": "with-image"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -50,7 +81,15 @@
             "type": "link",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_6448f8361bc43",
+                        "operator": "==",
+                        "value": "with-image"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -77,5 +116,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1682491380
+    "modified": 1682505023
 }

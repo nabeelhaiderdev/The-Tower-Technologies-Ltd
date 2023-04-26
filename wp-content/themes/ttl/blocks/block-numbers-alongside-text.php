@@ -47,36 +47,67 @@ if ($block['name']) {
 $ttl_blk_nat_title = (isset($block_fields['ttl_blk_nat_title'])) ? $block_fields['ttl_blk_nat_title'] : null;
 $ttl_blk_nat_kicker = (isset($block_fields['ttl_blk_nat_kicker'])) ? $block_fields['ttl_blk_nat_kicker'] : null;
 $ttl_blk_nat_number_block = (isset($block_fields['ttl_blk_nat_number_block'])) ? $block_fields['ttl_blk_nat_number_block'] : null;
+$ttl_blk_nat_design = (isset($block_fields['ttl_blk_nat_design'])) ? $block_fields['ttl_blk_nat_design'] : null;
 ?>
-?>
-<div id="<?php echo $id; ?>" class="<?php echo $align_class . ' ' . $class_name . ' ' . $name; ?> glide-block-<?php echo $block_glide_name; ?>">
-	<!-- Section Figures -->
-	<section class="section section-figures bg-gray">
-		<div class="section-frame">
-			<div class="container">
-				<header class="section-head" data-aos="fade-down" data-aos-duration="700">
-					<h5><?php echo $ttl_blk_nat_kicker ?></h5>
-					<h2><?php echo $ttl_blk_nat_title ?><span class="sign-line"></span></h2>
-				</header>
-				<?php if ($ttl_blk_nat_number_block) { ?>
-					<div class="figures-block">
-						<?php foreach ($ttl_blk_nat_number_block as $nblock) {
-						?>
-							<div class="box-figure" data-aos="fade-right" data-aos-duration="500" data-aos-delay="100">
-								<div class="figure-holder">
-									<strong><?php echo $nblock['number']; ?></strong>
-								</div>
-								<div class="text-box">
-									<h4><?php echo $nblock['number']; ?> <?php echo $nblock['title']; ?></h4>
-									<p><?php echo html_entity_decode($nblock['description']); ?></p>
-								</div>
-							</div>
-						<?php }
-						?>
-					</div>
-				<?php } ?>
-			</div>
-		</div>
-	</section>
 
+<div id="<?php echo $id; ?>" class="<?php echo $align_class . ' ' . $class_name . ' ' . $name; ?> glide-block-<?php echo $block_glide_name; ?>">
+	<?php if ($ttl_blk_nat_design == 'with-text') {
+	?>
+		<!-- Section Figures -->
+		<section class="section section-figures bg-gray">
+			<div class="section-frame">
+				<div class="container">
+					<header class="section-head" data-aos="fade-down" data-aos-duration="700">
+						<h5><?php echo $ttl_blk_nat_kicker ?></h5>
+						<h2><?php echo $ttl_blk_nat_title ?><span class="sign-line"></span></h2>
+					</header>
+					<?php if ($ttl_blk_nat_number_block) { ?>
+						<div class="figures-block">
+							<?php foreach ($ttl_blk_nat_number_block as $nblock) {
+							?>
+								<div class="box-figure" data-aos="fade-right" data-aos-duration="500" data-aos-delay="100">
+									<div class="figure-holder">
+										<strong><?php echo $nblock['number']; ?></strong>
+									</div>
+									<div class="text-box">
+										<h4><?php echo $nblock['number']; ?> <?php echo $nblock['title']; ?></h4>
+										<p><?php echo $nblock['description']; ?></p>
+									</div>
+								</div>
+							<?php }
+							?>
+						</div>
+					<?php } ?>
+				</div>
+			</div>
+		</section>
+	<?php } else { ?>
+		<!-- Section Figures -->
+		<section class="section section-figures figures-modified pb-0">
+			<div class="section-frame">
+				<div class="container">
+					<header class="section-head" data-aos="fade-down" data-aos-duration="700">
+						<h5><?php echo $ttl_blk_nat_kicker ?></h5>
+						<h2><?php echo $ttl_blk_nat_title ?><span class="sign-line"></span></h2>
+					</header>
+					<?php if ($ttl_blk_nat_number_block) { ?>
+						<div class="figures-block">
+							<?php foreach ($ttl_blk_nat_number_block as $nblock) {
+							?>
+								<div class="box-figure" data-aos="fade-right" data-aos-duration="500" data-aos-delay="100">
+									<div class="figure-holder">
+										<strong><?php echo $nblock['number']; ?></strong>
+									</div>
+									<div class="text-box">
+										<h4><?php echo $nblock['title']; ?></h4>
+									</div>
+								</div>
+							<?php }
+							?>
+						</div>
+					<?php } ?>
+				</div>
+			</div>
+		</section>
+	<?php } ?>
 </div>
