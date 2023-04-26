@@ -102,14 +102,14 @@ function glide_theme_acf_init() {
 				'supports'        => array(
 					'align' => false,
 				),
-				'example'         => array(
-					'attributes' => array(
-						'mode' => 'preview',
-						'data' => array(
-							'preview_image_help' => esc_url( get_template_directory_uri() ) . '/assets/img/admin/default-block-preview.webp',
-						),
-					),
-				),
+				// 'example'         => array(
+				// 	'attributes' => array(
+				// 		'mode' => 'preview',
+				// 		'data' => array(
+				// 			'preview_image_help' => esc_url( get_template_directory_uri() ) . '/assets/img/admin/default-block-preview.webp',
+				// 		),
+				// 	),
+				// ),
 			)
 		);
 
@@ -132,14 +132,14 @@ function glide_theme_acf_init() {
 				'supports'        => array(
 					'align' => false,
 				),
-				'example'         => array(
-					'attributes' => array(
-						'mode' => 'preview',
-						'data' => array(
-							'preview_image_help' => get_template_directory_uri() . '/assets/img/admin/default-block-preview.webp',
-						),
-					),
-				),
+				// 'example'         => array(
+				// 	'attributes' => array(
+				// 		'mode' => 'preview',
+				// 		'data' => array(
+				// 			'preview_image_help' => get_template_directory_uri() . '/assets/img/admin/default-block-preview.webp',
+				// 		),
+				// 	),
+				// ),
 			)
 		);
 
@@ -183,14 +183,14 @@ function glide_theme_acf_init() {
 				'supports'        => array(
 					'align' => false,
 				),
-				'example'         => array(
-					'attributes' => array(
-						'mode' => 'preview',
-						'data' => array(
-							'preview_image_help' => get_template_directory_uri() . '/assets/img/admin/default-block-preview.webp',
-						),
-					),
-				),
+				// 'example'         => array(
+				// 	'attributes' => array(
+				// 		'mode' => 'preview',
+				// 		'data' => array(
+				// 			'preview_image_help' => get_template_directory_uri() . '/assets/img/admin/default-block-preview.webp',
+				// 		),
+				// 	),
+				// ),
 			)
 		);
 
@@ -213,14 +213,14 @@ function glide_theme_acf_init() {
 				'supports'        => array(
 					'align' => false,
 				),
-				'example'         => array(
-					'attributes' => array(
-						'mode' => 'preview',
-						'data' => array(
-							'preview_image_help' => get_template_directory_uri() . '/assets/img/admin/default-block-preview.webp',
-						),
-					),
-				),
+				// 'example'         => array(
+				// 	'attributes' => array(
+				// 		'mode' => 'preview',
+				// 		'data' => array(
+				// 			'preview_image_help' => get_template_directory_uri() . '/assets/img/admin/default-block-preview.webp',
+				// 		),
+				// 	),
+				// ),
 			)
 		);
 		// Register a block - Featured Icons
@@ -242,14 +242,101 @@ function glide_theme_acf_init() {
 				'supports'        => array(
 					'align' => false,
 				),
-				'example'         => array(
-					'attributes' => array(
-						'mode' => 'preview',
-						'data' => array(
-							'preview_image_help' => get_template_directory_uri() . '/assets/img/admin/default-block-preview.webp',
-						),
-					),
+				// 'example'         => array(
+				// 	'attributes' => array(
+				// 		'mode' => 'preview',
+				// 		'data' => array(
+				// 			'preview_image_help' => get_template_directory_uri() . '/assets/img/admin/default-block-preview.webp',
+				// 		),
+				// 	),
+				// ),
+			)
+		);
+		// Register a block - Features Alongside Text
+		acf_register_block(
+			array(
+				'name'            => 'features-alongside-text',
+				'title'           => __( 'Features Alongside Text', 'ttl_td' ),
+				'description'     => __( 'A custom Features Alongside Text.', 'ttl_td' ),
+				'render_callback' => 'glide_acf_block_callback',
+				'category'        => 'glide-blocks',
+				'icon'            => 'images-alt2',
+				'mode'            => 'edit',
+				'keywords'        => array( 'Features Alongside Text' ),
+				'align'           => 'wide',
+				// calling assets js,css
+				// 'enqueue_assets' => function(){
+				// wp_enqueue_script( 'block-testimonial', get_template_directory_uri() . '/scripts/jquery.cycle2.min.js', array('jquery'), '', true );
+				// },
+				'supports'        => array(
+					'align' => false,
 				),
+				// 'example'         => array(
+				// 	'attributes' => array(
+				// 		'mode' => 'preview',
+				// 		'data' => array(
+				// 			'preview_image_help' => get_template_directory_uri() . '/assets/img/admin/default-block-preview.webp',
+				// 		),
+				// 	),
+				// ),
+			)
+		);
+		// Register a block - FAQs
+		acf_register_block(
+			array(
+				'name'            => 'faqs',
+				'title'           => __( 'FAQs', 'ttl_td' ),
+				'description'     => __( 'A custom FAQs.', 'ttl_td' ),
+				'render_callback' => 'glide_acf_block_callback',
+				'category'        => 'glide-blocks',
+				'icon'            => 'images-alt2',
+				'mode'            => 'edit',
+				'keywords'        => array( 'FAQs' ),
+				'align'           => 'wide',
+				// calling assets js,css
+				// 'enqueue_assets' => function(){
+				// wp_enqueue_script( 'block-testimonial', get_template_directory_uri() . '/scripts/jquery.cycle2.min.js', array('jquery'), '', true );
+				// },
+				'supports'        => array(
+					'align' => false,
+				),
+				// 'example'         => array(
+				// 	'attributes' => array(
+				// 		'mode' => 'preview',
+				// 		'data' => array(
+				// 			'preview_image_help' => get_template_directory_uri() . '/assets/img/admin/default-block-preview.webp',
+				// 		),
+				// 	),
+				// ),
+			)
+		);
+		// Register a block - Projects
+		acf_register_block(
+			array(
+				'name'            => 'projects',
+				'title'           => __( 'Projects', 'ttl_td' ),
+				'description'     => __( 'A custom projects.', 'ttl_td' ),
+				'render_callback' => 'glide_acf_block_callback',
+				'category'        => 'glide-blocks',
+				'icon'            => 'images-alt2',
+				'mode'            => 'edit',
+				'keywords'        => array( 'Projects' ),
+				'align'           => 'wide',
+				// calling assets js,css
+				// 'enqueue_assets' => function(){
+				// wp_enqueue_script( 'block-testimonial', get_template_directory_uri() . '/scripts/jquery.cycle2.min.js', array('jquery'), '', true );
+				// },
+				'supports'        => array(
+					'align' => false,
+				),
+				// 'example'         => array(
+				// 	'attributes' => array(
+				// 		'mode' => 'preview',
+				// 		'data' => array(
+				// 			'preview_image_help' => get_template_directory_uri() . '/assets/img/admin/default-block-preview.webp',
+				// 		),
+				// 	),
+				// ),
 			)
 		);
 

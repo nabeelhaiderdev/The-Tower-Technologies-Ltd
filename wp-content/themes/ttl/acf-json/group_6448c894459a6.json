@@ -1,11 +1,12 @@
 {
-    "key": "group_62651a1f97278",
-    "title": "Template Blog- Hero Options",
+    "key": "group_6448c894459a6",
+    "title": "Template Blog - Page Options",
     "fields": [
         {
-            "key": "field_62651a1fb45be",
+            "key": "field_6448c8b61a970",
             "label": "Title",
-            "name": "ttl_tblgho_title",
+            "name": "ttl_tbpo_title",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -16,16 +17,17 @@
                 "id": ""
             },
             "default_value": "",
+            "maxlength": "",
             "placeholder": "",
             "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "append": ""
         },
         {
-            "key": "field_62651a1fb81bf",
-            "label": "Feature Post",
-            "name": "ttl_tblgho_feature_post",
-            "type": "relationship",
+            "key": "field_6448c8c91a971",
+            "label": "Description",
+            "name": "ttl_tbpo_description",
+            "aria-label": "",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -34,19 +36,27 @@
                 "class": "",
                 "id": ""
             },
-            "post_type": [
-                "post"
-            ],
-            "taxonomy": "",
-            "filters": [
-                "search"
-            ],
-            "elements": [
-                "featured_image"
-            ],
-            "min": "",
-            "max": 1,
-            "return_format": "object"
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_6448c8ee1a972",
+            "label": "Button",
+            "name": "ttl_tbpo_button",
+            "aria-label": "",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
         }
     ],
     "location": [
@@ -67,5 +77,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1681796898
+    "modified": 1682492264
 }

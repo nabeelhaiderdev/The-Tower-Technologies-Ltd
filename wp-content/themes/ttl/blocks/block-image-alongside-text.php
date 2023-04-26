@@ -49,60 +49,149 @@ $ttl_blk_iat_design        = $block_fields['ttl_blk_iat_design'];
 $ttl_blk_iat_image        = $block_fields['ttl_blk_iat_image'];
 $ttl_blk_iat_kicker        = $block_fields['ttl_blk_iat_kicker'];
 $ttl_blk_iat_description        = $block_fields['ttl_blk_iat_description'];
-$ttl_blk_iat_features        = $block_fields['ttl_blk_iat_features'];
+$ttl_blk_iat_features = ( isset( $fields['ttl_blk_iat_features'] ) ) ? $fields['ttl_blk_iat_features'] : null;
 
 
 ?>
-<div id="<?php echo $id; ?>" class="<?php echo $align_class . ' ' . $class_name . ' ' . $name; ?> glide-block-<?php echo $block_glide_name; ?>">
+<div id="<?php echo $id; ?>"
+	class="<?php echo $align_class . ' ' . $class_name . ' ' . $name; ?> glide-block-<?php echo $block_glide_name; ?>">
 
-<?php if($ttl_blk_iat_design == 'features'){ ?>
-<!-- Section About -->
-<section class="section section-about">
-	<div class="section-frame">
-		<div class="container">
-			<div class="about-content">
-				<div class="img-holder" data-aos="fade-right" data-aos-duration="700" data-aos-delay="500">
-					<?php if($ttl_blk_iat_image){ ?>
-						<img src="<?php echo $ttl_blk_iat_image; ?>" alt="" width="534" height="696" alt="<?php echo $ttl_iat_title; ?>">
-					<?php } ?>
-				</div>
-				<div class="text-block" data-aos="fade-left" data-aos-duration="700" data-aos-delay="1000">
-					<header class="section-head">
-						<?php if($ttl_blk_iat_kicker){ ?>
-							<h5><?php echo $ttl_blk_iat_kicker; ?></h5>
+	<?php if($ttl_blk_iat_design == 'features'){ ?>
+	<!-- Section About -->
+	<section class="section section-about">
+		<div class="section-frame">
+			<div class="container">
+				<div class="about-content">
+					<div class="img-holder" data-aos="fade-right" data-aos-duration="700" data-aos-delay="500">
+						<?php if($ttl_blk_iat_image){ ?>
+						<img src="<?php echo $ttl_blk_iat_image; ?>" alt="" width="534" height="696"
+							alt="<?php echo $ttl_iat_title; ?>">
 						<?php } ?>
-						<h2><?php echo $ttl_iat_title; ?><span class="sign-line"></span></h2>
-					</header>
-					<?php 
+					</div>
+					<div class="text-block" data-aos="fade-left" data-aos-duration="700" data-aos-delay="1000">
+						<header class="section-head">
+							<?php if($ttl_blk_iat_kicker){ ?>
+							<h5><?php echo $ttl_blk_iat_kicker; ?></h5>
+							<?php } ?>
+							<h2><?php echo $ttl_iat_title; ?><span class="sign-line"></span></h2>
+						</header>
+						<?php 
 						if($ttl_blk_iat_description){
 							echo html_entity_decode($ttl_blk_iat_description);
 						}
 					?>
-					<?php if($ttl_blk_iat_features){ ?>
-					<ul class="services-list">
-						<?php foreach ($ttl_blk_iat_features as $feature ) { 
+						<?php if($ttl_blk_iat_features){ ?>
+						<ul class="services-list">
+							<?php foreach ($ttl_blk_iat_features as $feature ) { 
 							$feature_title = $feature['title'];
 							$feature_text = $feature['text'];
 							$feature_icon = $feature['icon'];
 							?>
-						<li>
-							<div class="ico"><img src="<?php echo $feature_icon; ?>" alt="" width="59" height="59" alt="<?php echo $feature_title; ?>"></div>
-							<h5><?php echo $feature_title; ?></h5>
-							<p><?php echo $feature_text; ?></p>
-						</li>
+							<li>
+								<div class="ico"><img src="<?php echo $feature_icon; ?>" alt="" width="59" height="59"
+										alt="<?php echo $feature_title; ?>"></div>
+								<h5><?php echo $feature_title; ?></h5>
+								<p><?php echo $feature_text; ?></p>
+							</li>
+							<?php } ?>
+						</ul>
 						<?php } ?>
-					</ul>
-					<?php } ?>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-</section>
+	</section>
 
-<?php } elseif($ttl_blk_iat_design == 'overlap'){ ?>
+	<?php } elseif($ttl_blk_iat_design == 'overlap'){ ?>
 
-<?php } elseif($ttl_blk_iat_design == 'frame'){ ?>
+	<!-- Section TwoCols  -->
+	<section class="section section-twocols">
+		<div class="section-frame">
+			<div class="container">
+				<div class="row-twocols reverse">
+					<div class="big-col" data-aos="fade-up" data-aos-duration="700">
+						<div class="col-holder">
+							<header class="section-head">
+								<h3><?php echo html_entity_decode($ttl_blk_iat_kicker); ?></h3>
+								<h2><?php echo html_entity_decode($ttl_iat_title); ?> <span class="sign-line"></span>
+								</h2>
+							</header>
+							<?php 
+								if($ttl_blk_iat_description){
+									echo html_entity_decode($ttl_blk_iat_description);
+								}
+							?>
+						</div>
+					</div>
+					<div class="small-col" data-aos="fade-down" data-aos-duration="700">
+						<?php if($ttl_blk_iat_image){ ?>
+						<img src="<?php echo $ttl_blk_iat_image; ?>" alt="<?php echo $ttl_iat_title; ?>">
+						<?php } ?>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
-<?php } ?>
+	<?php } elseif($ttl_blk_iat_design == 'overlaptext'){ ?>
+
+	<!-- Section TwoCols  -->
+	<section class="section section-twocols">
+		<div class="section-frame">
+			<div class="container">
+				<div class="row-twocols">
+					<div class="big-col" data-aos="fade-up" data-aos-duration="700">
+						<img src="<?php echo $ttl_blk_iat_image; ?>" alt="<?php echo $ttl_iat_title; ?>">
+					</div>
+					<div class="small-col" data-aos="fade-down" data-aos-duration="700">
+						<div class="col-holder">
+							<header class="section-head">
+								<h3><?php echo html_entity_decode($ttl_blk_iat_kicker); ?></h3>
+								<h2><?php echo html_entity_decode($ttl_iat_title); ?> <span class="sign-line"></span>
+								</h2>
+							</header>
+							<?php 
+								if($ttl_blk_iat_description){
+									echo html_entity_decode($ttl_blk_iat_description);
+								}
+							?>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<?php } elseif($ttl_blk_iat_design == 'frame'){ ?>
+
+	<!-- Section Textblock -->
+	<section class="section section-textblock section-textblock-add bg-gray">
+		<div class="section-frame">
+			<div class="container">
+				<div class="section-row">
+					<div class="section-col text-col" data-aos="fade-right" data-aos-duration="700">
+						<h3><?php echo $ttl_blk_iat_kicker; ?></h3>
+						<h2><?php echo $ttl_iat_title; ?> <span class="sign-line"></span></h2>
+						<?php 
+							if($ttl_blk_iat_description){
+								echo html_entity_decode($ttl_blk_iat_description);
+							}
+						?>
+					</div>
+					<div class="section-col img-col" data-aos="fade-left" data-aos-duration="700" data-aos-delay="500">
+						<div class="img-corner-holder smaller-x gray">
+							<div class="img-corner-frame">
+								<div class="img-frame">
+									<img src="<?php echo $ttl_blk_iat_image; ?>" alt="" width="460" height="466">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<?php } ?>
 
 </div>
