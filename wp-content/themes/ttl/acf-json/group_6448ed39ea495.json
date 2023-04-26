@@ -1,10 +1,10 @@
 {
-    "key": "group_6448b0c940bb4",
-    "title": "Block - Gallery",
+    "key": "group_6448ed39ea495",
+    "title": "Block - Our Goals",
     "fields": [
         {
-            "key": "field_6448b0caef0c0",
-            "label": "<h2 style=\"text-align:center;\"> Gallery <\/h2>",
+            "key": "field_6448ed3ac58c7",
+            "label": "<h2 style=\"text-align:center;\"> Our Goals<\/h2>",
             "name": "",
             "aria-label": "",
             "type": "message",
@@ -21,9 +21,9 @@
             "esc_html": 0
         },
         {
-            "key": "field_6448b189ef0c1",
+            "key": "field_6448edafc58c8",
             "label": "Title",
-            "name": "ttl_blk_gallery_title",
+            "name": "ttl_blk_og_title",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -41,7 +41,7 @@
             "append": ""
         },
         {
-            "key": "field_6448b1b6ef0c2",
+            "key": "field_6448edd7c58c9",
             "label": "Expand for options",
             "name": "",
             "aria-label": "",
@@ -59,29 +59,9 @@
             "endpoint": 0
         },
         {
-            "key": "field_6448b1e3ef0c3",
-            "label": "Kicker",
-            "name": "ttl_blk_gallery_kicker",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_6448b253ef0c4",
-            "label": "Images",
-            "name": "ttl_blk_gallery_images",
+            "key": "field_6448ee03c58ca",
+            "label": "Goals",
+            "name": "ttl_blk_og_goals",
             "aria-label": "",
             "type": "repeater",
             "instructions": "",
@@ -97,11 +77,11 @@
             "min": 0,
             "max": 0,
             "collapsed": "",
-            "button_label": "Add Row",
+            "button_label": "Add Goal",
             "rows_per_page": 20,
             "sub_fields": [
                 {
-                    "key": "field_6448bba3e00b2",
+                    "key": "field_6448ee88c58cb",
                     "label": "Image",
                     "name": "image",
                     "aria-label": "",
@@ -124,7 +104,49 @@
                     "max_size": "",
                     "mime_types": "",
                     "preview_size": "medium",
-                    "parent_repeater": "field_6448b253ef0c4"
+                    "parent_repeater": "field_6448ee03c58ca"
+                },
+                {
+                    "key": "field_6448eea1c58cc",
+                    "label": "Title",
+                    "name": "title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_6448ee03c58ca"
+                },
+                {
+                    "key": "field_6448eeacc58cd",
+                    "label": "Description",
+                    "name": "description",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "parent_repeater": "field_6448ee03c58ca"
                 }
             ]
         }
@@ -134,7 +156,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/gallery"
+                "value": "acf\/our-goals"
             }
         ]
     ],
@@ -147,5 +169,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1682500904
+    "modified": 1682502408
 }
