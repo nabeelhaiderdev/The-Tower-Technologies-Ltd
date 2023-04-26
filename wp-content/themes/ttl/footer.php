@@ -68,18 +68,20 @@ $ttl_social_in       = ( isset( $option_fields['ttl_social_in'] ) ) ? $option_fi
 $ttl_social_yt       = ( isset( $option_fields['ttl_social_yt'] ) ) ? $option_fields['ttl_social_yt'] : null;
 
 ?>
- <?php get_template_part( 'partials/cta' ); ?> </main>
+<?php get_template_part( 'partials/cta' ); ?> </main>
 <footer id="footer" class="footer-section">
 	<!-- Footer -->
-		<div class="container">
-			<div class="footer-content">
-				<div class="footer-col box-content">
-					<div class="logo">
-						<a href="./"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/logo-towertech.svg" alt="" width="330" height="46"></a>
-					</div>			
-					<?php if($ttl_to_ftr_css){ ?>			
-					<ul class="contacts">
-						<?php foreach ($ttl_to_ftr_css as $contact) { 
+	<div class="container">
+		<div class="footer-content">
+			<div class="footer-col box-content">
+				<div class="logo">
+					<a href="./"><img
+							src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/logo-towertech.svg"
+							alt="" width="330" height="46"></a>
+				</div>
+				<?php if($ttl_to_ftr_css){ ?>
+				<ul class="contacts">
+					<?php foreach ($ttl_to_ftr_css as $contact) { 
 							$contact_title = $contact['title'];
 							$contact_text = $contact['text'];
 							$contact_type = $contact['type'];
@@ -89,17 +91,18 @@ $ttl_social_yt       = ( isset( $option_fields['ttl_social_yt'] ) ) ? $option_fi
 								$contact_href = 'mailto:' . $contact_text;
 							}
 							?>
-						<li>
-							<span class="subtitle"><?php echo $contact_title; ?></span>
-							<span class="context"><a href="<?php echo $contact_href; ?>"><?php echo $contact_text; ?></a></span>
-						</li>
-						<?php } ?>
-					</ul>
+					<li>
+						<span class="subtitle"><?php echo $contact_title; ?></span>
+						<span class="context"><a
+								href="<?php echo $contact_href; ?>"><?php echo $contact_text; ?></a></span>
+					</li>
 					<?php } ?>
-				</div>
-				<div class="footer-col footer-nav">
-					<h4>Links</h4>
-					<?php
+				</ul>
+				<?php } ?>
+			</div>
+			<div class="footer-col footer-nav">
+				<h4>Links</h4>
+				<?php
 						wp_nav_menu(
 							array(
 							'theme_location' => 'header-nav',
@@ -107,47 +110,49 @@ $ttl_social_yt       = ( isset( $option_fields['ttl_social_yt'] ) ) ? $option_fi
 							)
 						);
 					?>
-				</div>
-				<div class="footer-col newsletter">
-					<h4>Follow Us</h4>
-					<ul class="social-networks">
-						<?php if($ttl_social_tw){ ?>
-							<li><a href="<?php echo $ttl_social_tw; ?>"><i class="fab fa-twitter"></i></a></li>
-						<?php } ?>
-						<?php if($ttl_social_li){ ?>
-						<li><a href="<?php echo $ttl_social_li; ?>"><i class="fab fa-linkedin"></i></a></li>
-						<?php } ?>
-						<?php if($ttl_social_fb){ ?>
-						<li><a href="<?php echo $ttl_social_fb; ?>"><i class="fab fa-facebook"></i></a></li>
-						<?php } ?>
-						<?php if($ttl_social_yt){ ?>
-						<li><a href="<?php echo $ttl_social_yt; ?>"><i class="fab fa-youtube"></i></a></li>
-						<?php } ?>
-					</ul>
-					<h4>Subscribe</h4>
-					<p>Subscribe our newsletter to get updates about our services and offers.</p>
-					<form class="newsletter-form">
-						<div class="form-holder">
-							<input type="email" class="form-control form-control-sm" placeholder="Enter your email">
-							<button type="submit" class="btn btn-tertiary btn-sm">Subscribe</button>
-						</div>
-					</form>
-					
-				</div>
 			</div>
-			<div class="copyright"> 
-				<p>&copy; <?php the_date('Y'); ?> <?php echo $ttl_ftrop_copyright; ?> </p>
+			<div class="footer-col newsletter">
+				<h4>Follow Us</h4>
+				<ul class="social-networks">
+					<?php if($ttl_social_tw){ ?>
+					<li><a href="<?php echo $ttl_social_tw; ?>"><i class="fab fa-twitter"></i></a></li>
+					<?php } ?>
+					<?php if($ttl_social_li){ ?>
+					<li><a href="<?php echo $ttl_social_li; ?>"><i class="fab fa-linkedin"></i></a></li>
+					<?php } ?>
+					<?php if($ttl_social_fb){ ?>
+					<li><a href="<?php echo $ttl_social_fb; ?>"><i class="fab fa-facebook"></i></a></li>
+					<?php } ?>
+					<?php if($ttl_social_yt){ ?>
+					<li><a href="<?php echo $ttl_social_yt; ?>"><i class="fab fa-youtube"></i></a></li>
+					<?php } ?>
+				</ul>
+				<h4>Subscribe</h4>
+				<p>Subscribe our newsletter to get updates about our services and offers.</p>
+				<form class="newsletter-form">
+					<div class="form-holder">
+						<input type="email" class="form-control form-control-sm" placeholder="Enter your email">
+						<button type="submit" class="btn btn-tertiary btn-sm">Subscribe</button>
+					</div>
+				</form>
+
 			</div>
 		</div>
-		<!-- Btn Top -->
-		<a href="#wrapper" class="btn-top smoothScroll">
-			<img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/ico-up.svg" alt="Go Top" width="9" height="18">
-		</a>
-	<!-- Footer End --> 
+		<div class="copyright">
+			<p>&copy; <?php the_date('Y'); ?><a href="https://thetowertech.com/">Powered by Tower Tech </a>
+				<?php echo $ttl_ftrop_copyright; ?> </p>
+		</div>
+	</div>
+	<!-- Btn Top -->
+	<a href="#wrapper" class="btn-top smoothScroll">
+		<img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/ico-up.svg" alt="Go Top" width="9"
+			height="18">
+	</a>
+	<!-- Footer End -->
 	<?php
 	if ( $ttl_schema_check ) {
 		?>
-		 <script type="application/ld+json">
+	<script type="application/ld+json">
 	{
 		"@context": "http://schema.org",
 		"@type": "<?php echo $ttl_schema_type; ?>",
@@ -177,7 +182,7 @@ $ttl_social_yt       = ( isset( $option_fields['ttl_social_yt'] ) ) ? $option_fi
 </footer> <?php wp_footer(); ?> <?php
 if ( $footer_scripts != '' ) {
 	?>
-	 <div style="display: none;">
+<div style="display: none;">
 	<?php echo html_entity_decode( $footer_scripts, ENT_QUOTES ); ?> </div> <?php } ?>
 
 </div>
