@@ -79,6 +79,29 @@
             "append": ""
         },
         {
+            "key": "field_6448eb9fa10c1",
+            "label": "Select Design",
+            "name": "ttl_blk_nat_design",
+            "aria-label": "",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "with-text": "With Text",
+                "without-text": "Without Text"
+            },
+            "default_value": "",
+            "return_format": "value",
+            "allow_null": 0,
+            "layout": "horizontal"
+        },
+        {
             "key": "field_6440fd2ff5776",
             "label": "Number Block",
             "name": "ttl_blk_nat_number_block",
@@ -147,21 +170,28 @@
                     "label": "Description",
                     "name": "description",
                     "aria-label": "",
-                    "type": "wysiwyg",
+                    "type": "text",
                     "instructions": "",
                     "required": 0,
-                    "conditional_logic": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_6448eb9fa10c1",
+                                "operator": "==",
+                                "value": "with-text"
+                            }
+                        ]
+                    ],
                     "wrapper": {
                         "width": "",
                         "class": "",
                         "id": ""
                     },
                     "default_value": "",
-                    "wysiwyg_height": "",
-                    "tabs": "all",
-                    "toolbar": "full",
-                    "media_upload": 1,
-                    "delay": 0,
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
                     "parent_repeater": "field_6440fd2ff5776"
                 }
             ]
@@ -185,5 +215,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1681982565
+    "modified": 1682503557
 }

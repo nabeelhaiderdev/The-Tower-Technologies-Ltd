@@ -603,6 +603,7 @@ function glide_theme_acf_init()
 				),
 			)
 		);
+	);
 		// Register a block - Features Alongside Text
 		acf_register_block(
 			array(
@@ -1312,12 +1313,6 @@ function glide_theme_acf_init()
 
 
 	// Ahmad
-
-
-
-
-
-
 
 
 
