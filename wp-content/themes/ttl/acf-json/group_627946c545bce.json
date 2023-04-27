@@ -164,6 +164,13 @@
                         "operator": "==",
                         "value": "features"
                     }
+                ],
+                [
+                    {
+                        "field": "field_643e5a6410e72",
+                        "operator": "==",
+                        "value": "frame"
+                    }
                 ]
             ],
             "wrapper": {
@@ -268,5 +275,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1681979329
+    "modified": 1682505429
 }

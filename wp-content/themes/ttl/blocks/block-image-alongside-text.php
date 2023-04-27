@@ -49,7 +49,7 @@ $ttl_blk_iat_design        = $block_fields['ttl_blk_iat_design'];
 $ttl_blk_iat_image        = $block_fields['ttl_blk_iat_image'];
 $ttl_blk_iat_kicker        = $block_fields['ttl_blk_iat_kicker'];
 $ttl_blk_iat_description        = $block_fields['ttl_blk_iat_description'];
-$ttl_blk_iat_features = ( isset( $fields['ttl_blk_iat_features'] ) ) ? $fields['ttl_blk_iat_features'] : null;
+$ttl_blk_iat_features = ( isset( $block_fields['ttl_blk_iat_features'] ) ) ? $block_fields['ttl_blk_iat_features'] : null;
 
 
 ?>
@@ -164,8 +164,9 @@ $ttl_blk_iat_features = ( isset( $fields['ttl_blk_iat_features'] ) ) ? $fields['
 
 	<?php } elseif($ttl_blk_iat_design == 'frame'){ ?>
 
+
 	<!-- Section Textblock -->
-	<section class="section section-textblock section-textblock-add bg-gray">
+	<section class="section section-about about-modified">
 		<div class="section-frame">
 			<div class="container">
 				<div class="section-row">
@@ -177,6 +178,24 @@ $ttl_blk_iat_features = ( isset( $fields['ttl_blk_iat_features'] ) ) ? $fields['
 								echo html_entity_decode($ttl_blk_iat_description);
 							}
 						?>
+						<?php if($ttl_blk_iat_features){ ?>
+						<ul class="services-list">
+							<?php foreach ($ttl_blk_iat_features as $feature ) { 
+							$feature_title = $feature['title'];
+							$feature_text = $feature['text'];
+							$feature_icon = $feature['icon'];
+							?>
+							<li>
+								<div class="ico"><img src="<?php echo $feature_icon; ?>" alt="" width="59" height="59"
+										alt="<?php echo $feature_title; ?>"></div>
+								<div class="text-box">
+									<h5><?php echo $feature_title; ?></h5>
+									<p><?php echo $feature_text; ?></p>
+								</div>
+							</li>
+							<?php } ?>
+						</ul>
+						<?php } ?>
 					</div>
 					<div class="section-col img-col" data-aos="fade-left" data-aos-duration="700" data-aos-delay="500">
 						<div class="img-corner-holder smaller-x gray">

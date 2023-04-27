@@ -139,7 +139,7 @@ $ttl_social_yt       = ( isset( $option_fields['ttl_social_yt'] ) ) ? $option_fi
 			</div>
 		</div>
 		<div class="copyright">
-			<p>&copy; <?php the_date('Y'); ?><a href="https://thetowertech.com/">Powered by Tower Tech </a>
+			<p>&copy; <?php the_date('Y'); ?><a href="https://thetowertech.com/"> Powered by Tower Tech </a>
 				<?php echo $ttl_ftrop_copyright; ?> </p>
 		</div>
 	</div>
