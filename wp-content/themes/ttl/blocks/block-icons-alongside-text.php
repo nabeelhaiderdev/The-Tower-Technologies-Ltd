@@ -55,7 +55,7 @@ $ttl_blk_Icat_description = ( isset( $block_fields['ttl_blk_Icat_description'] )
 <div id="<?php echo $id; ?>"
 	class="<?php echo $align_class . ' ' . $class_name. ' ' . $name; ?> glide-block-<?php echo $block_glide_name; ?>">
 
-	<?php if($ttl_blk_Icat_design == 'first'){?>
+	<?php if($ttl_blk_Icat_design == 'first'){ ?>
 	<section class="section section-procedure p-0">
 		<div class="section-frame">
 			<div class="container">
@@ -82,7 +82,7 @@ $ttl_blk_Icat_description = ( isset( $block_fields['ttl_blk_Icat_description'] )
 			</div>
 		</div>
 	</section>
-	<?php } else { ?>
+	<?php } elseif($ttl_blk_Icat_design == 'second'){?>
 
 	<section class="section section-why bg-gray">
 		<div class="section-frame">
@@ -106,6 +106,39 @@ $ttl_blk_Icat_description = ( isset( $block_fields['ttl_blk_Icat_description'] )
 			</div>
 		</div>
 	</section>
+
+	<?php } elseif($ttl_blk_Icat_design == 'third'){ ?>
+
+	<!-- Section Goals -->
+	<section class="section section-goals bg-gray">
+		<div class="section-frame">
+			<div class="container">
+				<header class="section-head" data-aos="fade-down" data-aos-duration="700">
+					<h2><?php echo $ttl_blk_Icat_title; ?></h2>
+				</header>
+				<?php if($ttl_blk_Icat_icons){ ?>
+				<div class="featured-boxes">
+					<?php foreach ($ttl_blk_Icat_icons as $icon ) {
+						$icon_image = $icon['icon'];
+						$icon_title = $icon['title'];
+						$icon_description = $icon['description'];
+						?>
+					<div class="featured-box" data-aos="fade-up" data-aos-duration="500" data-aos-delay="100">
+						<div class="box-frame">
+							<div class="ico-holder">
+								<img src="<?php echo $icon_image; ?>" alt="" width="80" height="80">
+							</div>
+							<h5><?php echo $icon_title; ?></h5>
+							<p><?php echo $icon_description; ?></p>
+						</div>
+					</div>
+					<?php } ?>
+				</div>
+				<?php } ?>
+			</div>
+		</div>
+	</section>
+
 	<?php } ?>
 
 </div>

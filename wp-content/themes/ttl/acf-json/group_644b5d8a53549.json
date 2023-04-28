@@ -5,7 +5,7 @@
         {
             "key": "field_644b5d8b81e44",
             "label": "Type",
-            "name": "type",
+            "name": "ttl_sport_type",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -25,7 +25,7 @@
         {
             "key": "field_644b5e0d81e45",
             "label": "Sub Title",
-            "name": "sub_title",
+            "name": "ttl_sport_sub_title",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -61,5 +61,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1682660915
+    "modified": 1682679471
 }

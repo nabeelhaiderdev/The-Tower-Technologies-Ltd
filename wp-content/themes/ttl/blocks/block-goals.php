@@ -52,9 +52,10 @@ $ttl_blk_og_goals = (isset($block_fields['ttl_blk_og_goals'])) ? $block_fields['
 
 ?>
 
-<div id="<?php echo $id; ?>" class="<?php echo $align_class . ' ' . $class_name . ' ' . $name; ?> glide-block-<?php echo $block_glide_name; ?>">
+<div id="<?php echo $id; ?>"
+	class="<?php echo $align_class . ' ' . $class_name . ' ' . $name; ?> glide-block-<?php echo $block_glide_name; ?>">
 
-
+	<h1>Text</h1>
 	<section class="section section-goals bg-gray">
 		<div class="section-frame">
 			<div class="container">
@@ -64,19 +65,20 @@ $ttl_blk_og_goals = (isset($block_fields['ttl_blk_og_goals'])) ? $block_fields['
 					<h2><?php echo $ttl_blk_og_title; ?></h2>
 				</header>
 				<?php if ($ttl_blk_og_goals) { ?>
-					<div class="featured-boxes">
-						<?php foreach ($ttl_blk_og_goals as $goals) { ?>
-							<div class="featured-box" data-aos="fade-up" data-aos-duration="500" data-aos-delay="100">
-								<div class="box-frame">
-									<div class="ico-holder">
-										<img src=<?php echo $goals['image']; ?> alt=<?php echo $goals['title']; ?> width="80" height="80">
-									</div>
-									<h5><?php echo $goals['title']; ?></h5>
-									<p><?php echo $goals['description']; ?></p>
-								</div>
+				<div class="featured-boxes">
+					<?php foreach ($ttl_blk_og_goals as $goals) { ?>
+					<div class="featured-box" data-aos="fade-up" data-aos-duration="500" data-aos-delay="100">
+						<div class="box-frame">
+							<div class="ico-holder">
+								<img src=<?php echo $goals['image']; ?> alt=<?php echo $goals['title']; ?> width="80"
+									height="80">
 							</div>
-						<?php } ?>
+							<h5><?php echo $goals['title']; ?></h5>
+							<p><?php echo $goals['description']; ?></p>
+						</div>
 					</div>
+					<?php } ?>
+				</div>
 				<?php } ?>
 			</div>
 		</div>

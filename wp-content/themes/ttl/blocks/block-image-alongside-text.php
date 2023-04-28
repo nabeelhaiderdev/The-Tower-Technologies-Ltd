@@ -46,6 +46,18 @@ if ( $block['name'] ) {
 
 $ttl_iat_title        = html_entity_decode($block_fields['ttl_iat_title']);
 $ttl_blk_iat_design        = $block_fields['ttl_blk_iat_design'];
+$ttl_blk_iat_bgcolor        = $block_fields['ttl_blk_iat_bgcolor'];
+if($ttl_blk_iat_bgcolor == 'Grey'){
+	$iat_bgcolor_class = ' bg-gray ';
+} else {
+	$iat_bgcolor_class = null;
+}
+$ttl_blk_iat_image_position        = $block_fields['ttl_blk_iat_image_position'];
+if($ttl_blk_iat_image_position == 'Left'){
+	$iat_imgposition_class = ' row-reverse ';
+} else {
+	$iat_imgposition_class = null;
+}
 $ttl_blk_iat_image        = $block_fields['ttl_blk_iat_image'];
 $ttl_blk_iat_image_two        = $block_fields['ttl_blk_iat_image_two'];
 $ttl_blk_iat_kicker        = $block_fields['ttl_blk_iat_kicker'];
@@ -237,6 +249,31 @@ $ttl_blk_iat_features = ( isset( $block_fields['ttl_blk_iat_features'] ) ) ? $bl
 								echo html_entity_decode($ttl_blk_iat_description);
 							}
 						?>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<?php } elseif($ttl_blk_iat_design == 'shape'){ ?>
+
+	<section class="section section-textblock <?php echo $iat_bgcolor_class; ?>">
+		<div class="section-frame">
+			<div class="container">
+				<div class="section-row <?php echo $iat_imgposition_class; ?>">
+					<div class="section-col text-col" data-aos="fade-left" data-aos-duration="700" data-aos-delay="500">
+						<h3><?php echo $ttl_blk_iat_kicker; ?></h3>
+						<h2><?php echo $ttl_iat_title; ?> <span class="sign-line"></span></h2>
+						<?php 
+							if($ttl_blk_iat_description){
+								echo html_entity_decode($ttl_blk_iat_description);
+							}
+						?>
+					</div>
+					<div class="section-col img-col" data-aos="fade-right" data-aos-duration="700">
+						<div class="img-shape img-shape-2">
+							<img src="<?php echo $ttl_blk_iat_image; ?>" alt="" width="566">
+						</div>
 					</div>
 				</div>
 			</div>

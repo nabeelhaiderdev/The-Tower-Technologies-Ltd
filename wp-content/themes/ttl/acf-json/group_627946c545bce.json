@@ -77,9 +77,72 @@
                 "overlap": "Image Overlapping",
                 "overlaptext": "Text Overlapping",
                 "frame": "Image in Frame",
-                "twoimages": "Two Images"
+                "twoimages": "Two Images",
+                "shape": "Shaped Image"
             },
             "default_value": "features",
+            "return_format": "value",
+            "allow_null": 0,
+            "layout": "horizontal"
+        },
+        {
+            "key": "field_644b9dad147a3",
+            "label": "Background Color",
+            "name": "ttl_blk_iat_bgcolor",
+            "aria-label": "",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_643e5a6410e72",
+                        "operator": "==",
+                        "value": "shape"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "White": "White",
+                "Grey": "Grey"
+            },
+            "default_value": "White",
+            "return_format": "value",
+            "allow_null": 0,
+            "layout": "horizontal"
+        },
+        {
+            "key": "field_644b9e5063991",
+            "label": "Image Position",
+            "name": "ttl_blk_iat_image_position",
+            "aria-label": "",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_643e5a6410e72",
+                        "operator": "==",
+                        "value": "shape"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "Left": "Left",
+                "Right": "Right"
+            },
+            "default_value": "Left",
             "return_format": "value",
             "allow_null": 0,
             "layout": "horizontal"
@@ -309,5 +372,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1682664402
+    "modified": 1682677389
 }
