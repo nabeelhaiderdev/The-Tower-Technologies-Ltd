@@ -1,0 +1,44 @@
+{
+    "key": "group_6448fc8ac6468",
+    "title": "Single Testimonial Options",
+    "fields": [
+        {
+            "key": "field_6448fc8b249d0",
+            "label": "Start Rating",
+            "name": "ttl_start_rating",
+            "aria-label": "",
+            "type": "star_rating_field",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "max_stars": 5,
+            "return_type": 0,
+            "allow_half": 0,
+            "theme": "default"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "testimonial"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1682505004
+}

@@ -1552,4 +1552,34 @@ function glide_theme_acf_init()
 				),
 			)
 		);
+
+		// Register a block - Team
+		acf_register_block(
+			array(
+				'name'            => 'testimonials',
+				'title'           => __( 'testimonials', 'ttl_td' ),
+				'description'     => __( 'A custom testimonials.', 'ttl_td' ),
+				'render_callback' => 'glide_acf_block_callback',
+				'category'        => 'glide-blocks',
+				'icon'            => 'images-alt2',
+				'mode'            => 'edit',
+				'keywords'        => array( 'testimonials' ),
+				'align'           => 'wide',
+				// calling assets js,css
+				// 'enqueue_assets' => function(){
+				// wp_enqueue_script( 'block-testimonial', get_template_directory_uri() . '/scripts/jquery.cycle2.min.js', array('jquery'), '', true );
+				// },
+				'supports'        => array(
+					'align' => false,
+				),
+				'example'         => array(
+					'attributes' => array(
+						'mode' => 'preview',
+						'data' => array(
+							'preview_image_help' => get_template_directory_uri() . '/assets/img/admin/default-block-preview.webp',
+						),
+					),
+				),
+			)
+		);
 }
