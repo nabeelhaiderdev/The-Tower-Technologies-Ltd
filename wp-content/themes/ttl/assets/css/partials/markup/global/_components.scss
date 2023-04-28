@@ -2783,6 +2783,7 @@ ol.comments-list {
     .about-content {
         display: flex;
         align-items: center;
+        justify-content: space-between;
         margin: -30px -30px 0;
 
         @media (max-width: $widescreen) {
@@ -2793,8 +2794,6 @@ ol.comments-list {
         @media (max-width: $desktop) {
             display: block;
         }
-
-
 
         >* {
             padding: 30px 30px 0;
@@ -2865,11 +2864,17 @@ ol.comments-list {
     }
 
     &.about-modified {
+        .text-block.add {
+            @media (min-width: $widescreen + 1) {
+                max-width: 590px;
+            }
+        }
+
         .services-list {
             display: block;
 
-            @media (min-width: $tablet + 1) {
-                max-width: 80%;
+            @media (min-width: $desktop + 1) {
+                max-width: 580px;
                 padding: 16px 0 0;
                 margin-top: -40px;
 
@@ -2893,6 +2898,70 @@ ol.comments-list {
 
             .ico {
                 border-radius: 50% 0 50% 50%;
+            }
+        }
+    }
+
+    .img-overlap {
+        flex-shrink: 0;
+        width: 53.3%;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+
+        @media (max-width: $desktop) {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .img-first {
+            margin: 200px 0 0;
+            width: 52.6%;
+            position: relative;
+            z-index: 50;
+
+            @media (max-width: $widescreen) {
+                margin: 150px 0 0;
+            }
+
+            @media (max-width: $desktop) {
+                margin: 100px 0 0;
+            }
+
+            @media (max-width: $tablet) {
+                margin: 70px 0 0;
+            }
+
+            img {
+                display: block;
+                width: 100%;
+                border-radius: 16px;
+                height: auto;
+            }
+        }
+
+        .img-sec {
+            margin: 0 0 0 -176px;
+            width: 73.75%;
+
+            @media (max-width: $widescreen) {
+                margin: 0 0 0 -120px;
+            }
+
+            @media (max-width: $desktop) {
+                margin: 0 0 0 -75px;
+            }
+
+            @media (max-width: $tablet) {
+                margin: 0 0 0 -50px;
+            }
+
+            img {
+                display: block;
+                width: 100%;
+                border-radius: 16px;
+                height: auto;
             }
         }
     }
@@ -5170,6 +5239,7 @@ ol.comments-list {
     }
 }
 
+/* Featured Boxes */
 .featured-boxes {
     display: flex;
     margin: -24px -12px 0;
@@ -5203,4 +5273,146 @@ ol.comments-list {
             margin: 0 0 18px;
         }
     }
+
+}
+
+.section-featured-services {
+    text-align: center;
+
+    .section-head {
+        max-width: 85%;
+        margin-left: auto;
+        margin-right: auto;
+
+        h2 .sign-line {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+
+    .featured-boxes {
+        text-align: center;
+
+        @media (min-width: $widescreen + 1) {
+            margin: -60px -55px 0;
+        }
+
+        .featured-box {
+
+            @media (min-width: $widescreen + 1) {
+                padding: 60px 55px 0;
+            }
+
+            .box-frame {
+                padding: 0;
+                box-shadow: none;
+                background: none;
+            }
+        }
+
+        .ico-holder {
+            min-height: 96px;
+            justify-content: center;
+
+            @media (min-width: $widescreen + 1) {
+                margin-bottom: 25px;
+            }
+        }
+
+        h5 {
+            @media (min-width: $widescreen + 1) {
+                margin-bottom: 23px;
+            }
+        }
+    }
+}
+
+/* Section Info */
+.section-info {
+    color: #F1F4FA;
+    text-align: center;
+
+    .section-frame {
+        padding: 0;
+        min-height: 700px;
+        display: flex;
+        align-items: center;
+
+        @media (max-width: $widescreen) {
+            min-height: 550px;
+        }
+        @media (max-width: $desktop) {
+            min-height: 450px;
+        }
+        @media (max-width: $tablet) {
+            min-height: 350px;
+        }
+    }
+
+    .container {
+        width: 100%;
+        position: relative;
+        z-index: 50;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .img-area {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 10;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        &:after {
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(71, 71, 71, 0.75);
+            content: "";
+        }
+    }
+
+    h5 {
+        color: #F1F4FA;
+        margin: 0 0 7px;
+
+        @media (min-width: $widescreen + 1) {
+            font-size: 20px;
+        }
+    }
+
+    h2 {
+        color: $white;
+        text-transform: uppercase;
+        margin: 0 0 35px;
+
+        @media (max-width: $desktop) {
+            margin: 0 0 15px;
+        }
+    }
+
+    p {
+        margin: 0 0 40px;
+        @media (max-width: $desktop) {
+            margin: 0 0 20px;
+        }
+    }
+
+    .btn-lg {
+        font-size: 18px;
+        padding-left: 15px;
+        padding-right: 15px;
+
+        i {
+            margin-left: 12px;
+        }
+    }
+
 }

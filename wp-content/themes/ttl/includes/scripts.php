@@ -35,6 +35,7 @@ DEFINE( 'ASSET_VERSION_CSS', filemtime( get_template_directory() . '/assets/css/
 function glide_assets() {
 
 	// Enqueue theme styles
+	// wp_enqueue_style( 'plugins', get_template_directory_uri() . '/html-files/scss/plugins.scss?v=' . ASSET_VERSION_CSS, false, null );
 	wp_enqueue_style( 'glide-theme-stylesheet', assetDir . '/css/bundle.min.css?v=' . ASSET_VERSION_CSS, false, null );
 
 	// Eliminate the emoji script

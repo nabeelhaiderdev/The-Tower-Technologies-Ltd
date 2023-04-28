@@ -1,8 +1,8 @@
 <?php
 /**
- * Block Name: BlockName
+ * Block Name: Services
  *
- * The template for displaying the custom gutenberg block named BlockName.
+ * The template for displaying the custom gutenberg block named Services.
  *
  * @link https://www.advancedcustomfields.com/resources/blocks/
  *
@@ -41,48 +41,42 @@ if($block['name']){
 }
 
 // Block variables
-$ttl_blk_tk = ( isset( $block_fields['ttl_blk_tk'] ) ) ? $block_fields['ttl_blk_tk'] : null;
-$ttl_blk_tt = ( isset( $block_fields['ttl_blk_tt'] ) ) ? $block_fields['ttl_blk_tt'] : null;
-$ttl_blk_td = ( isset( $block_fields['ttl_blk_td'] ) ) ? $block_fields['ttl_blk_td'] : null;
-$ttl_blk_team_members = ( isset( $block_fields['ttl_blk_team_members'] ) ) ? $block_fields['ttl_blk_team_members'] : array();
-/*
-echo '<pre>';
-print_r($block_fields);
-echo '</pre>';
-*/
+// $custom_field_of_block = html_entity_decode($block_fields['custom_field_of_block']); // for keeping html from input
+// $custom_field_of_block = html_entity_remove($block_fields['custom_field_of_block']); // for removing html from input
+$ttl_blk_srvcs_title = ( isset( $block_fields['ttl_blk_srvcs_title'] ) ) ? $block_fields['ttl_blk_srvcs_title'] : null;
+$ttl_blk_srvcs_description = ( isset( $block_fields['ttl_blk_srvcs_description'] ) ) ? $block_fields['ttl_blk_srvcs_description'] : null;
+$ttl_blk_srvcs_services = ( isset( $block_fields['ttl_blk_srvcs_services'] ) ) ? $block_fields['ttl_blk_srvcs_services'] : null;
 ?>
 <div id="<?php echo $id; ?>"
 	class="<?php echo $align_class . ' ' . $class_name. ' ' . $name; ?> glide-block-<?php echo $block_glide_name; ?>">
-	<section class="section section-team">
+
+	<!-- Section Services -->
+	<section class="section section-featured-services">
 		<div class="section-frame">
 			<div class="container">
-				<header class="section-head" data-aos="fade-down" data-aos-duration="700">
-					<h3><?php echo $ttl_blk_tk;?></h3>
-					<h2><?php echo html_entity_decode($ttl_blk_tt);?></h2>
-					<p><?php echo $ttl_blk_td;?></p>
+				<header class="section-head" data-aos="fade-right" data-aos-duration="700">
+					<h2><?php echo $ttl_blk_srvcs_title; ?> <span class="sign-line"></span></h2>
+					<p><?php echo $ttl_blk_srvcs_description; ?></p>
 				</header>
-				<div class="team-members">
-					<?php  
-							if(count($ttl_blk_team_members) > 0){
-								foreach($ttl_blk_team_members as $team){
-
-									?>
-					<div class="member-box" data-aos="zoom-in" data-aos-duration="500" data-aos-delay="100">
-						<div class="box-holder">
-							<div class="img-holder">
-								<img src="<?php echo $team['ttl_blk_ti'];?>" alt="">
+				<?php if($ttl_blk_srvcs_services){ ?>
+				<div class="featured-boxes">
+					<?php foreach ($ttl_blk_srvcs_services as $service ) {
+						$service_icon = $service['icon'];
+						$service_title = $service['title'];
+						$service_text = $service['text'];
+						?>
+					<div class="featured-box" data-aos="fade-right" data-aos-duration="700" data-aos-delay="100">
+						<div class="box-frame">
+							<div class="ico-holder">
+								<?php echo wp_get_attachment_image( $service_icon, 'thumb_100' ); ?>
 							</div>
-							<div class="text-box">
-								<h5><?php echo $team['ttl_blk_t_name'];?></h5>
-								<h6><?php echo $team['ttl_blk_team_designation'];?></h6>
-							</div>
+							<h5><?php echo $service_title; ?></h5>
+							<p><?php echo $service_text; ?></p>
 						</div>
 					</div>
-					<?php
-								}
-							}
-							?>
+					<?php } ?>
 				</div>
+				<?php } ?>
 			</div>
 		</div>
 	</section>

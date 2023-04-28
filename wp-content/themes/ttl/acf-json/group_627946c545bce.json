@@ -68,7 +68,7 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "70",
+                "width": "",
                 "class": "",
                 "id": ""
             },
@@ -76,7 +76,8 @@
                 "features": "With Features",
                 "overlap": "Image Overlapping",
                 "overlaptext": "Text Overlapping",
-                "frame": "Image in Frame"
+                "frame": "Image in Frame",
+                "twoimages": "Two Images"
             },
             "default_value": "features",
             "return_format": "value",
@@ -93,7 +94,40 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "30",
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "",
+            "preview_size": "admin-landscape"
+        },
+        {
+            "key": "field_644b6b8537cb9",
+            "label": "Second Image",
+            "name": "ttl_blk_iat_image_two",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_643e5a6410e72",
+                        "operator": "==",
+                        "value": "twoimages"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
                 "class": "",
                 "id": ""
             },
@@ -275,5 +309,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1682505429
+    "modified": 1682664402
 }

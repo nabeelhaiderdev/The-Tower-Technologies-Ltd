@@ -139,7 +139,7 @@ Version: 1.0
 // ------------------------------------------------------------------ */
 // @import "vendor/magnific-popup.css";
 
-// @import "partials/markup/plugins";
+@import "partials/markup/plugins";
 @import "partials/markup/layout/variables";
 @import "partials/markup/layout/normalize";
 @import "partials/markup/layout/typography";
@@ -157,4 +157,13 @@ html {
 #single-post-content {
 	position: relative;
 	top: -80px;
+}
+
+figure.wp-block-video {
+	max-width: 1300px;
+	margin: 0 auto;
+}
+
+.ico-holder img {
+	width: 96px;
 }

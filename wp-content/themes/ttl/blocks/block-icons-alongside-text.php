@@ -52,57 +52,60 @@ $ttl_blk_Icat_description = ( isset( $block_fields['ttl_blk_Icat_description'] )
 
 ?>
 
-<div id="<?php echo $id; ?>" class="<?php echo $align_class . ' ' . $class_name. ' ' . $name; ?> glide-block-<?php echo $block_glide_name; ?>">
+<div id="<?php echo $id; ?>"
+	class="<?php echo $align_class . ' ' . $class_name. ' ' . $name; ?> glide-block-<?php echo $block_glide_name; ?>">
 
-<?php if($ttl_blk_Icat_design == 'first'){?>
-<section class="section section-procedure p-0">
-				<div class="section-frame">
-					<div class="container">
-						<header class="section-head" data-aos="fade-down" data-aos-duration="700">
-							<h3><?php echo $ttl_blk_Icat_kicker; ?></h3>
-							<h2><?php echo $ttl_blk_Icat_title; ?> <span class="sign-line"></span></h2>
-						</header>
-						<?php if($ttl_blk_Icat_icons){ ?>
-							<div class="procedure-steps">
-							<?php foreach ($ttl_blk_Icat_icons as $icons) { ?>
-							<div class="step" data-aos="fade-up" data-aos-duration="500" data-aos-delay="100">
-								<div class="step-holder">
-									<div class="ico"><img src=<?php echo $icons['icon']; ?> alt=<?php echo $icons['title']; ?> width="61" height="61">
-									</div>
-									<h4><?php echo $icons['title']; ?></h4>
-									<p><?php echo $icons['description']; ?>
-									</p>
-								</div>
+	<?php if($ttl_blk_Icat_design == 'first'){?>
+	<section class="section section-procedure p-0">
+		<div class="section-frame">
+			<div class="container">
+				<header class="section-head" data-aos="fade-down" data-aos-duration="700">
+					<h3><?php echo $ttl_blk_Icat_kicker; ?></h3>
+					<h2><?php echo $ttl_blk_Icat_title; ?> <span class="sign-line"></span></h2>
+				</header>
+				<?php if($ttl_blk_Icat_icons){ ?>
+				<div class="procedure-steps">
+					<?php foreach ($ttl_blk_Icat_icons as $icons) { ?>
+					<div class="step" data-aos="fade-up" data-aos-duration="500" data-aos-delay="100">
+						<div class="step-holder">
+							<div class="ico"><img src=<?php echo $icons['icon']; ?> alt="<?php echo $icons['title']; ?>"
+									width="61" height="61">
 							</div>
-	<?php }?>
+							<h4><?php echo $icons['title']; ?></h4>
+							<p><?php echo $icons['description']; ?>
+							</p>
 						</div>
-	<?php }?>
 					</div>
+					<?php }?>
 				</div>
-			</section>
-<?php } else { ?>
-	
+				<?php }?>
+			</div>
+		</div>
+	</section>
+	<?php } else { ?>
+
 	<section class="section section-why bg-gray">
-				<div class="section-frame">
-					<div class="container">
-						<header class="section-head" data-aos="fade-down" data-aos-duration="700">
-							<h2><?php echo $ttl_blk_Icat_title; ?></h2>
-							<p><?php echo $ttl_blk_Icat_description; ?></p>
-						</header>
-						<?php if($ttl_blk_Icat_icons){ ?>
-						<ul class="features-list">
-							<?php foreach ($ttl_blk_Icat_icons as $icons) { ?>
-							<li data-aos="fade-up" data-aos-duration="500" data-aos-delay="100">
-								<div class="ico-holder"><img src=<?php echo $icons['icon']; ?> alt=<?php echo $icons['title']; ?>width="70" height="70">
-								</div>
-								<p><?php echo $icons['description']; ?></p>
-							</li>
-							<?php }?>
-						</ul>
-						<?php }?>
-					</div>
-				</div>
-			</section>
-<?php } ?>
+		<div class="section-frame">
+			<div class="container">
+				<header class="section-head" data-aos="fade-down" data-aos-duration="700">
+					<h2><?php echo $ttl_blk_Icat_title; ?></h2>
+					<p><?php echo $ttl_blk_Icat_description; ?></p>
+				</header>
+				<?php if($ttl_blk_Icat_icons){ ?>
+				<ul class="features-list">
+					<?php foreach ($ttl_blk_Icat_icons as $icons) { ?>
+					<li data-aos="fade-up" data-aos-duration="500" data-aos-delay="100">
+						<div class="ico-holder"><img src=<?php echo $icons['icon']; ?>
+								alt="<?php echo $icons['title']; ?>" width="70" height="70">
+						</div>
+						<p><?php echo $icons['description']; ?></p>
+					</li>
+					<?php }?>
+				</ul>
+				<?php }?>
+			</div>
+		</div>
+	</section>
+	<?php } ?>
 
 </div>

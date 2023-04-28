@@ -44,9 +44,10 @@ if ( $block['name'] ) {
 
 // Block variables
 
-$ttl_iat_title        = $block_fields['ttl_iat_title'];
+$ttl_iat_title        = html_entity_decode($block_fields['ttl_iat_title']);
 $ttl_blk_iat_design        = $block_fields['ttl_blk_iat_design'];
 $ttl_blk_iat_image        = $block_fields['ttl_blk_iat_image'];
+$ttl_blk_iat_image_two        = $block_fields['ttl_blk_iat_image_two'];
 $ttl_blk_iat_kicker        = $block_fields['ttl_blk_iat_kicker'];
 $ttl_blk_iat_description        = $block_fields['ttl_blk_iat_description'];
 $ttl_blk_iat_features = ( isset( $block_fields['ttl_blk_iat_features'] ) ) ? $block_fields['ttl_blk_iat_features'] : null;
@@ -125,7 +126,7 @@ $ttl_blk_iat_features = ( isset( $block_fields['ttl_blk_iat_features'] ) ) ? $bl
 					</div>
 					<div class="small-col" data-aos="fade-down" data-aos-duration="700">
 						<?php if($ttl_blk_iat_image){ ?>
-						<img src="<?php echo $ttl_blk_iat_image; ?>" alt="<?php echo $ttl_iat_title; ?>">
+						<img src="<?php echo $ttl_blk_iat_image; ?>">
 						<?php } ?>
 					</div>
 				</div>
@@ -205,6 +206,37 @@ $ttl_blk_iat_features = ( isset( $block_fields['ttl_blk_iat_features'] ) ) ? $bl
 								</div>
 							</div>
 						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<?php } elseif($ttl_blk_iat_design == 'twoimages'){ ?>
+
+	<!-- Section About -->
+	<section class="section section-about about-modified pb-0">
+		<div class="section-frame">
+			<div class="container">
+				<div class="about-content">
+					<div class="img-overlap">
+						<div class="img-first" data-aos="fade-right" data-aos-duration="500">
+							<img src="<?php echo $ttl_blk_iat_image; ?>" alt="" width="350" height="540">
+						</div>
+						<div class="img-sec" data-aos="fade-right" data-aos-duration="500" data-aos-delay="200">
+							<img src="<?php echo $ttl_blk_iat_image_two; ?>" alt="" width="490" height="597">
+						</div>
+					</div>
+					<div class="text-block add" data-aos="fade-right" data-aos-duration="700">
+						<header class="section-head">
+							<h5><?php echo $ttl_blk_iat_kicker; ?></h5>
+							<h2><?php echo $ttl_iat_title; ?> <span class="sign-line"></span></h2>
+						</header>
+						<?php 
+							if($ttl_blk_iat_description){
+								echo html_entity_decode($ttl_blk_iat_description);
+							}
+						?>
 					</div>
 				</div>
 			</div>

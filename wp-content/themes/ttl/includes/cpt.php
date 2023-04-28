@@ -78,15 +78,15 @@ add_action( 'init', 'register_cpt_project' );
 
 function register_cpt_testimonials() {
 	// CPT Labels
-	$cpt_singular_capital   = 'Project'; // Name of the post type shown in the menu
-	$cpt_plural_capital     = 'Projects';
-	$cpt_singular_lowercase = 'project';
-	$cpt_plural_lowercase   = 'projects';
+	$cpt_singular_capital   = 'Testimonial'; // Name of the post type shown in the menu
+	$cpt_plural_capital     = 'Testimonials';
+	$cpt_singular_lowercase = 'testimonial';
+	$cpt_plural_lowercase   = 'testimonials';
 
 	// CPT Slug & Name
-	$cpt_register_key = 'project';  // This is the registering name of the single CPT post. (Try to keep it singular).
-	$cpt_slug         = 'project';  // This is the permalink slug of single CPT post. (Try to keep it singular).
-	// The slug will become - www.website.com/project/single-project-name
+	$cpt_register_key = 'testimonial';  // This is the registering name of the single CPT post. (Try to keep it singular).
+	$cpt_slug         = 'testimonial';  // This is the permalink slug of single CPT post. (Try to keep it singular).
+	// The slug will become - www.website.com/testimonial/single-testimonial-name
 
 	$labels = array(
 		'name'                  => _x( $cpt_plural_capital, 'Post type general name', 'ttl_td' ),
