@@ -1,10 +1,10 @@
 {
-    "key": "group_627946c545bce",
-    "title": "Block - Image Alongside Text",
+    "key": "group_643fa19a03e9b",
+    "title": "Block - Features Alongside Text",
     "fields": [
         {
-            "key": "field_627946d1c50e7",
-            "label": "<h2 style=\"text-align:center;\"> Image Alongside Text <\/h2>",
+            "key": "field_643fa19a7bb32",
+            "label": "<h2 style=\"text-align:center;\"> Features Alongside Text <\/h2>",
             "name": "",
             "aria-label": "",
             "type": "message",
@@ -21,27 +21,47 @@
             "esc_html": 0
         },
         {
-            "key": "field_627946dfc50e8",
-            "label": "Title",
-            "name": "ttl_iat_title",
+            "key": "field_643fa1d17bb33",
+            "label": "Title Start",
+            "name": "title_start",
             "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "",
+                "width": "30",
                 "class": "",
                 "id": ""
             },
             "default_value": "",
+            "maxlength": "",
             "placeholder": "",
             "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "append": ""
         },
         {
-            "key": "field_62794720c50e9",
+            "key": "field_643fa2017bb34",
+            "label": "Title",
+            "name": "ttl_blk_fat_title",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "70",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_643fa22b7bb35",
             "label": "Expand for options",
             "name": "",
             "aria-label": "",
@@ -59,59 +79,9 @@
             "endpoint": 0
         },
         {
-            "key": "field_643e5a6410e72",
-            "label": "Select Design",
-            "name": "ttl_blk_iat_design",
-            "aria-label": "",
-            "type": "button_group",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "70",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "features": "With Features",
-                "overlap": "Image Overlapping",
-                "overlaptext": "Text Overlapping",
-                "frame": "Image in Frame"
-            },
-            "default_value": "features",
-            "return_format": "value",
-            "allow_null": 0,
-            "layout": "horizontal"
-        },
-        {
-            "key": "field_643e5aa710e73",
-            "label": "Image",
-            "name": "ttl_blk_iat_image",
-            "aria-label": "",
-            "type": "image",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "30",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "url",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": "",
-            "preview_size": "admin-landscape"
-        },
-        {
-            "key": "field_643e5b7f10e74",
-            "label": "Kicker Text",
-            "name": "ttl_blk_iat_kicker",
+            "key": "field_643fa2e0d5509",
+            "label": "Kicker",
+            "name": "ttl_blk_fat_kicker",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -129,43 +99,14 @@
             "append": ""
         },
         {
-            "key": "field_643e5bad10e75",
-            "label": "Description",
-            "name": "ttl_blk_iat_description",
-            "aria-label": "",
-            "type": "wysiwyg",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "wysiwyg_height": "",
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 1,
-            "delay": 0
-        },
-        {
-            "key": "field_643e5bc0c39fb",
+            "key": "field_643fa255bc0ba",
             "label": "Features",
-            "name": "ttl_blk_iat_features",
+            "name": "ttl_blk_fat_features",
             "aria-label": "",
             "type": "repeater",
             "instructions": "",
             "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_643e5a6410e72",
-                        "operator": "==",
-                        "value": "features"
-                    }
-                ]
-            ],
+            "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -180,7 +121,7 @@
             "rows_per_page": 20,
             "sub_fields": [
                 {
-                    "key": "field_643e5bf7c39fd",
+                    "key": "field_643fa269bc0bb",
                     "label": "Title",
                     "name": "title",
                     "aria-label": "",
@@ -198,10 +139,10 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "parent_repeater": "field_643e5bc0c39fb"
+                    "parent_repeater": "field_643fa255bc0ba"
                 },
                 {
-                    "key": "field_643e5c02c39fe",
+                    "key": "field_643fa26ebc0bc",
                     "label": "Text",
                     "name": "text",
                     "aria-label": "",
@@ -210,7 +151,7 @@
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "70",
+                        "width": "",
                         "class": "",
                         "id": ""
                     },
@@ -219,19 +160,19 @@
                     "placeholder": "",
                     "prepend": "",
                     "append": "",
-                    "parent_repeater": "field_643e5bc0c39fb"
+                    "parent_repeater": "field_643fa255bc0ba"
                 },
                 {
-                    "key": "field_643e5bccc39fc",
-                    "label": "Icon",
-                    "name": "icon",
+                    "key": "field_643fa273bc0bd",
+                    "label": "Image",
+                    "name": "image",
                     "aria-label": "",
                     "type": "image",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "30",
+                        "width": "",
                         "class": "",
                         "id": ""
                     },
@@ -245,7 +186,7 @@
                     "max_size": "",
                     "mime_types": "",
                     "preview_size": "medium",
-                    "parent_repeater": "field_643e5bc0c39fb"
+                    "parent_repeater": "field_643fa255bc0ba"
                 }
             ]
         }
@@ -255,7 +196,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "acf\/image-alongside-text"
+                "value": "acf\/features-alongside-text"
             }
         ]
     ],
@@ -268,5 +209,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1681979329
+    "modified": 1681892548
 }

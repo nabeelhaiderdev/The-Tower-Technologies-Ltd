@@ -78,15 +78,15 @@ add_action( 'init', 'register_cpt_project' );
 
 function register_cpt_testimonials() {
 	// CPT Labels
-	$cpt_singular_capital   = 'Testimonial'; // Name of the post type shown in the menu
-	$cpt_plural_capital     = 'Testimonials';
-	$cpt_singular_lowercase = 'testimonial';
-	$cpt_plural_lowercase   = 'testimonials';
+	$cpt_singular_capital   = 'Project'; // Name of the post type shown in the menu
+	$cpt_plural_capital     = 'Projects';
+	$cpt_singular_lowercase = 'project';
+	$cpt_plural_lowercase   = 'projects';
 
 	// CPT Slug & Name
-	$cpt_register_key = 'testimonial';  // This is the registering name of the single CPT post. (Try to keep it singular).
-	$cpt_slug         = 'testimonial';  // This is the permalink slug of single CPT post. (Try to keep it singular).
-	// The slug will become - www.website.com/testimonial/single-testimonial-name
+	$cpt_register_key = 'project';  // This is the registering name of the single CPT post. (Try to keep it singular).
+	$cpt_slug         = 'project';  // This is the permalink slug of single CPT post. (Try to keep it singular).
+	// The slug will become - www.website.com/project/single-project-name
 
 	$labels = array(
 		'name'                  => _x( $cpt_plural_capital, 'Post type general name', 'ttl_td' ),
@@ -131,7 +131,6 @@ function register_cpt_testimonials() {
 		'capability_type'    => 'page', // Set this value for each CPT.
 		'has_archive'        => false, // Set this value for each CPT.
 		'hierarchical'       => true, // Set this value for each CPT.
-		'menu_icon'          => 'dashicons-admin-users', // Set this value for each CPT.
 		'rewrite'            => array(
 			'slug'       => $cpt_slug,
 			'with_front' => true, // If required only then set this value for each CPT.
