@@ -196,6 +196,57 @@ function glide_theme_acf_init()
 			)
 		);
 
+		// Register portfolios block - ACFBlock
+		acf_register_block(
+			array(
+				'name'            => 'portfolios-list',
+				'title'           => __('Portfolio', 'ttl_td'),
+				'description'     => __('Portfolios list.', 'ttl_td'),
+				'render_callback' => 'glide_acf_block_callback',
+				'category'        => 'glide-blocks',
+				'icon'            => '<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M60 40H40V60H60V40ZM36 36V64H64V36H36Z" fill="#20007F"/>
+				<path d="M46.0714 48L40 56.2143V60H60V56.5714L56.0714 51.9286L52.8571 55.5L46.0714 48Z" fill="#20007F"/>
+				<path d="M56 45.5C56 46.8807 54.8807 48 53.5 48C52.1193 48 51 46.8807 51 45.5C51 44.1193 52.1193 43 53.5 43C54.8807 43 56 44.1193 56 45.5Z" fill="#20007F"/>
+				<path d="M28 48L28 52L-1.63189e-07 52L0 48L28 48Z" fill="#20007F"/>
+				<path d="M28 48L28 52L-1.63189e-07 52L0 48L28 48Z" fill="#20007F"/>
+				<path d="M28 48L28 52L-1.63189e-07 52L0 48L28 48Z" fill="#20007F"/>
+				<path d="M28 40L28 44L-1.63189e-07 44L0 40L28 40Z" fill="#20007F"/>
+				<path d="M28 40L28 44L-1.63189e-07 44L0 40L28 40Z" fill="#20007F"/>
+				<path d="M28 40L28 44L-1.63189e-07 44L0 40L28 40Z" fill="#20007F"/>
+				<path d="M14 56L14 60L-1.63189e-07 60L0 56L14 56Z" fill="#20007F"/>
+				<path d="M14 56L14 60L-1.63189e-07 60L0 56L14 56Z" fill="#20007F"/>
+				<path d="M14 56L14 60L-1.63189e-07 60L0 56L14 56Z" fill="#20007F"/>
+				<path d="M64 12L64 16L36 16L36 12L64 12Z" fill="#20007F"/>
+				<path d="M64 12L64 16L36 16L36 12L64 12Z" fill="#20007F"/>
+				<path d="M64 12L64 16L36 16L36 12L64 12Z" fill="#20007F"/>
+				<path d="M64 4L64 8L36 8L36 4L64 4Z" fill="#20007F"/>
+				<path d="M64 4L64 8L36 8L36 4L64 4Z" fill="#20007F"/>
+				<path d="M64 4L64 8L36 8L36 4L64 4Z" fill="#20007F"/>
+				<path d="M50 20L50 24L36 24L36 20L50 20Z" fill="#20007F"/>
+				<path d="M50 20L50 24L36 24L36 20L50 20Z" fill="#20007F"/>
+				<path d="M50 20L50 24L36 24L36 20L50 20Z" fill="#20007F"/>
+				<path fill-rule="evenodd" clip-rule="evenodd" d="M24 4H4V24H24V4ZM0 0V28H28V0H0Z" fill="#20007F"/>
+				<path d="M10.0714 12L4 20.2143V24H24V20.5714L20.0714 15.9286L16.8571 19.5L10.0714 12Z" fill="#20007F"/>
+				<path d="M22 9.5C22 10.8807 20.8807 12 19.5 12C18.1193 12 17 10.8807 17 9.5C17 8.11929 18.1193 7 19.5 7C20.8807 7 22 8.11929 22 9.5Z" fill="#20007F"/>
+				</svg>',
+				'mode'            => 'edit',
+				'keywords'        => array('portfolio', 'list', 'listing'),
+				'align'           => 'wide',
+				'supports'        => array(
+					'align' => false,
+				),
+				'example'         => array(
+					'attributes' => array(
+						'mode' => 'preview',
+						'data' => array(
+							'preview_image_help' => get_template_directory_uri() . '/assets/img/admin/default-block-preview.webp',
+						),
+					),
+				),
+			)
+		);
+
 		// Register a block - Partner Companies
 		acf_register_block(
 			array(
@@ -1050,7 +1101,6 @@ function glide_theme_acf_init()
 			'name'            => 'our-goals',
 			'title'           => __('Our Goals', 'ttl_td'),
 			'description'     => __('A custom Our Goals.', 'ttl_td'),
-			'render_callback' => 'glide_acf_block_callback',
 			'category'        => 'glide-blocks',
 			'icon'            => 'images-alt2',
 			'mode'            => 'edit',
@@ -1073,8 +1123,6 @@ function glide_theme_acf_init()
 			),
 		)
 	);
-
-
 
 
 
