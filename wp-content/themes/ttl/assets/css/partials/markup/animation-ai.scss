@@ -1,188 +1,194 @@
 
 .img-brain {
-    svg {
-        opacity: 0;
-        visibility: hidden;
-        transform: scaleX(.6);
-        transition: opacity .4s ease-in-out, visibility .4s ease-in-out, transform 2.5s ease-in-out .4s;
 
-        .pageLoaded & {
-            opacity: 1;
-            visibility: visible;
-            transform: scaleX(1);
-        }
-    }
+	svg {
+		opacity: 0;
+		visibility: hidden;
+		transform: scaleX(0.6);
+		transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out, transform 2.5s ease-in-out 0.4s;
 
-    /* SVG Animation */ 
+		.pageLoaded & {
+			opacity: 1;
+			visibility: visible;
+			transform: scaleX(1);
+		}
+	}
 
-    svg line {
+	/* SVG Animation */
 
-        pointer-events: none;
-        animation: animateDash 3s ease-in-out;
-    }
+	svg line {
 
-    svg path {
-        animation: mymove 6s ease-in-out;
-        opacity: .75;
+		pointer-events: none;
+		animation: animateDash 3s ease-in-out;
+	}
 
-        @for $i from 1 through 1500 {
-            &:nth-child(#{$i}) {
+	svg path {
+		animation: mymove 6s ease-in-out;
+		opacity: 0.75;
 
-                animation-delay: $i * 5ms;
+		@for $i from 1 through 1500 {
+			&:nth-child(#{$i}) {
 
-
-            }
-        }
-
-    }
-
-    svg circle {
-        animation: mymove 12s ease-in-out infinite;
-        opacity: 1;
-        animation-fill-mode: both;
-
-        @for $i from 1 through 1000 {
-            &:nth-child(#{$i}) {
-
-                animation-delay: $i * 10ms;
+				animation-delay: $i * 5ms;
 
 
-            }
-        }
+			}
+		}
 
-    }
+	}
 
-    svg rect {
-        animation: mymoveIn 3s ease-in-out;
-        opacity: 1;
-        transform-origin: 0 0;
-        transform: scale(1);
+	svg circle {
+		animation: mymove 12s ease-in-out infinite;
+		opacity: 1;
+		animation-fill-mode: both;
 
-        @for $i from 1 through 1000 {
-            &:nth-child(#{$i}) {
+		@for $i from 1 through 1000 {
+			&:nth-child(#{$i}) {
 
-                animation-delay: $i * 3ms;
-
-
-            }
-        }
-
-    }
-
-    svg line {
-        animation: animateDash 5s ease-in-out;
-        stroke-miterlimit: 10;
-        stroke-width: 0.7px;
-
-        @for $i from 1 through 100 {
-            &:nth-child(#{$i}) {
-
-                animation-delay: $i * 2ms;
+				animation-delay: $i * 10ms;
 
 
-            }
-        }
-    }
+			}
+		}
+
+	}
+
+	svg rect {
+		animation: mymoveIn 3s ease-in-out;
+		opacity: 1;
+		transform-origin: 0 0;
+		transform: scale(1);
+
+		@for $i from 1 through 1000 {
+			&:nth-child(#{$i}) {
+
+				animation-delay: $i * 3ms;
+
+
+			}
+		}
+
+	}
+
+	svg line {
+		animation: animateDash 5s ease-in-out;
+		stroke-miterlimit: 10;
+		stroke-width: 0.7px;
+
+		@for $i from 1 through 100 {
+			&:nth-child(#{$i}) {
+
+				animation-delay: $i * 2ms;
+
+
+			}
+		}
+	}
 
 }
 
 .img-bubbles {
 
-    svg path {
-        animation: mymove 6s ease-in infinite;
-        opacity: 1;
-        animation-fill-mode: forwards;
+	svg path {
+		animation: mymove 6s ease-in infinite;
+		opacity: 1;
+		animation-fill-mode: forwards;
 
-        @for $i from 1 through 1500 {
-            &:nth-child(#{$i}) {
+		@for $i from 1 through 1500 {
+			&:nth-child(#{$i}) {
 
-                animation-delay: $i * 3ms;
+				animation-delay: $i * 3ms;
 
 
-            }
-        }
+			}
+		}
 
-    }
+	}
 }
 
 
 .img-bubbles2 {
-    transform: rotate(180deg);
+	transform: rotate(180deg);
 
-    svg path {
-        animation-duration: 10s;
-    }
+	svg path {
+		animation-duration: 10s;
+	}
 
 }
 
 @keyframes animateDash {
-    0% {
-        stroke-width: 0;
-        stroke-miterlimit: 0;
-    }
 
-    50% {
-        stroke-miterlimit: 10;
-        stroke-width: 0.7px;
-    }
+	0% {
+		stroke-width: 0;
+		stroke-miterlimit: 0;
+	}
 
-    100% {
-        stroke-width: 0;
-        stroke-miterlimit: 0;
-    }
+	50% {
+		stroke-miterlimit: 10;
+		stroke-width: 0.7px;
+	}
+
+	100% {
+		stroke-width: 0;
+		stroke-miterlimit: 0;
+	}
 }
 
 @keyframes mymove {
-    0% {
-        opacity: 0;
-    }
 
-    50% {
-        opacity: 1;
-    }
+	0% {
+		opacity: 0;
+	}
 
-    80% {
-        opacity: 1;
-    }
+	50% {
+		opacity: 1;
+	}
 
-    100% {
-        opacity: 0;
-    }
+	80% {
+		opacity: 1;
+	}
+
+	100% {
+		opacity: 0;
+	}
 }
 
 @keyframes mymoveIn {
-    0% {
-        opacity: 0;
-    }
 
-    50% {
-        opacity: 1;
-    }
+	0% {
+		opacity: 0;
+	}
+
+	50% {
+		opacity: 1;
+	}
 }
 
 @keyframes mymove2 {
-    0% {
-        opacity: 0;
-        transform: scale(0);
-    }
 
-    100% {
-        opacity: 1;
-        transform: scale(1);
-    }
+	0% {
+		opacity: 0;
+		transform: scale(0);
+	}
+
+	100% {
+		opacity: 1;
+		transform: scale(1);
+	}
 
 }
 
 @keyframes mymove3 {
-    0% {
-        opacity: 0;
-        transform: skewX(100deg);
-    }
 
-    100% {
-        opacity: 1;
-        transform: skewX(0deg);
-    }
+	0% {
+		opacity: 0;
+		transform: skewX(100deg);
+	}
+
+	100% {
+		opacity: 1;
+		transform: skewX(0deg);
+	}
 
 
 }

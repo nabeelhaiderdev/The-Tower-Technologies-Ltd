@@ -234,3 +234,33 @@ function wpds_custom_admin_post_css() {
 		echo '<style>#edit-slug-box {display:none;}</style>';
 	}
 }
+
+/**
+ ** Displays the appropriate username for a given WordPress user.
+ *
+ * If the user has both a first and last name, the function will combine them into
+ * a single display name. Otherwise, it will default to the user's nicename. If
+ * there is still no appropriate display name, it will default to the user's login name.
+ *
+ * @param int $user_id The ID of the WordPress user to display.
+ * @return void
+ */
+function display_username($user_id) {
+	$user = get_userdata($user_id);
+	$first_name = $user->first_name;
+	$last_name = $user->last_name;
+	$nicename = $user->user_nicename;
+	$username = $user->user_login;
+
+	$display_name = $nicename;
+
+	if (!empty($first_name) || !empty($last_name)) {
+		$display_name = trim("{$first_name} {$last_name}");
+	}
+
+	if (empty($display_name)) {
+		$display_name = $username;
+	}
+
+	echo esc_html($display_name);
+}

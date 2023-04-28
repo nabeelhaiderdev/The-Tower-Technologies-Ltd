@@ -25,70 +25,47 @@ if ( ! empty( $_SERVER['SCRIPT_FILENAME'] ) && 'comments.php' == basename( $_SER
 		die( __( 'Please do not load this page directly. Thanks!', 'ttl_td' ) );
 }
 if ( post_password_required() ) { /*2*/ ?>
-	<?php _e( 'This post is password protected. Enter the password to view comments.', 'ttl_td' ); ?>
-	<?php
+<?php _e( 'This post is password protected. Enter the password to view comments.', 'ttl_td' ); ?>
+<?php
 	return;
 }
 
 ?>
-
-<section id="respond">
-	<div id="comments" class="comments-area">
-
-		<?php
-		// Only show  when comments are available.
-		if ( have_comments() ) {
-			?>
-		<h3 class="section-title" id="comments">
-			<?php
-				$theme_comment_count = get_comments_number();
-			if ( '1' === $theme_comment_count ) {
-				printf(
-					/* translators: 1: title. */
-					__( 'One Responce', 'ttl_td' ),
-					'<span>' . get_the_title() . '</span>'
-				);
-			} else {
-				printf( // WPCS: XSS OK.
-					/* translators: 1: comment count number, 2: title. */
-					esc_html( _nx( '%1$s Responce', '%1$s Responces', $theme_comment_count, 'comments title', 'ttl_td' ) ),
-					number_format_i18n( $theme_comment_count ),
-					'<span>' . get_the_title() . '</span>'
-				);
-			}
-			?>
-		</h3>
-		<div class="navigation">
-			<?php the_comments_navigation(); ?>
-		</div>
-		<ol class="commentlist">
-
-			<?php
-				wp_list_comments(
-					array(
-						'style'       => 'ol',
-						'short_ping'  => true,
-						'avatar_size' => 60,
-					)
-				);
-			?>
-
+<div class="widget-content widget-comments">
+	<div class="widget-holder">
+		<h4>0 Comments</h4>
+		<ol class="comments-list">
 		</ol>
-		<div class="navigation">
-			<?php the_comments_navigation(); ?>
+	</div>
+	<div class="widget-holder widget-reply">
+		<h4>Leave a Reply</h4>
+		<p>Your address will not be published. Required fields are marked *</p>
+		<div class="reply-form">
+			<form>
+				<div class="input-holder">
+					<textarea class="form-control" placeholder="Comment"></textarea>
+				</div>
+				<div class="input-holder">
+					<input type="text" class="form-control" placeholder="Your Name*">
+				</div>
+				<div class="input-holder">
+					<input type="email" class="form-control" placeholder="Email*">
+				</div>
+				<div class="input-holder">
+					<input type="text" class="form-control" placeholder="Your Website">
+				</div>
+				<div class="input-holder">
+					<label class="custom-checkbox">
+						<input type="checkbox">
+						<span class="checkbox"><i class="fa fa-check"></i></span>
+						<span class="label-text">Save my name, email and website in this
+							browser for the next time i comment.</span>
+					</label>
+				</div>
+				<div class="btn-block">
+					<button type="submit" class="btn btn-primary btn-lg">Post Comment</button>
+				</div>
+			</form>
 		</div>
-		<?php } else { // this is displayed if there are no comments so far ?>
-
-			<?php
-			// If comments are closed and there are comments, let's leave a little note, shall we?
-			if ( ! comments_open() ) {
-				?>
-		<p class="no-comments"><?php _e( 'Comments are closed.', 'ttl_td' ); ?></p>
-				<?php
-			}
-		}// Check for have_comments().
-			comment_form();
-		?>
-
-	</div><!-- #comments -->
-</section>
+	</div>
+</div>

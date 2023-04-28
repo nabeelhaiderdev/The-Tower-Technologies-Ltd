@@ -20,7 +20,7 @@ $file_includes = array(
 	'includes/cpt.php',                 // Custom post types setup
 	'includes/custom.php',              // Custom functions
 	'includes/ajax.php',                // Ajax related functions
-	'includes/editor.php',              // Editor styles
+	// 'includes/editor.php',              // Editor styles
 	'includes/nav-walker.php',          // Header nav Walker
 	'includes/api.php',                 // Api
 );

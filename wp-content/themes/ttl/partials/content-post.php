@@ -23,115 +23,85 @@ $ttl_posttitle=glide_page_title('ttl_posttitle');
 
 ?>
 
-<div class="container-980">
-	<div class="wrapper">
-		<div class="post-image">
-			<?php if ( has_post_thumbnail() ) { ?> <div class="thumb"> <?php the_post_thumbnail(
-							'thumb_1200',
-							array(
-								'alt'   => get_the_title(),
-								'title' => get_the_title(),
-							)
-						); ?> </div> <?php } else { ?> <img
-					src="<?php echo get_template_directory_uri(); ?>/assets/img/admin/defaults/default-image.webp" class=""
-					alt="<?php get_the_title(); ?>" title="<?php get_the_title(); ?>"> <?php } ?>
-		</div><!-- .post-image -->
-		<div class="post-meta d-flex align-items-center justify-content-between">
-			<!-- /.post-tags -->
-			<?php if($ttl_post_categories){ ?>
-				<div class="post-cat">
-					<?php foreach ($ttl_post_categories as $category ) { ?>
-						<a href="<?php echo get_category_link($category); ?>"><?php echo $category->name; ?></a>
-					<?php } ?>
+<!-- Content -->
+<div id="content">
+	<div class="posts-block">
+		<article class="post post-details">
+			<div class="img-corner-holder reverse">
+				<time class="date" datetime="2022-03-22"><strong class="date-holder">22
+						<span>Mar</span></strong></time>
+				<div class="img-corner-frame">
+					<a href="#" class="img-frame">
+						<?php if ( has_post_thumbnail() ) { ?>
+						<?php the_post_thumbnail(
+								'thumb_900',
+								array(
+									'alt'   => get_the_title(),
+									'title' => get_the_title(),
+								)
+							); ?>
+						<?php } else { ?>
+						<img src="<?php echo get_template_directory_uri(); ?>/assets/images/defaults/default-image.webp"
+							class="" alt="<?php get_the_title(); ?>" title="<?php get_the_title(); ?>">
+						<?php } ?>
+					</a>
 				</div>
-				<!-- /.post-cat -->
-			<?php } ?>
-			<div class="post-shares">
-				<a href="http://www.facebook.com/sharer.php?u=<?php the_permalink();?>&amp;t=<?php the_title();?>" target="_blank"
-					rel="noopener" rel="noreferrer"
-					onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><img
-						src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/facebook-icon.svg" alt="Facebook"
-						class="post-fb-share"></a>
-				<a href="http://www.linkedin.com/shareArticle?mini=true&amp;title=<?php the_title();?>&amp;url=<?php the_permalink();?>"
-					target="_blank" rel="noopener" rel="noreferrer"
-					onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><img
-						src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/linkedin-icon.svg" alt="Linked In"
-						class="post-li-share"></a>
-						<a href="http://twitter.com/intent/tweet?text=Currently reading <?php the_title();?>&amp;url=<?php the_permalink();?>"
-					target="_blank" rel="noopener" rel="noreferrer"
-					onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><img
-						src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/twitter-icon.svg" alt="Twitter"
-						class="post-tw-share"></a>
+				<ul class="meta">
+					<li><a href="#"><?php display_username( get_the_author_meta( 'ID' )); ?></a></li>
+					<li><time
+							datetime="<?php echo get_the_date('Y-m-d'); ?>"><?php echo get_the_date('F j, Y'); ?></time>
+					</li>
+				</ul>
 			</div>
-			<!-- /.post-shares -->
-		</div>
-
-
-		<article id="post-<?php the_ID(); ?>" <?php post_class('post-ctn'); ?>>
-				<?php get_template_part( 'partials/content' ); ?>
-				<div class="clear"></div>
-				<div class="post-details">
-					<div class="post-pagination"> <?php the_posts_pagination() ?> </div>
-					<div class="post-comments"> <?php
-							// If comments are open or we have at least one comment, load up the comment template.
-							if ( comments_open() || get_comments_number() ) {
-								comments_template();
-							}
-						?>
-					</div>
-				</div>
-			</div>
-
-			<?php
-			wp_reset_query();
-			wp_reset_postdata();
-
-			$ttl_rp_selection_criteria = isset($fields['ttl_rp_selection_criteria']) ? $fields['ttl_rp_selection_criteria'] : null;
-			if($ttl_rp_selection_criteria == 'random'){
-
-				$args = array(
-					'posts_per_page' => 3,
-					'post__not_in'   => array( $post->ID ),
-					'orderby'        => 'rand',
-				);
-
-				$query = new WP_Query( $args );
-
-				// The Loop
-				if ( $query->have_posts() ) {
-					while ( $query->have_posts() ) {
-						$query->the_post();
-						//Include specific template for the content.
-						get_template_part( 'partials/content', 'archive-post' );
-					}
-				?> <div class="clear"></div> <?php
-				}
-			}
-			else {
-				global $post;
-				$ttl_selected_posts = array();
-				$ttl_selected_posts = isset($fields['ttl_rp_selected_posts']) ? $fields['ttl_rp_selected_posts'] : null;
-				if ( $ttl_selected_posts ) { ?> <div class="related-posts ">
-				<h3><?php _e( 'Related Posts', 'ttl_td' ) ?></h3> <?php
-								foreach ( $ttl_selected_posts as $ttl_post ) {
-									$post = $ttl_post;
-									setup_postdata( $post );
-									$pID         = $post->ID;
-									$post_fields = get_fields( $pID );
-									$custom_field  = $post_fields['custom_field'];
-									$src         = wp_get_attachment_image_src( get_post_thumbnail_id( $pID ), 'thumb_600', false );
-									if ( ! $src ) {
-										$src = get_template_directory_uri() . '/assets/img/admin/defaults/default-image.webp';
-									} else {
-										$src = $src[0];
-									}
-										get_template_part( 'partials/content', 'archive-post' );
-								}
-							?>
-			</div> <?php } wp_reset_query();
-				wp_reset_postdata();
-				}
-				?>
+			<h2><?php the_title(); ?></h2>
+			<?php get_template_part( 'partials/content' ); ?>
 		</article>
+		<div class="widget-content">
+			<div class="widget-holder">
+				<h4>Popular Tags</h4>
+				<?php
+				$tags = get_the_tags(); 
+				if ( $tags ) {
+					$i = 0;
+				?>
+				<ul class="popular-tags">
+					<?php foreach ( $tags as $tag ) {
+						 if ( $i >= 4 ) {
+							break; // stop after the first four tags
+						}
+						$i++;
+				 ?>
+					<li><a href="<?php echo get_tag_link( $tag->term_id ); ?>"><?php echo $tag->name; ?></a></li>
+					<?php } ?>
+				</ul>
+				<?php } ?>
+			</div>
+			<div class="widget-holder">
+				<h4>Share Article</h4>
+				<ul class="share-holder">
+					<li><a href="#"><img
+								src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/ico-facebook.svg"
+								alt="Facebook" width="41" height="41"></a></li>
+					<li><a href="#"><img
+								src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/ico-twitter.svg"
+								alt="Facebook" width="41" height="41"></a></li>
+					<li><a href="#"><img
+								src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/ico-whatsapp.svg"
+								alt="Facebook" width="45" height="46"></a></li>
+					<li><a href="#"><img
+								src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/ico-gmail.svg"
+								alt="Facebook" width="41" height="41"></a></li>
+				</ul>
+			</div>
+		</div>
+		<?php
+			// If comments are open or we have at least one comment, load up the comment template.
+			if ( comments_open() || get_comments_number() ) {
+				comments_template();
+			}
+		?>
+
 	</div>
 </div>
+<!-- Sidebar -->
+<?php get_template_part( 'partials/content', 'blog-aside' ); ?>

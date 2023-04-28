@@ -59,7 +59,8 @@ $bscripts = ( isset( $option_fields['body_scripts'] ) ) ? $option_fields['body_s
 		href="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/pwa/favicon.ico">
 	<link rel="icon" type="image/svg+xml"
 		href="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/pwa/icon.svg">
-	<link rel="manifest" href="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/pwa/site.webmanifest">
+	<link rel="manifest"
+		href="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/pwa/site.webmanifest">
 	<meta name="theme-color" content="#0047FE">
 	<meta name="mobile-web-app-capable" content="yes">
 	<meta name="application-name" content="BaseTheme Package">
@@ -74,7 +75,9 @@ $bscripts = ( isset( $option_fields['body_scripts'] ) ) ? $option_fields['body_s
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+	<link
+		href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+		rel="stylesheet">
 	<?php
 		// Tracking Code
 	if ( $tracking != '' ) {
@@ -99,21 +102,35 @@ $bscripts = ( isset( $option_fields['body_scripts'] ) ) ? $option_fields['body_s
 	</script>
 </head>
 
-<body <?php body_class(); ?>> <?php wp_body_open(); ?> <?php
+<?php 
+$ttl_spo_select_design = (isset($fields['ttl_spo_select_design'])) ? $fields['ttl_spo_select_design'] : null;
+	if ($ttl_spo_select_design) {
+		$body_class = ' page-landing ';
+	} else {
+		$body_class = null;
+	}
+
+?>
+
+<body <?php body_class($body_class); ?>> <?php wp_body_open(); ?> <?php
 if ( $bscripts != '' ) {
 	?>
 	<div style="display: none;">
 		<?php echo html_entity_decode( $bscripts, ENT_QUOTES ); ?> </div> <?php } ?> <a
 		class="skip-link screen-reader-text"
 		href="#page-section"><?php esc_html_e( 'Skip to content', 'ttl_td' ); ?></a>
-		<div id="wrapper">
+	<div id="wrapper">
 		<!-- Header Global -->
 		<header id="header" data-aos="fade-down" data-aos-duration="1000" data-aos-delay="1000">
 			<div class="container-full">
 				<div class="header-holder">
 					<div class="logo-wrap">
-						<div class="logo logo-normal"><a href="./"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/logo-towertech-white.svg" alt="Tower Tech" width="245" height="46"></a></div>
-						<div class="logo logo-fixed"><a href="./"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/logo-towertech.svg" alt="Tower Tech" width="245" height="46"></a></div>
+						<div class="logo logo-normal"><a href="./"><img
+									src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/logo-towertech-white.svg"
+									alt="Tower Tech" width="245" height="46"></a></div>
+						<div class="logo logo-fixed"><a href="./"><img
+									src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/logo-towertech.svg"
+									alt="Tower Tech" width="245" height="46"></a></div>
 					</div>
 					<a href="javascript:;" class="nav-opener"><span></span></a>
 				</div>
@@ -124,8 +141,12 @@ if ( $bscripts != '' ) {
 			<div class="container-full">
 				<div class="header-holder">
 					<div class="logo-wrap">
-						<div class="logo logo-normal"><a href="<?php echo home_url(); ?>"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/logo-towertech-white.svg" alt="Tower Tech" width="245" height="46"></a></div>
-						<div class="logo logo-fixed"><a href="<?php echo home_url(); ?>"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/logo-towertech.svg" alt="Tower Tech" width="245" height="46"></a></div>
+						<div class="logo logo-normal"><a href="<?php echo home_url(); ?>"><img
+									src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/logo-towertech-white.svg"
+									alt="Tower Tech" width="245" height="46"></a></div>
+						<div class="logo logo-fixed"><a href="<?php echo home_url(); ?>"><img
+									src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/logo-towertech.svg"
+									alt="Tower Tech" width="245" height="46"></a></div>
 					</div>
 					<a href="javascript:;" class="nav-opener"><span></span></a>
 				</div>
@@ -143,5 +164,3 @@ if ( $bscripts != '' ) {
 			</div>
 		</nav>
 		<!-- Intro -->
-		
-	

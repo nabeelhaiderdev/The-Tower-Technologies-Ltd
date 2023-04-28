@@ -64,15 +64,21 @@ Version: 1.0
 	> Slick Nav
 ------------------------------------------------------------------ */
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
-button, hr, input {
+button,
+hr,
+input {
   overflow: visible;
 }
 
-progress, sub, sup {
+progress,
+sub,
+sup {
   vertical-align: baseline;
 }
 
-[type=checkbox], [type=radio], legend {
+[type=checkbox],
+[type=radio],
+legend {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 0;
@@ -86,7 +92,8 @@ body {
   margin: 0;
 }
 
-details, main {
+details,
+main {
   display: block;
 }
 
@@ -101,7 +108,10 @@ hr {
   height: 0;
 }
 
-code, kbd, pre, samp {
+code,
+kbd,
+pre,
+samp {
   font-family: monospace, monospace;
   font-size: 1em;
 }
@@ -117,7 +127,8 @@ abbr[title] {
           text-decoration: underline dotted;
 }
 
-b, strong {
+b,
+strong {
   font-weight: bolder;
 }
 
@@ -125,7 +136,8 @@ small {
   font-size: 80%;
 }
 
-sub, sup {
+sub,
+sup {
   font-size: 75%;
   line-height: 0;
   position: relative;
@@ -143,27 +155,41 @@ img {
   border-style: none;
 }
 
-button, input, optgroup, select, textarea {
+button,
+input,
+optgroup,
+select,
+textarea {
   font-family: inherit;
   font-size: 100%;
   line-height: 1.15;
   margin: 0;
 }
 
-button, select {
+button,
+select {
   text-transform: none;
 }
 
-[type=button], [type=reset], [type=submit], button {
+[type=button],
+[type=reset],
+[type=submit],
+button {
   -webkit-appearance: button;
 }
 
-[type=button]::-moz-focus-inner, [type=reset]::-moz-focus-inner, [type=submit]::-moz-focus-inner, button::-moz-focus-inner {
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner,
+button::-moz-focus-inner {
   border-style: none;
   padding: 0;
 }
 
-[type=button]:-moz-focusring, [type=reset]:-moz-focusring, [type=submit]:-moz-focusring, button:-moz-focusring {
+[type=button]:-moz-focusring,
+[type=reset]:-moz-focusring,
+[type=submit]:-moz-focusring,
+button:-moz-focusring {
   outline: ButtonText dotted 1px;
 }
 
@@ -182,7 +208,8 @@ textarea {
   overflow: auto;
 }
 
-[type=number]::-webkit-inner-spin-button, [type=number]::-webkit-outer-spin-button {
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
   height: auto;
 }
 
@@ -204,7 +231,8 @@ summary {
   display: list-item;
 }
 
-[hidden], template {
+[hidden],
+template {
   display: none;
 }
 
@@ -1450,7 +1478,7 @@ canvas {
   right: 0;
   color: #fff;
   z-index: 2000;
-  font-family: "Poppins", Arial;
+  font-family: Poppins, Arial;
 }
 #header .container-full {
   padding-top: 60px;
@@ -1475,8 +1503,8 @@ canvas {
 .fixed-header #header .container-full {
   padding: 30px !important;
   background: #fff;
-  -webkit-box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.16);
-          box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.16);
+  -webkit-box-shadow: 0 3px 2px rgba(0, 0, 0, 0.16);
+          box-shadow: 0 3px 2px rgba(0, 0, 0, 0.16);
 }
 @media (max-width: 1023px) {
   .fixed-header #header .container-full {
@@ -1532,7 +1560,7 @@ html:not(.fixed-header) #header.dual-color .logo-wrap .logo-fixed {
 html:not(.fixed-header) #header.dual-color .logo-wrap .logo-normal {
   display: none;
 }
-html:not(.fixed-header) #header.dual-color .nav-opener:after, html:not(.fixed-header) #header.dual-color .nav-opener:before {
+html:not(.fixed-header) #header.dual-color .nav-opener::after, html:not(.fixed-header) #header.dual-color .nav-opener::before {
   background: #fff;
 }
 
@@ -1577,7 +1605,7 @@ html:not(.fixed-header) #header.dual-color .nav-opener:after, html:not(.fixed-he
     right: 20px;
   }
 }
-.nav-opener:before, .nav-opener:after {
+.nav-opener::before, .nav-opener::after {
   width: 100%;
   height: 4px;
   background: #fff;
@@ -1587,19 +1615,19 @@ html:not(.fixed-header) #header.dual-color .nav-opener:after, html:not(.fixed-he
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
-.nav-opener:before {
+.nav-opener::before {
   margin-bottom: 6px;
 }
-.nav-active .nav-opener:before {
+.nav-active .nav-opener::before {
   margin-bottom: -2px;
   -webkit-transform: rotate(45deg);
       -ms-transform: rotate(45deg);
           transform: rotate(45deg);
 }
-.nav-opener:after {
+.nav-opener::after {
   margin-top: 6px;
 }
-.nav-active .nav-opener:after {
+.nav-active .nav-opener::after {
   margin-top: -2px;
   -webkit-transform: rotate(-45deg);
       -ms-transform: rotate(-45deg);
@@ -1608,7 +1636,7 @@ html:not(.fixed-header) #header.dual-color .nav-opener:after, html:not(.fixed-he
 .fixed-header:not(.nav-active) .nav-opener {
   right: 30px;
 }
-.fixed-header:not(.nav-active) .nav-opener:after, .fixed-header:not(.nav-active) .nav-opener:before {
+.fixed-header:not(.nav-active) .nav-opener::after, .fixed-header:not(.nav-active) .nav-opener::before {
   background: #20007F;
 }
 
@@ -1617,14 +1645,14 @@ html:not(.fixed-header) #header.dual-color .nav-opener:after, html:not(.fixed-he
   left: 0;
   top: 0;
   right: 0;
-  background: -o-linear-gradient(343.89deg, #0F1013 1.09%, #181B8E 100%);
-  background: linear-gradient(106.11deg, #0F1013 1.09%, #181B8E 100%);
+  background: -o-linear-gradient(343.89deg, #0f1013 1.09%, #181b8e 100%);
+  background: linear-gradient(106.11deg, #0f1013 1.09%, #181b8e 100%);
   height: 100vh;
   overflow: hidden;
   z-index: 3000;
   overflow-y: auto;
   text-align: center;
-  font: 700 36px/1.5 "Poppins", Arial;
+  font: 700 36px/1.5 Poppins, Arial;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1888,7 +1916,7 @@ html:not(.fixed-header) #header.dual-color .nav-opener:after, html:not(.fixed-he
 .page-landing #header .logo.logo-fixed {
   display: block;
 }
-.page-landing #header .nav-opener:after, .page-landing #header .nav-opener:before {
+.page-landing #header .nav-opener::after, .page-landing #header .nav-opener::before {
   background: #20007F;
 }
 
@@ -7845,6 +7873,15 @@ ol.comments-list > li p {
 }
 .featured-boxes .featured-box h5 {
   margin: 0 0 18px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+#single-post-content {
+  position: relative;
+  top: -80px;
 }
 /*# sourceMappingURL=bundle.css.map */
 

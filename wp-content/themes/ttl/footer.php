@@ -105,7 +105,7 @@ $ttl_social_yt       = ( isset( $option_fields['ttl_social_yt'] ) ) ? $option_fi
 				<?php
 						wp_nav_menu(
 							array(
-							'theme_location' => 'header-nav',
+							'theme_location' => 'footer-nav-one',
 							'fallback_cb' => 'menu_fallback',
 							)
 						);

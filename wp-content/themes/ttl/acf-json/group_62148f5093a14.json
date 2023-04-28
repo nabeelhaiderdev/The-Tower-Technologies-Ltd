@@ -1,11 +1,12 @@
 {
     "key": "group_62148f5093a14",
-    "title": "Options - Default Post Template",
+    "title": "Single Post Template",
     "fields": [
         {
             "key": "field_62148f6d8a381",
             "label": "Title",
             "name": "ttl_posttitle",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -20,6 +21,26 @@
             "prepend": "",
             "append": "",
             "maxlength": ""
+        },
+        {
+            "key": "field_644a216a20f37",
+            "label": "Short Description",
+            "name": "ttl_spost_short_description",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         }
     ],
     "location": [
@@ -40,5 +61,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1681796898
+    "modified": 1682579848
 }

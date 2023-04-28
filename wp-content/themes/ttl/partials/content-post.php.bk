@@ -1,0 +1,397 @@
+<?php
+/**
+ * Template part for displaying single post
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ *
+ * @package The Tower Technologies Ltd.
+ * @since 1.0.0
+ */
+
+
+$post_data=get_queried_object();
+$pID  = get_the_ID();
+if (function_exists('get_fields') && function_exists('get_fields_escaped')) {
+	$post_fields = get_fields_escaped( $pID );
+}
+
+// Post Tags & Categories
+// $ttl_post_tags = get_the_tags($pID);
+$ttl_post_categories = get_categories($pID);
+
+$ttl_posttitle=glide_page_title('ttl_posttitle');
+
+?>
+<!-- Content -->
+<div id="content">
+	<div class="posts-block">
+		<article class="post post-details">
+			<div class="img-corner-holder reverse">
+				<time class="date" datetime="2022-03-22"><strong class="date-holder">22
+						<span>Mar</span></strong></time>
+				<div class="img-corner-frame">
+					<a href="#" class="img-frame">
+						<img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/img-post-1.jpg"
+							alt="image description" width="872" height="567">
+					</a>
+				</div>
+				<ul class="meta">
+					<li><a href="#">Hassan Abbas</a></li>
+					<li><time datetime="2023-03-22">March 22, 2023</time></li>
+				</ul>
+			</div>
+			<h2>5 Easy Ways You Can Turn Future Into Succe</h2>
+			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+				Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+				incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+				exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+			<p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+				mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit
+				voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab
+				illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+			<div class="quote-text">
+				<div class="quote-holder">
+					<blockquote>
+						<q>The Web as I envisaged it, we have not
+							seen it yet. The future is still so much
+							bigger than the past</q>
+					</blockquote>
+				</div>
+			</div>
+			<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+				Ipsum has been the industry's standard dummy text ever since the 1500s,</p>
+
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+				incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+				exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+			<div class="text-block">
+				<h2>Why Choose Our Products?</h2>
+				<ul>
+					<li>Supported over 100 digital agencies as their full dedicated development,
+						strategy and executionist partner in North America</li>
+
+					<li>Setup complete development team models in over 7 IT facilities worldwide
+					</li>
+
+					<li>Q/A teams setup and support</li>
+
+					<li>Off-shore & local teams setup across 3 continents</li>
+				</ul>
+			</div>
+
+		</article>
+		<div class="widget-content">
+			<div class="widget-holder">
+				<h4>Popular Tags</h4>
+				<ul class="popular-tags">
+					<li><a href="#">#PopularLanguage</a></li>
+					<li><a href="#">#InformationTechnology</a></li>
+					<li><a href="#">#Programming</a></li>
+					<li><a href="#">#Coding</a></li>
+				</ul>
+			</div>
+			<div class="widget-holder">
+				<h4>Share Article</h4>
+				<ul class="share-holder">
+					<li><a href="#"><img
+								src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/ico-facebook.svg"
+								alt="Facebook" width="41" height="41"></a></li>
+					<li><a href="#"><img
+								src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/ico-twitter.svg"
+								alt="Facebook" width="41" height="41"></a></li>
+					<li><a href="#"><img
+								src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/ico-whatsapp.svg"
+								alt="Facebook" width="45" height="46"></a></li>
+					<li><a href="#"><img
+								src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/ico-gmail.svg"
+								alt="Facebook" width="41" height="41"></a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="widget-content widget-comments">
+			<div class="widget-holder">
+				<h4>2 Comments</h4>
+				<ol class="comments-list">
+					<li>
+						<div class="comment-holder">
+							<div class="avatar">
+
+							</div>
+							<div class="text-block">
+								<ul class="comment-meta">
+									<li><a href="#">John Doe</a></li>
+									<li><time datetime="2023-03-31">March 31, 2023</time></li>
+								</ul>
+								<p>What an amazing description on the future technology of VGX.
+									Thank you for sharing this information.</p>
+								<ul class="comment-meta">
+									<li><a href="#" class="reply">REPLY</a></li>
+								</ul>
+							</div>
+						</div>
+						<ol>
+							<li>
+								<div class="comment-holder">
+									<div class="avatar">
+
+									</div>
+									<div class="text-block">
+										<ul class="comment-meta">
+											<li><a href="#">John Doe</a></li>
+											<li><time datetime="2023-03-31">March 31, 2023</time>
+											</li>
+										</ul>
+										<p>You are welcome, its an honor for me.</p>
+										<ul class="comment-meta">
+											<li><a href="#" class="reply">REPLY</a></li>
+										</ul>
+									</div>
+								</div>
+							</li>
+						</ol>
+					</li>
+					<li>
+						<div class="comment-holder">
+							<div class="avatar">
+
+							</div>
+							<div class="text-block">
+								<ul class="comment-meta">
+									<li><a href="#">John Doe</a></li>
+									<li><time datetime="2023-03-31">March 31, 2023</time></li>
+								</ul>
+								<p>Big fan of yours dude</p>
+								<ul class="comment-meta">
+									<li><a href="#" class="reply">REPLY</a></li>
+								</ul>
+							</div>
+						</div>
+					</li>
+				</ol>
+			</div>
+			<div class="widget-holder widget-reply">
+				<h4>Leave a Reply</h4>
+				<p>Your address will not be published. Required fields are marked *</p>
+				<div class="reply-form">
+					<form>
+						<div class="input-holder">
+							<textarea class="form-control" placeholder="Comment"></textarea>
+						</div>
+						<div class="input-holder">
+							<input type="text" class="form-control" placeholder="Your Name*">
+						</div>
+						<div class="input-holder">
+							<input type="email" class="form-control" placeholder="Email*">
+						</div>
+						<div class="input-holder">
+							<input type="text" class="form-control" placeholder="Your Website">
+						</div>
+						<div class="input-holder">
+							<label class="custom-checkbox">
+								<input type="checkbox">
+								<span class="checkbox"><i class="fa fa-check"></i></span>
+								<span class="label-text">Save my name, email and website in this
+									browser for the next time i comment.</span>
+							</label>
+						</div>
+						<div class="btn-block">
+							<button type="submit" class="btn btn-primary btn-lg">Post Comment</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Sidebar -->
+<aside id="aside">
+	<div class="widget widget-search">
+		<div class="widget-holder">
+			<form>
+				<div class="input-holder">
+					<input class="form-control" placeholder="Search">
+				</div>
+				<button type="submit" class="btn btn-primary"><img
+						src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/ico-search.svg"
+						alt="Search" width="20" height="20"></button>
+			</form>
+		</div>
+	</div>
+	<div class="widget widget-posts">
+		<div class="widget-holder">
+			<h4>Latest Post</h4>
+			<article class="post-small">
+				<div class="img-holder">
+					<a href="">
+						<img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/img-thumbnail-1.jpg"
+							alt="">
+					</a>
+				</div>
+				<div class="text-box">
+					<time class="date" datetime="2023-07-16">JULY 16, 2023</time>
+					<h5><a href="">5 Ways you can turn future into success</a></h5>
+				</div>
+			</article>
+			<article class="post-small">
+				<div class="img-holder">
+					<a href="">
+						<img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/img-thumbnail-2.jpg"
+							alt="">
+					</a>
+				</div>
+				<div class="text-box">
+					<time class="date" datetime="2023-07-16">August 02, 2023</time>
+					<h5><a href="#">Master The Art OF Coding In Python</a></h5>
+				</div>
+			</article>
+			<article class="post-small">
+				<div class="img-holder">
+					<a href="#">
+						<img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/img-thumbnail-3.jpg"
+							alt="">
+					</a>
+				</div>
+				<div class="text-box">
+					<time class="date" datetime="2023-07-16">August 12, 2023</time>
+					<h5><a href="#">All the technology follow chat GPT</a></h5>
+				</div>
+			</article>
+		</div>
+	</div>
+	<div class="widget widget-categories">
+		<div class="widget-holder">
+			<h4>Blog Categories</h4>
+			<ul>
+				<li><a href="#">Mobile App Development(3)</a></li>
+				<li><a href="#">Website Development(2)</a></li>
+				<li><a href="#">Web Portals(4)</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="widget widget-tags">
+		<div class="widget-holder">
+			<h4>Popular Tags</h4>
+			<ul>
+				<li><a href="#">Python</a></li>
+				<li><a href="#">C++</a></li>
+				<li><a href="#">Java</a></li>
+				<li><a href="#">Native</a></li>
+				<li><a href="#">Hybrid</a></li>
+			</ul>
+		</div>
+	</div>
+</aside>
+
+<div class="container-980">
+	<div class="wrapper">
+		<div class="post-image">
+			<?php if ( has_post_thumbnail() ) { ?> <div class="thumb"> <?php the_post_thumbnail(
+							'thumb_1200',
+							array(
+								'alt'   => get_the_title(),
+								'title' => get_the_title(),
+							)
+						); ?> </div> <?php } else { ?> <img
+				src="<?php echo get_template_directory_uri(); ?>/assets/img/admin/defaults/default-image.webp" class=""
+				alt="<?php get_the_title(); ?>" title="<?php get_the_title(); ?>"> <?php } ?>
+		</div><!-- .post-image -->
+		<div class="post-meta d-flex align-items-center justify-content-between">
+			<!-- /.post-tags -->
+			<?php if($ttl_post_categories){ ?>
+			<div class="post-cat">
+				<?php foreach ($ttl_post_categories as $category ) { ?>
+				<a href="<?php echo get_category_link($category); ?>"><?php echo $category->name; ?></a>
+				<?php } ?>
+			</div>
+			<!-- /.post-cat -->
+			<?php } ?>
+			<div class="post-shares">
+				<a href="http://www.facebook.com/sharer.php?u=<?php the_permalink();?>&amp;t=<?php the_title();?>"
+					target="_blank" rel="noopener" rel="noreferrer"
+					onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><img
+						src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/facebook-icon.svg"
+						alt="Facebook" class="post-fb-share"></a>
+				<a href="http://www.linkedin.com/shareArticle?mini=true&amp;title=<?php the_title();?>&amp;url=<?php the_permalink();?>"
+					target="_blank" rel="noopener" rel="noreferrer"
+					onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><img
+						src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/linkedin-icon.svg"
+						alt="Linked In" class="post-li-share"></a>
+				<a href="http://twitter.com/intent/tweet?text=Currently reading <?php the_title();?>&amp;url=<?php the_permalink();?>"
+					target="_blank" rel="noopener" rel="noreferrer"
+					onclick="javascript:window.open(this.href,'', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=600,width=600');return false;"><img
+						src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/twitter-icon.svg"
+						alt="Twitter" class="post-tw-share"></a>
+			</div>
+			<!-- /.post-shares -->
+		</div>
+
+
+		<article id="post-<?php the_ID(); ?>" <?php post_class('post-ctn'); ?>>
+			<?php get_template_part( 'partials/content' ); ?>
+			<div class="clear"></div>
+			<div class="post-details">
+				<div class="post-pagination"> <?php the_posts_pagination() ?> </div>
+				<div class="post-comments"> <?php
+							// If comments are open or we have at least one comment, load up the comment template.
+							if ( comments_open() || get_comments_number() ) {
+								comments_template();
+							}
+						?>
+				</div>
+			</div>
+	</div>
+
+	<?php
+			wp_reset_query();
+			wp_reset_postdata();
+
+			$ttl_rp_selection_criteria = isset($fields['ttl_rp_selection_criteria']) ? $fields['ttl_rp_selection_criteria'] : null;
+			if($ttl_rp_selection_criteria == 'random'){
+
+				$args = array(
+					'posts_per_page' => 3,
+					'post__not_in'   => array( $post->ID ),
+					'orderby'        => 'rand',
+				);
+
+				$query = new WP_Query( $args );
+
+				// The Loop
+				if ( $query->have_posts() ) {
+					while ( $query->have_posts() ) {
+						$query->the_post();
+						//Include specific template for the content.
+						get_template_part( 'partials/content', 'archive-post' );
+					}
+				?> <div class="clear"></div> <?php
+				}
+			}
+			else {
+				global $post;
+				$ttl_selected_posts = array();
+				$ttl_selected_posts = isset($fields['ttl_rp_selected_posts']) ? $fields['ttl_rp_selected_posts'] : null;
+				if ( $ttl_selected_posts ) { ?> <div class="related-posts ">
+		<h3><?php _e( 'Related Posts', 'ttl_td' ) ?></h3> <?php
+								foreach ( $ttl_selected_posts as $ttl_post ) {
+									$post = $ttl_post;
+									setup_postdata( $post );
+									$pID         = $post->ID;
+									$post_fields = get_fields( $pID );
+									$custom_field  = $post_fields['custom_field'];
+									$src         = wp_get_attachment_image_src( get_post_thumbnail_id( $pID ), 'thumb_600', false );
+									if ( ! $src ) {
+										$src = get_template_directory_uri() . '/assets/img/admin/defaults/default-image.webp';
+									} else {
+										$src = $src[0];
+									}
+										get_template_part( 'partials/content', 'archive-post' );
+								}
+							?>
+	</div> <?php } wp_reset_query();
+				wp_reset_postdata();
+				}
+				?>
+	</article>
+</div>
+</div>

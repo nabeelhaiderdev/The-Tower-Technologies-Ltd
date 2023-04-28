@@ -139,7 +139,7 @@ Version: 1.0
 // ------------------------------------------------------------------ */
 // @import "vendor/magnific-popup.css";
 
-
+// @import "partials/markup/plugins";
 @import "partials/markup/layout/variables";
 @import "partials/markup/layout/normalize";
 @import "partials/markup/layout/typography";
@@ -149,3 +149,12 @@ Version: 1.0
 @import "partials/markup/global/header";
 @import "partials/markup/global/footer";
 @import "partials/markup/global/components";
+
+html {
+	scroll-behavior: smooth;
+}
+
+#single-post-content {
+	position: relative;
+	top: -80px;
+}
