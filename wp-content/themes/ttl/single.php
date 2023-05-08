@@ -104,7 +104,6 @@ $current_post_type = get_post_type();
 				</div>
 			</div>
 		</div>
-	</div>
 </section>
 
 <?php } ?>
@@ -112,13 +111,12 @@ $current_post_type = get_post_type();
 <!-- Main Content -->
 <main id="main" class="main">
 	<!-- Content Two Columns -->
-	<?php while (have_posts()) {
-				the_post();
-				//Include specific template for the content.
-				get_template_part('partials/content', get_post_type());
-			} ?>
-
-	<div class="clear"></div>
+	<?php while (have_posts()) { 
+			the_post();
+			//Include specific template for the content.
+			get_template_part('partials/content', get_post_type());
+		} ?> <div class="clear">
+	</div>
 	<div class="ts-80"></div>
 </main>
 
