@@ -59,13 +59,14 @@ if ( $ttl_schema_check ) {
 $ttl_to_ftr_css = ( isset( $option_fields['ttl_to_ftr_css'] ) ) ? $option_fields['ttl_to_ftr_css'] : null;
 
 $ttl_ftrop_title     = ( isset( $option_fields['ttl_ftrop_title'] ) ) ? $option_fields['ttl_ftrop_title'] : null;
-$ttl_ftrop_text      = html_entity_decode( $option_fields['ttl_ftrop_text'] );
 $ttl_ftrop_copyright = html_entity_decode( $option_fields['ttl_ftrop_copyright'] );
 $ttl_social_fb       = ( isset( $option_fields['ttl_social_fb'] ) ) ? $option_fields['ttl_social_fb'] : null;
 $ttl_social_tw       = ( isset( $option_fields['ttl_social_tw'] ) ) ? $option_fields['ttl_social_tw'] : null;
 $ttl_social_li       = ( isset( $option_fields['ttl_social_li'] ) ) ? $option_fields['ttl_social_li'] : null;
 $ttl_social_in       = ( isset( $option_fields['ttl_social_in'] ) ) ? $option_fields['ttl_social_in'] : null;
 $ttl_social_yt       = ( isset( $option_fields['ttl_social_yt'] ) ) ? $option_fields['ttl_social_yt'] : null;
+// Contact form options
+$ttl_ftrop_cfshortcode       = ( isset( $option_fields['ttl_ftrop_cfshortcode'] ) ) ? $option_fields['ttl_ftrop_cfshortcode'] : null;
 
 ?>
 <?php get_template_part( 'partials/cta' ); ?> </main>
@@ -127,15 +128,13 @@ $ttl_social_yt       = ( isset( $option_fields['ttl_social_yt'] ) ) ? $option_fi
 					<li><a href="<?php echo $ttl_social_yt; ?>"><i class="fab fa-youtube"></i></a></li>
 					<?php } ?>
 				</ul>
-				<h4>Subscribe</h4>
-				<p>Subscribe our newsletter to get updates about our services and offers.</p>
-				<form class="newsletter-form">
-					<div class="form-holder">
-						<input type="email" class="form-control form-control-sm" placeholder="Enter your email">
-						<button type="submit" class="btn btn-tertiary btn-sm">Subscribe</button>
-					</div>
-				</form>
-
+				<?php if($ttl_ftrop_cfshortcode){
+					$form_code = html_entity_decode($ttl_ftrop_cfshortcode['form']);
+					?>
+				<h4><?php echo $ttl_ftrop_cfshortcode['heading']; ?></h4>
+				<p><?php echo $ttl_ftrop_cfshortcode['description']; ?></p>
+				<?php echo do_shortcode($form_code); 
+				} ?>
 			</div>
 		</div>
 		<div class="copyright">

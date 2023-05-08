@@ -79,25 +79,39 @@ $ttl_posttitle=glide_page_title('ttl_posttitle');
 			<div class="widget-holder">
 				<h4>Share Article</h4>
 				<ul class="share-holder">
-					<li><a href="#"><img
-								src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/ico-facebook.svg"
-								alt="Facebook" width="41" height="41"></a></li>
-					<li><a href="#"><img
-								src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/ico-twitter.svg"
-								alt="Facebook" width="41" height="41"></a></li>
-					<li><a href="#"><img
-								src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/ico-whatsapp.svg"
-								alt="Facebook" width="45" height="46"></a></li>
-					<li><a href="#"><img
-								src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/ico-gmail.svg"
-								alt="Facebook" width="41" height="41"></a></li>
+					<li>
+						<a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode(get_permalink()); ?>"
+							target="_blank" rel="nofollow noopener noreferrer">
+							<img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/ico-facebook.svg"
+								alt="Facebook" width="41" height="41"></a>
+					</li>
+					<li>
+						<a href="https://twitter.com/share?url=<?php echo urlencode(get_permalink()); ?>&text=<?php echo urlencode(get_the_title()); ?>"
+							target="_blank" rel="nofollow noopener noreferrer">
+							<img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/ico-twitter.svg"
+								alt="Facebook" width="41" height="41"></a>
+					</li>
+					<li>
+						<a href="https://wa.me/?text=<?php echo urlencode(get_the_title()); ?>%20<?php echo urlencode(get_permalink()); ?>"
+							target="_blank" rel="nofollow noopener noreferrer">
+
+							<img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/ico-whatsapp.svg"
+								alt="Facebook" width="45" height="46"></a>
+					</li>
+					<li>
+						<a href="mailto:?subject=<?php echo rawurlencode(get_the_title()); ?>&body=<?php echo rawurlencode('Check out this article: '.get_permalink()); ?>"
+							target="_blank" rel="nofollow noopener noreferrer">
+
+							<img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/ico-gmail.svg"
+								alt="Facebook" width="41" height="41"></a>
+					</li>
 				</ul>
 			</div>
 		</div>
 		<?php
 			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) {
-				comments_template();
+			if ( comments_open() || have_comments() ) {
+				comments_template();  //comments.php
 			}
 		?>
 

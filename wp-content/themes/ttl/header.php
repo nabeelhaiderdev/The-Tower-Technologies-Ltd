@@ -34,6 +34,8 @@ $hscripts = ( isset( $option_fields['head_scripts'] ) ) ? $option_fields['head_s
 $bscripts = ( isset( $option_fields['body_scripts'] ) ) ? $option_fields['body_scripts'] : null;
 
 // Page variables - Advanced custom fields variables
+
+$current_template = get_page_template();
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -103,11 +105,11 @@ $bscripts = ( isset( $option_fields['body_scripts'] ) ) ? $option_fields['body_s
 </head>
 
 <?php 
-$ttl_spo_select_design = (isset($fields['ttl_spo_select_design'])) ? $fields['ttl_spo_select_design'] : null;
-	if ($ttl_spo_select_design) {
-		$body_class = ' page-landing ';
-	} else {
+// $ttl_spo_select_design = (isset($fields['ttl_spo_select_design'])) ? $fields['ttl_spo_select_design'] : null;
+	if ( basename($current_template) == 'template-home.php' ) {
 		$body_class = null;
+	} else {
+		$body_class = ' page-landing ';
 	}
 
 ?>
@@ -125,10 +127,10 @@ if ( $bscripts != '' ) {
 			<div class="container-full">
 				<div class="header-holder">
 					<div class="logo-wrap">
-						<div class="logo logo-normal"><a href="./"><img
+						<div class="logo logo-normal"><a href="<?php echo home_url(); ?>"><img
 									src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/logo-towertech-white.svg"
 									alt="Tower Tech" width="245" height="46"></a></div>
-						<div class="logo logo-fixed"><a href="./"><img
+						<div class="logo logo-fixed"><a href="<?php echo home_url(); ?>"><img
 									src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/logo-towertech.svg"
 									alt="Tower Tech" width="245" height="46"></a></div>
 					</div>

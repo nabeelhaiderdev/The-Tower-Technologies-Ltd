@@ -44,6 +44,12 @@ if($block['name']){
 $ttl_blk_tk = ( isset( $block_fields['ttl_blk_tk'] ) ) ? $block_fields['ttl_blk_tk'] : null;
 $ttl_blk_tt = ( isset( $block_fields['ttl_blk_tt'] ) ) ? $block_fields['ttl_blk_tt'] : null;
 $ttl_blk_td = ( isset( $block_fields['ttl_blk_td'] ) ) ? $block_fields['ttl_blk_td'] : null;
+$ttl_blk_bgcolor = ( isset( $block_fields['ttl_blk_bgcolor'] ) ) ? $block_fields['ttl_blk_bgcolor'] : null;
+if($ttl_blk_bgcolor == 'Gray'){
+	$team_bg_color = ' bg-gray '; 
+} else {
+	$team_bg_color = null;
+}
 $ttl_blk_team_members = ( isset( $block_fields['ttl_blk_team_members'] ) ) ? $block_fields['ttl_blk_team_members'] : array();
 /*
 echo '<pre>';
@@ -53,7 +59,7 @@ echo '</pre>';
 ?>
 <div id="<?php echo $id; ?>"
 	class="<?php echo $align_class . ' ' . $class_name. ' ' . $name; ?> glide-block-<?php echo $block_glide_name; ?>">
-	<section class="section section-team">
+	<section class="section section-team <?php echo $team_bg_color; ?>">
 		<div class="section-frame">
 			<div class="container">
 				<header class="section-head" data-aos="fade-down" data-aos-duration="700">

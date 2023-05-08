@@ -13,12 +13,15 @@
 <aside id="aside">
 	<div class="widget widget-search">
 		<div class="widget-holder">
-			<form>
+			</form>
+			<form role="search" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
 				<div class="input-holder">
-					<input class="form-control" placeholder="Search">
+					<input type="search" class="form-control"
+						placeholder="<?php echo esc_attr_x( 'Search', 'placeholder', 'textdomain' ); ?>"
+						value="<?php echo get_search_query(); ?>" name="s" />
 				</div>
-				<button type="submit" class="btn btn-primary"><img
-						src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/ico-search.svg"
+				<button type="submit" class="btn btn-primary">
+					<img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/ico-search.svg"
 						alt="Search" width="20" height="20"></button>
 			</form>
 		</div>
