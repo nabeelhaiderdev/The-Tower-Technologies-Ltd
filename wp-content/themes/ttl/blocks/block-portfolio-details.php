@@ -53,7 +53,7 @@ $ttl_blk_pd_details = (isset($block_fields['ttl_blk_pd_details'])) ? $block_fiel
 ?>
 <div id="<?php echo $id; ?>" class="<?php echo $align_class . ' ' . $class_name . ' ' . $name; ?> glide-block-<?php echo $block_glide_name; ?>">
 
-	<section class="section portfolio-details bg-gray">
+	<section class="section portfolio-details">
 		<div class="section-frame">
 			<div class="container">
 				<header class="section-head" data-aos="fade-down" data-aos-duration="700">
