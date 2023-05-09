@@ -78,7 +78,8 @@
                 "overlaptext": "Text Overlapping",
                 "frame": "Image in Frame",
                 "twoimages": "Two Images",
-                "shape": "Shaped Image"
+                "shape": "Shaped Image",
+                "plain": "Plain"
             },
             "default_value": "features",
             "return_format": "value",
@@ -130,6 +131,13 @@
                         "field": "field_643e5a6410e72",
                         "operator": "==",
                         "value": "shape"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_643e5a6410e72",
+                        "operator": "==",
+                        "value": "plain"
                     }
                 ]
             ],
@@ -213,7 +221,15 @@
             "type": "text",
             "instructions": "",
             "required": 0,
-            "conditional_logic": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_643e5a6410e72",
+                        "operator": "!=",
+                        "value": "plain"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -372,5 +388,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1682677389
+    "modified": 1683617816
 }
