@@ -334,7 +334,7 @@ function glide_theme_acf_init()
 				// ),
 			)
 		);
-	}
+	
 	// Register a block - Tabbed Content
 	acf_register_block(
 		array(
@@ -509,123 +509,123 @@ function glide_theme_acf_init()
 			),
 		)
 	);
-	// Register a block - Three Columns Text
-	acf_register_block(
-		array(
-			'name'            => 'three-columns-text',
-			'title'           => __('Three Columns Text', 'ttl_td'),
-			'description'     => __('A custom Three Columns.', 'ttl_td'),
-			'render_callback' => 'glide_acf_block_callback',
-			'category'        => 'glide-blocks',
-			'icon'            => 'images-alt2',
-			'mode'            => 'edit',
-			'keywords'        => array('Three Columns Text'),
-			'align'           => 'wide',
-			// calling assets js,css
-			// 'enqueue_assets' => function(){
-			// wp_enqueue_script( 'block-testimonial', get_template_directory_uri() . '/scripts/jquery.cycle2.min.js', array('jquery'), '', true );
-			// },
-			'supports'        => array(
-				'align' => false,
-			),
-			// 'example'         => array(
-			// 	'attributes' => array(
-			// 		'mode' => 'preview',
-			// 		'data' => array(
-			// 			'preview_image_help' => get_template_directory_uri() . '/assets/img/admin/default-block-preview.webp',
-			// 		),
-			// 	),
-			// ),
-		)
-	);
+	// // Register a block - Three Columns Text
+	// acf_register_block(
+	// 	array(
+	// 		'name'            => 'three-columns-text',
+	// 		'title'           => __('Three Columns Text', 'ttl_td'),
+	// 		'description'     => __('A custom Three Columns.', 'ttl_td'),
+	// 		'render_callback' => 'glide_acf_block_callback',
+	// 		'category'        => 'glide-blocks',
+	// 		'icon'            => 'images-alt2',
+	// 		'mode'            => 'edit',
+	// 		'keywords'        => array('Three Columns Text'),
+	// 		'align'           => 'wide',
+	// 		// calling assets js,css
+	// 		// 'enqueue_assets' => function(){
+	// 		// wp_enqueue_script( 'block-testimonial', get_template_directory_uri() . '/scripts/jquery.cycle2.min.js', array('jquery'), '', true );
+	// 		// },
+	// 		'supports'        => array(
+	// 			'align' => false,
+	// 		),
+	// 		// 'example'         => array(
+	// 		// 	'attributes' => array(
+	// 		// 		'mode' => 'preview',
+	// 		// 		'data' => array(
+	// 		// 			'preview_image_help' => get_template_directory_uri() . '/assets/img/admin/default-block-preview.webp',
+	// 		// 		),
+	// 		// 	),
+	// 		// ),
+	// 	)
+	// );
 
-	// Register a block - Tabbed Content
-	acf_register_block(
-		array(
-			'name'            => 'tabbed-content',
-			'title'           => __('Tabbed Content', 'ttl_td'),
-			'description'     => __('Tabbed Content.', 'ttl_td'),
-			'render_callback' => 'glide_acf_block_callback',
-			'category'        => 'glide-blocks',
-			'icon'            => 'images-alt2',
-			'mode'            => 'edit',
-			'keywords'        => array('Tabbed Content'),
-			'align'           => 'wide',
-			// calling assets js,css
-			// 'enqueue_assets' => function(){
-			// wp_enqueue_script( 'block-testimonial', get_template_directory_uri() . '/scripts/jquery.cycle2.min.js', array('jquery'), '', true );
-			// },
-			'supports'        => array(
-				'align' => false,
-			),
-			// 'example'         => array(
-			// 	'attributes' => array(
-			// 		'mode' => 'preview',
-			// 		'data' => array(
-			// 			'preview_image_help' => get_template_directory_uri() . '/assets/img/admin/default-block-preview.webp',
-			// 		),
-			// 	),
-			// ),
-		)
-	);
-	// Register a block - Numbers Alongside Text
-	acf_register_block(
-		array(
-			'name'            => 'numbers-alongside-text',
-			'title'           => __('Numbers Alongside Text', 'ttl_td'),
-			'description'     => __('Numbers Alongside Text.', 'ttl_td'),
-			'render_callback' => 'glide_acf_block_callback',
-			'category'        => 'glide-blocks',
-			'icon'            => 'images-alt2',
-			'mode'            => 'edit',
-			'keywords'        => array('Numbers Alongside Text'),
-			'align'           => 'wide',
-			// calling assets js,css
-			// 'enqueue_assets' => function(){
-			// wp_enqueue_script( 'block-testimonial', get_template_directory_uri() . '/scripts/jquery.cycle2.min.js', array('jquery'), '', true );
-			// },
-			'supports'        => array(
-				'align' => false,
-			),
-			// 'example'         => array(
-			// 	'attributes' => array(
-			// 		'mode' => 'preview',
-			// 		'data' => array(
-			// 			'preview_image_help' => get_template_directory_uri() . '/assets/img/admin/default-block-preview.webp',
-			// 		),
-			// 	),
-			// ),
-		)
-	);
-	// Register a block - Logos Grid
-	acf_register_block(
-		array(
-			'name'            => 'logos-grid',
-			'title'           => __('Logos Grid', 'ttl_td'),
-			'description'     => __('Logos Grid.', 'ttl_td'),
-			'render_callback' => 'glide_acf_block_callback',
-			'category'        => 'glide-blocks',
-			'icon'            => 'images-alt2',
-			'mode'            => 'edit',
-			'keywords'        => array('Logos Grid'),
-			'align'           => 'wide',
-			// calling assets js,css
-			// 'enqueue_assets' => function(){
-			// wp_enqueue_script( 'block-testimonial', get_template_directory_uri() . '/scripts/jquery.cycle2.min.js', array('jquery'), '', true );
-			// },
-			'supports'        => array(
-				'align' => false,
-			),
-			// 'example'         => array(
-			// 	'attributes' => array(
-			// 		'mode' => 'preview',
-			// 		'data' => array(
-			// 			'preview_image_help' => get_template_directory_uri() . '/assets/img/admin/default-block-preview.webp',
-			// 		),
-			// 	),
-			// ),
-		)
-	);
+	// // Register a block - Tabbed Content
+	// acf_register_block(
+	// 	array(
+	// 		'name'            => 'tabbed-content',
+	// 		'title'           => __('Tabbed Content', 'ttl_td'),
+	// 		'description'     => __('Tabbed Content.', 'ttl_td'),
+	// 		'render_callback' => 'glide_acf_block_callback',
+	// 		'category'        => 'glide-blocks',
+	// 		'icon'            => 'images-alt2',
+	// 		'mode'            => 'edit',
+	// 		'keywords'        => array('Tabbed Content'),
+	// 		'align'           => 'wide',
+	// 		// calling assets js,css
+	// 		// 'enqueue_assets' => function(){
+	// 		// wp_enqueue_script( 'block-testimonial', get_template_directory_uri() . '/scripts/jquery.cycle2.min.js', array('jquery'), '', true );
+	// 		// },
+	// 		'supports'        => array(
+	// 			'align' => false,
+	// 		),
+	// 		// 'example'         => array(
+	// 		// 	'attributes' => array(
+	// 		// 		'mode' => 'preview',
+	// 		// 		'data' => array(
+	// 		// 			'preview_image_help' => get_template_directory_uri() . '/assets/img/admin/default-block-preview.webp',
+	// 		// 		),
+	// 		// 	),
+	// 		// ),
+	// 	)
+	// );
+	// // Register a block - Numbers Alongside Text
+	// acf_register_block(
+	// 	array(
+	// 		'name'            => 'numbers-alongside-text',
+	// 		'title'           => __('Numbers Alongside Text', 'ttl_td'),
+	// 		'description'     => __('Numbers Alongside Text.', 'ttl_td'),
+	// 		'render_callback' => 'glide_acf_block_callback',
+	// 		'category'        => 'glide-blocks',
+	// 		'icon'            => 'images-alt2',
+	// 		'mode'            => 'edit',
+	// 		'keywords'        => array('Numbers Alongside Text'),
+	// 		'align'           => 'wide',
+	// 		// calling assets js,css
+	// 		// 'enqueue_assets' => function(){
+	// 		// wp_enqueue_script( 'block-testimonial', get_template_directory_uri() . '/scripts/jquery.cycle2.min.js', array('jquery'), '', true );
+	// 		// },
+	// 		'supports'        => array(
+	// 			'align' => false,
+	// 		),
+	// 		// 'example'         => array(
+	// 		// 	'attributes' => array(
+	// 		// 		'mode' => 'preview',
+	// 		// 		'data' => array(
+	// 		// 			'preview_image_help' => get_template_directory_uri() . '/assets/img/admin/default-block-preview.webp',
+	// 		// 		),
+	// 		// 	),
+	// 		// ),
+	// 	)
+	// );
+	// // Register a block - Logos Grid
+	// acf_register_block(
+	// 	array(
+	// 		'name'            => 'logos-grid',
+	// 		'title'           => __('Logos Grid', 'ttl_td'),
+	// 		'description'     => __('Logos Grid.', 'ttl_td'),
+	// 		'render_callback' => 'glide_acf_block_callback',
+	// 		'category'        => 'glide-blocks',
+	// 		'icon'            => 'images-alt2',
+	// 		'mode'            => 'edit',
+	// 		'keywords'        => array('Logos Grid'),
+	// 		'align'           => 'wide',
+	// 		// calling assets js,css
+	// 		// 'enqueue_assets' => function(){
+	// 		// wp_enqueue_script( 'block-testimonial', get_template_directory_uri() . '/scripts/jquery.cycle2.min.js', array('jquery'), '', true );
+	// 		// },
+	// 		'supports'        => array(
+	// 			'align' => false,
+	// 		),
+	// 		// 'example'         => array(
+	// 		// 	'attributes' => array(
+	// 		// 		'mode' => 'preview',
+	// 		// 		'data' => array(
+	// 		// 			'preview_image_help' => get_template_directory_uri() . '/assets/img/admin/default-block-preview.webp',
+	// 		// 		),
+	// 		// 	),
+	// 		// ),
+	// 	)
+	// );
 	// Register a block - Contact
 	acf_register_block(
 		array(
@@ -1718,4 +1718,5 @@ function glide_theme_acf_init()
 			),
 		)
 	);
+}
 }

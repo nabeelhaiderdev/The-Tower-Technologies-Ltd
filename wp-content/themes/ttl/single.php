@@ -57,7 +57,7 @@ $current_post_type = get_post_type();
 <?php } elseif ($current_post_type == 'service') { 
 	$ttl_ssbo_title = ( isset( $fields['ttl_ssbo_title'] ) ) ? $fields['ttl_ssbo_title'] : get_the_title();
 	$ttl_ssbo_text = ( isset( $fields['ttl_ssbo_text'] ) ) ? $fields['ttl_ssbo_text'] : null;
-	$ttl_ssbo_button_text = ( isset( $fields['ttl_ssbo_button_text'] ) ) ? $fields['ttl_ssbo_button_text'] : null;
+	$ttl_ssbo_button_text = ( isset( $fields['ttl_ssbo_button_text'] ) ) ? $fields['ttl_ssbo_button_text'] : 'DEVELOP With Us';
 	$ttl_ssbo_detail_page_options = ( isset( $fields['ttl_ssbo_detail_page_options'] ) ) ? $fields['ttl_ssbo_detail_page_options'] : null;
 	?>
 
@@ -79,7 +79,8 @@ $current_post_type = get_post_type();
 			<div class="img-corner-holder reverse circular">
 				<div class="img-corner-frame">
 					<div class="img-frame">
-						<img src="<?php echo get_the_post_thumbnail_url(); ?>" height="" alt="" width="368">
+						<img src="<?php echo get_the_post_thumbnail_url( get_the_ID(), 'full'); ?>" height="" alt=""
+							width="368">
 					</div>
 				</div>
 			</div>
@@ -87,7 +88,11 @@ $current_post_type = get_post_type();
 	</div>
 </section>
 
-<?php }  else { ?>
+<?php }  else { 
+	$ttl_posttitle = ( isset( $fields['ttl_posttitle'] ) ) ? $fields['ttl_posttitle'] : null;
+	$ttl_spost_short_description = ( isset( $fields['ttl_spost_short_description'] ) ) ? $fields['ttl_spost_short_description'] : null;
+	$ttl_posttitle = ( isset( $fields['ttl_posttitle'] ) ) ? $fields['ttl_posttitle'] : null;
+	?>
 <!-- Intro -->
 <section class="section-intro subpage">
 	<canvas></canvas>
@@ -110,14 +115,22 @@ $current_post_type = get_post_type();
 
 <!-- Main Content -->
 <main id="main" class="main">
+	<?php if ($current_post_type != 'service') {  ?>
 	<!-- Content Two Columns -->
-	<?php while (have_posts()) { 
-			the_post();
-			//Include specific template for the content.
-			get_template_part('partials/content', get_post_type());
-		} ?> <div class="clear">
+	<div id="content-twocols">
+		<div class="container">
+			<?php } ?>
+			<?php while (have_posts()) { 
+					the_post();
+					//Include specific template for the content.
+					get_template_part('partials/content', get_post_type());
+				} ?> <div class="clear">
+			</div>
+			<div class="ts-80"></div>
+			<?php if ($current_post_type != 'service') {  ?>
+		</div>
 	</div>
-	<div class="ts-80"></div>
+	<?php } ?>
 </main>
 
 <?php get_footer();

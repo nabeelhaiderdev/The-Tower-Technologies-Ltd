@@ -22,10 +22,14 @@ if (function_exists('get_fields') && function_exists('get_fields_escaped')) {
 
 
 $current_taxonomies = get_the_terms( get_the_ID(), 'services' );
-$first_term = $current_taxonomies[0];
+$first_term = $current_taxonomy_id = null;
+if($current_taxonomies){
+	$first_term = $current_taxonomies[0];
+	$current_taxonomy_id = $current_taxonomies[0]->term_id;
+}
 $term_link = get_term_link( $first_term, 'services' );
 
-$current_taxonomy_id = $current_taxonomies[0]->term_id;
+
 
 $categories = get_terms([
     'taxonomy' => 'services',
@@ -37,7 +41,7 @@ $categories = get_terms([
 
 
 $ttl_to_sso_contact_section = ( isset( $option_fields['ttl_to_sso_contact_section'] ) ) ? $option_fields['ttl_to_sso_contact_section'] : null;
-if($ttl_to_sso_contact_section['background_image'] || $ttl_to_sso_contact_section['icon'] || $ttl_to_sso_contact_section['heading'] || $ttl_to_sso_contact_section['text'] || $ttl_to_sso_contact_section['phone']){
+if(isset($ttl_to_sso_contact_section['background_image']) || isset($ttl_to_sso_contact_section['icon']) || isset($ttl_to_sso_contact_section['heading']) || isset($ttl_to_sso_contact_section['text']) || isset($ttl_to_sso_contact_section['phone'])){
 	$contact_background_image = ( isset( $ttl_to_sso_contact_section['background_image'] ) ) ? $ttl_to_sso_contact_section['background_image'] : null;
 	$contact_background_icon = ( isset( $ttl_to_sso_contact_section['icon'] ) ) ? $ttl_to_sso_contact_section['icon'] : null;
 	$contact_background_heading = ( isset( $ttl_to_sso_contact_section['heading'] ) ) ? $ttl_to_sso_contact_section['heading'] : null;
@@ -47,7 +51,8 @@ if($ttl_to_sso_contact_section['background_image'] || $ttl_to_sso_contact_sectio
 }
 
 $ttl_to_sso_contact_form = ( isset( $option_fields['ttl_to_sso_contact_form'] ) ) ? $option_fields['ttl_to_sso_contact_form'] : null;
- if($ttl_to_sso_contact_form['heading'] || $ttl_to_sso_contact_form['form'] ){
+ if(isset($ttl_to_sso_contact_form['heading']) || isset($ttl_to_sso_contact_form['form'])){
+
 	$contact_form_heading = ( isset( $ttl_to_sso_contact_form['heading'] ) ) ? $ttl_to_sso_contact_form['heading'] : null;
 	$contact_form_selected_form = ( isset( $ttl_to_sso_contact_form['form'] ) ) ? html_entity_decode($ttl_to_sso_contact_form['form']) : null;
 }
@@ -108,7 +113,7 @@ $ttl_to_sso_cta = ( isset( $option_fields['ttl_to_sso_cta'] ) ) ? $option_fields
 			?>
 		</ul>
 	</div>
-	<?php if($ttl_to_sso_contact_section['background_image'] || $ttl_to_sso_contact_section['icon'] || $ttl_to_sso_contact_section['heading'] || $ttl_to_sso_contact_section['text'] || $ttl_to_sso_contact_section['phone']){ ?>
+	<?php if(isset($ttl_to_sso_contact_section['background_image']) || isset($ttl_to_sso_contact_section['icon']) || isset($ttl_to_sso_contact_section['heading']) || isset($ttl_to_sso_contact_section['text']) || isset($ttl_to_sso_contact_section['phone'])){ ?>
 	<!-- Widget Call -->
 	<div class="widget widget-call">
 		<div class="widget-holder" <?php if($contact_background_image) { ?>
@@ -128,7 +133,8 @@ $ttl_to_sso_cta = ( isset( $option_fields['ttl_to_sso_cta'] ) ) ? $option_fields
 		</div>
 	</div>
 	<?php } ?>
-	<?php if($ttl_to_sso_contact_form['heading'] || $ttl_to_sso_contact_form['form'] ){ ?>
+	<?php if(isset($ttl_to_sso_contact_form['heading']) || isset($ttl_to_sso_contact_form['form'])){
+ ?>
 	<!-- Widget Quote -->
 	<div class="widget widget-quote">
 		<div class="widget-holder">
