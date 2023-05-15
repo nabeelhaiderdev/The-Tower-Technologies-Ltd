@@ -52,19 +52,20 @@ $lp_select_posts = array();
 $lp_select_posts = $block_fields['ttl_blk_rst'];
 
 ?>
-<div id="<?php echo $id; ?>" class="<?php echo $align_class . ' ' . $class_name. ' ' . $name; ?> glide-block-<?php echo $block_glide_name; ?>">
-<!-- Contact Form -->
-           <section class="section section-testimonials"  data-aos="fade-down" data-aos-duration="700">
-				<div class="section-frame">
-					<div class="container">
-						<header class="section-head">
-							<h3><?php echo $ttl_blk_tk;?></h3>
-							<h2><?php echo $ttl_blk_tt;?></h2>
-						</header>
-						<div class="testimonials-block-frame"> 
-							<div class="testimonials-block">
-								<div class="testimonial-slider testimonialsSlider">
-									<?php 
+<div id="<?php echo $id; ?>"
+	class="<?php echo $align_class . ' ' . $class_name. ' ' . $name; ?> glide-block-<?php echo $block_glide_name; ?>">
+	<!-- Contact Form -->
+	<section class="section section-testimonials" data-aos="fade-down" data-aos-duration="700">
+		<div class="section-frame">
+			<div class="container">
+				<header class="section-head">
+					<h3><?php echo $ttl_blk_tk;?></h3>
+					<h2><?php echo $ttl_blk_tt;?></h2>
+				</header>
+				<div class="testimonials-block-frame">
+					<div class="testimonials-block">
+						<div class="testimonial-slider testimonialsSlider">
+							<?php 
 									if ( $lp_select_posts ) :
 										
 										foreach ( $lp_select_posts as $lp_posts ) :
@@ -83,40 +84,40 @@ $lp_select_posts = $block_fields['ttl_blk_rst'];
 											}
 											
 									?>
-									<div class="testimonial-slide">
-										<div class="testimonial-holder">
-											<div class="img-holder">
-												<img src="<?php echo $src; ?>" alt="PGC" width="106" height="129">
-											</div>
-											<h5><?php the_title();?></h5>
-											<p><?php echo html_entity_decode(glide_excerpt_nomore( 130 )); ?></p>
-											<ul class="rating">
-												<?php 
+							<div class="testimonial-slide">
+								<div class="testimonial-holder">
+									<div class="img-holder">
+										<img src="<?php echo $src; ?>" alt="PGC" width="106" height="129">
+									</div>
+									<h5><?php the_title();?></h5>
+									<p><?php echo html_entity_decode(glide_excerpt_nomore( 1000 )); ?></p>
+									<ul class="rating">
+										<?php 
 												if($ttl_start_rating>0){
 													for($i=1;$i<=$ttl_start_rating;$i++){
 
 														?>
-														<li><a class="active" href="#"><i class="fa fa-star"></i></a></li>		
-														<?php
+										<li><a class="active" href="#"><i class="fa fa-star"></i></a></li>
+										<?php
 													}
 
 												}
-												?>												
-											</ul>
-										</div>
-									</div>
-									
-									<?php		
+												?>
+									</ul>
+								</div>
+							</div>
+
+							<?php		
 
 									endforeach; endif; wp_reset_query();
 									?>
-									
-									
-								</div>
-							</div>
+
+
 						</div>
 					</div>
 				</div>
-			</section>
+			</div>
+		</div>
+	</section>
 
 </div>
